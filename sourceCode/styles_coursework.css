@@ -1,0 +1,9 @@
+/* This is my css page which contains all of my styles for all of my pages.
+The general format of the names is pagename_whatitis or the other way around.
+This just makes it easier as I can easily search for styles and styles won't conflict with eachother */
+
+body {
+	background-color:gray;
+	margin:0 0;
+	padding:0;
+}
