@@ -23,10 +23,10 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `pois`
+-- Table structure for table `locations`
 --
 
-CREATE TABLE IF NOT EXISTS `pois` (
+CREATE TABLE IF NOT EXISTS `locations` (
 `placeID` int(11) NOT NULL,
   `poiName` varchar(255) NOT NULL,
   `poiDescription` varchar(500) DEFAULT NULL,
@@ -36,10 +36,10 @@ CREATE TABLE IF NOT EXISTS `pois` (
 ) ENGINE=InnoDB AUTO_INCREMENT=59 DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `pois`
+-- Dumping data for table `locations`
 --
 
-INSERT INTO `pois` (`placeID`, `poiName`, `poiDescription`, `question`, `answer`, `clue`) VALUES
+INSERT INTO `locations` (`placeID`, `poiName`, `poiDescription`, `question`, `answer`, `clue`) VALUES
 (1, 'Amory', 'The college of social sciences is housed here, but the lecture theatre “Moot Room” is shared as well as a number of smaller areas.', 'How many people can sit in the Moot room?', '260', 'Sounds like the french word for love'),
 (2, 'Queen`s', 'The building for the Foreign Languages department. It also contains lecture theatres shared by all departments.', 'What floor is the FLC on?', 'The second floor', 'The creator of Bohemian Rhapsody'),
 (3, 'Business School', 'The University of Exeter Business School, based in Exeter and Penryn in Cornwall, has approximately 3,900 students, studying courses in Management, Economics, Accounting and Finance and teaches the Exeter MBA.', 'This building has another name, what is it?', 'Building One', 'Where you learn to run a company'),
@@ -111,26 +111,68 @@ CREATE TABLE IF NOT EXISTS `users` (
   `username` varchar(40) DEFAULT NULL,
   `password` varchar(40) NOT NULL,
   `accessID` int(11) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `users`
 --
 
 INSERT INTO `users` (`userID`, `firstName`, `username`, `password`, `accessID`) VALUES
-(1, 'James', 'admin1', '6c5934555fd94f3f0a0e038cad79f80abc37c4f1', 2),
-(2, 'Aaron', 'gamemaster1', 'e74b595aff7c289c373d0c17798aa94ddb7c4278', 1),
-(3, 'Saleh', 'student1', 'student', 0),
-(4, 'Zain', 'zh290', '3eac329c208657f1d240cf5a24f32c084d8c2557', 0);
+(1, 'Aaron', 'gamemaster1', 'e74b595aff7c289c373d0c17798aa94ddb7c4278', 1),
+(2, 'Saleh', 'student1', 'student', 0),
+(3, 'Zain', 'zh290', '3eac329c208657f1d240cf5a24f32c084d8c2557', 0);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tours`
+--
+
+CREATE TABLE IF NOT EXISTS `tours` (
+  'tourID' INT(11) AUTO_INCREMENT PRIMARY KEY,
+    'creatorID' INT(11) NOT NULL,
+    'creationDate' DATE NULL,
+    'tourRoute' VARCHAR(255) NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `tables`
+--
+INSERT INTO `tours` (`tourID`, `creatorID`,  `creationDate`, `tourRoute`) VALUES
+(1,1, `2020-02-11`,`1,5,17,6,3`);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `bookings`
+--
+
+CREATE TABLE IF NOT EXISTS `bookings` (
+  'bookingID' INT(11) AUTO_INCREMENT PRIMARY KEY,
+      'tourID' INT(11) NOT NULL,
+      'userID' INT(11) UNIQUE NULL,
+      'bookingDate' DATETIME NOT NULL,
+      'lastLocation' INT,
+      'score' INT
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `bookings`
+--
+INSERT INTO `bookings` (`bookingID`, `tourID`, `userID`, `bookingDate`,
+  `lastLocation`, `score`) VALUES
+  (1, 1, 2, `2020-02-13`, 5, 17);
+
+-- --------------------------------------------------------
 
 --
 -- Indexes for dumped tables
 --
 
 --
--- Indexes for table `pois`
+-- Indexes for table `locations`
 --
-ALTER TABLE `pois`
+ALTER TABLE `locations`
  ADD PRIMARY KEY (`placeID`), ADD UNIQUE KEY `POIname` (`poiName`);
 
 --
@@ -144,15 +186,25 @@ ALTER TABLE `users`
 --
 
 --
--- AUTO_INCREMENT for table `pois`
+-- AUTO_INCREMENT for table `locations`
 --
-ALTER TABLE `pois`
+ALTER TABLE `locations`
 MODIFY `placeID` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=59;
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-MODIFY `userID` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=5;
+MODIFY `userID` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
+--
+-- AUTO_INCREMENT for table `tours`
+--
+ALTER TABLE `tours`
+MODIFY `tourID` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
+--
+-- AUTO_INCREMENT for table `bookings`
+--
+ALTER TABLE `bookings`
+MODIFY `bookingID` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
