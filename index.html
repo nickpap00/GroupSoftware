@@ -21,8 +21,8 @@ STUFF TO BE COMPLETED
       #map {
         /*width and height 100% for full size on mobile devices*/
         /*work with percentages on mobile devices*/
-        width: 100%;
-        height: 100%;
+        width: 50%;
+        height:50%;
       }
     </style>
   </head>
@@ -43,6 +43,8 @@ STUFF TO BE COMPLETED
         harrison: {lat: 50.737759, lng: -3.532615},
         car_park_forum: {lat: 50.736247, lng: -3.534458},
         car_park_sports: {lat: 50.737641, lng: -3.536463},
+        car_park_queens: {lat: 50.733906, lng: -3.534868},
+        car_park_amory: {lat: 50.737383, lng: -3.530348},
         into: {lat: 50.736111, lng: -3.533717},
         great_hall: {lat: 50.735482, lng: -3.534436},
         physics: {lat: 50.736922, lng: -3.536284},
@@ -116,9 +118,16 @@ STUFF TO BE COMPLETED
           harrison: new google.maps.Marker({position: locations.harrison, icon: iconPath + "question_mark.png", title: "this is harrison", animation: google.maps.Animation.DROP, map: map}),
           car_park_forum: new google.maps.Marker({position: locations.car_park_forum, icon: iconPath + "parking.png", title: "this is a car park", animation: google.maps.Animation.DROP, map: map}),
           car_park_sports: new google.maps.Marker({position: locations.car_park_sports, icon: iconPath + "parking.png", title: "this is a car park", animation: google.maps.Animation.DROP, map: map}),
+          car_park_queens: new google.maps.Marker({position: locations.car_park_queens, icon: iconPath + "parking.png", title: "this is a car park", animation: google.maps.Animation.DROP, map: map}),
+          car_park_amory: new google.maps.Marker({position: locations.car_park_amory, icon: iconPath + "parking.png", title: "this is a car park", animation: google.maps.Animation.DROP, map: map}),
           into: new google.maps.Marker({position: locations.into, icon: iconPath + "question_mark.png", title: "this is into", animation: google.maps.Animation.DROP, map: map}),
           great_hall: new google.maps.Marker({position: locations.great_hall, icon: iconPath + "question_mark.png", title: "this is great hall", animation: google.maps.Animation.DROP, map: map}),
-          physics: new google.maps.Marker({position: locations.great_hall, icon: iconPath + "question_mark.png", title: "this is physics building", animation: google.maps.Animation.DROP, map: map})
+          physics: new google.maps.Marker({position: locations.physics, icon: iconPath + "question_mark.png", title: "this is physics building", animation: google.maps.Animation.DROP, map: map}),
+          newman: new google.maps.Marker({position: locations.newman, icon: iconPath + "question_mark.png", title: "this is newman", animation: google.maps.Animation.DROP, map: map}),
+          peter_chalk: new google.maps.Marker({position: locations.peter_chalk, icon: iconPath + "question_mark.png", title: "this is peter chalk", animation: google.maps.Animation.DROP, map: map}),
+          queens: new google.maps.Marker({position: locations.queens, icon: iconPath + "question_mark.png", title: "this is queens", animation: google.maps.Animation.DROP, map: map}),
+          amory: new google.maps.Marker({position: locations.amory, icon: iconPath + "question_mark.png", title: "this is amory", animation: google.maps.Animation.DROP, map: map}),
+          streatham_court: new google.maps.Marker({position: locations.streatham_court, icon: iconPath + "question_mark.png", title: "this is streatham_court", animation: google.maps.Animation.DROP, map: map})
         };
       }
 
