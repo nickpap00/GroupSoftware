@@ -53,6 +53,8 @@
 				
 				if (error.length > 0){ // If the length of the error string is greater than 0, the page will alert the list of errors
 					document.getElementById("error_register_page").innerHTML=error;
+					//If error detected we show the requirements.
+					document.getElementById("main_error_register_page").style.display = "block";
 				}else{
 					document.getElementById("register").submit(); // Submits the details to the register page
 				}
@@ -67,7 +69,10 @@
 				document.getElementById("Sidebar").style.width = "0";
 				document.getElementById("main").style.marginLeft = "0";
 				}
-			
+				
+				function closeErr() {
+				document.getElementById("main_error_register_page").style.display = "none";
+				}
 			
 			
 		</script>
@@ -101,9 +106,11 @@
 		</div>
 		</center>
 
-		<div class="error_register_page">
+		<div  id="main_error_register_page" class="error_register_page">
+			<a href="javascript:void(0)" class="closebtn" onclick="closeErr()">&times;</a>
 			<p id="text"> Requirements: <br> Username longer than 6 characters </br> Password is to be longer than 6 characters </br> Password includes at least one capital letter and special character </br> User type must be either Student or Game Master </p>
 			<div id="error_register_page"><p><?=$error?></p></div>
+			
 		</div>
 		
 		
