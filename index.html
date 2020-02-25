@@ -44,7 +44,13 @@ STUFF TO BE COMPLETED
         car_park_forum: {lat: 50.736247, lng: -3.534458},
         car_park_sports: {lat: 50.737641, lng: -3.536463},
         into: {lat: 50.736111, lng: -3.533717},
-        great_hall: {lat: 50.735482, lng: -3.534436}
+        great_hall: {lat: 50.735482, lng: -3.534436},
+        physics: {lat: 50.736922, lng: -3.536284},
+        newman: {lat: 50.736606, lng: -3.536127},
+        peter_chalk: {lat: 3.536127, lng: -3.536074},
+        queens: {lat: 50.734125, lng: -3.534583},
+        amory: {lat: 50.736525, lng: -3.531449},
+        streatham_court: {lat: 50.735832, lng: -3.530549}
       };
       //store in the database
       var bounds = {
@@ -111,8 +117,8 @@ STUFF TO BE COMPLETED
           car_park_forum: new google.maps.Marker({position: locations.car_park_forum, icon: iconPath + "parking.png", title: "this is a car park", animation: google.maps.Animation.DROP, map: map}),
           car_park_sports: new google.maps.Marker({position: locations.car_park_sports, icon: iconPath + "parking.png", title: "this is a car park", animation: google.maps.Animation.DROP, map: map}),
           into: new google.maps.Marker({position: locations.into, icon: iconPath + "question_mark.png", title: "this is into", animation: google.maps.Animation.DROP, map: map}),
-          great_hall: new google.maps.Marker({position: locations.great_hall, icon: iconPath + "question_mark.png", title: "this is great hall", animation: google.maps.Animation.DROP, map: map})
-
+          great_hall: new google.maps.Marker({position: locations.great_hall, icon: iconPath + "question_mark.png", title: "this is great hall", animation: google.maps.Animation.DROP, map: map}),
+          physics: new google.maps.Marker({position: locations.great_hall, icon: iconPath + "question_mark.png", title: "this is physics building", animation: google.maps.Animation.DROP, map: map})
         };
       }
 
