@@ -1,5 +1,5 @@
 <html>
-
+<link rel="stylesheet" type="text/css" href="styles_coursework.css"></link>
 	<head>
 		<script src="jquery-3.2.1.min.js"></script>
 		
@@ -29,15 +29,27 @@
 			<center><h1>Welcome <br> to <br> GROUP SOFTWARE PROJECT</h1></center>
 		</div>
 		
-		<div id="button_box">
+		<div class="inputbox" id="button_box">
 			<!-- The onclick function allows the user to redirect to another page or start a function. -->
-			<button type="button" class="" onclick="window.location='login_page.php'">Login</button> 
-			<button type="button" class="" onclick="window.location='register_page.php'">Register</button>
-			<button type="button" class="" onclick="window.location='forgot_password.php'">Forgot Password</button>
+			<button type="button" class="button" onclick="window.location='login_page.php'">Login</button> 
+			<button type="button" class="button" onclick="window.location='register_page.php'">Register</button>
+			<button type="button" class="button" onclick="window.location='forgot_password.php'">Forgot Password</button>
 		</div> 
 		
 		<div id="footer">
 			<?php include_once("footer.php"); ?>
 		</div>
+		<script type='text/javascript'>
+			function openNav() {
+				document.getElementById("Sidebar").style.width = "250px";
+				document.getElementById("main").style.marginLeft = "250px";
+			}
+
+			/* Set the width of the sidebar to 0 and the left margin of the page content to 0 */
+			function closeNav() {
+				document.getElementById("Sidebar").style.width = "0";
+				document.getElementById("main").style.marginLeft = "0";
+			}
+		</script>
 	</body>
 </html>

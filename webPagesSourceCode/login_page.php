@@ -1,5 +1,5 @@
 <html> 
-
+<link rel="stylesheet" type="text/css" href="styles_coursework.css"></link>
 	<head> 
 	
 		<?php 
@@ -28,6 +28,16 @@
 				}else{
 					document.getElementById("displaytext_loginpage").innerHTML="Username or Password not entered"; // Sets the div tag with ID displaytext_loginpage equal to username .....
 				}
+			}
+			function openNav() {
+				document.getElementById("Sidebar").style.width = "250px";
+				document.getElementById("main").style.marginLeft = "250px";
+			}
+
+			/* Set the width of the sidebar to 0 and the left margin of the page content to 0 */
+			function closeNav() {
+				document.getElementById("Sidebar").style.width = "0";
+				document.getElementById("main").style.marginLeft = "0";
 			}
 		</script>
 		<link rel="icon" href="pictures/padlock.png"/>

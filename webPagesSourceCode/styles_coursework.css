@@ -20,6 +20,24 @@ p{
 	font-weight: 300;
 }
 
+/* Styling for buttons that can be used appwide*/
+.button{
+	border: 2px solid black;
+	background: white;
+	display: block;
+	margin: 10px auto;
+	text-align: center;
+	
+	width: 150px;
+	padding: 14px 40px;
+	outline: none;
+	border-radius: 2px;
+	transition: 0.25s;
+	cursor: pointer;
+}
+.button:hover{
+	background-color: gray;
+}
 /* The sidebar menu */
 .sidebar {
   height: 100%; /* 100% Full-height */
@@ -117,7 +135,6 @@ p{
 }
 .inputbox input[type = "text"]:focus,.inputbox input[type = "password"]:focus{
 	width: 280px;
-	
 }
 .inputbox input[type = "button"]{
 	border:0;
