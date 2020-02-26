@@ -130,7 +130,7 @@ INSERT INTO `users` (`userID`, `firstName`, `username`, `password`, `accessID`) 
 --
 
 CREATE TABLE IF NOT EXISTS `tours` (
-  'tourID' INT(11) AUTO_INCREMENT PRIMARY KEY,
+  'tourID' INT(11) AUTO_INCREMENT,
     'creatorID' INT(11) NOT NULL,
     'creationDate' DATE NOT NULL,
     'tourRoute' VARCHAR(255) NOT NULL
@@ -149,7 +149,7 @@ INSERT INTO `tours` (`tourID`, `creatorID`,  `creationDate`, `tourRoute`) VALUES
 --
 
 CREATE TABLE IF NOT EXISTS `bookings` (
-  'bookingID' INT(11) AUTO_INCREMENT PRIMARY KEY,
+  'bookingID' INT(11) AUTO_INCREMENT,
       'tourID' INT(11) NOT NULL,
       'userID' INT(11) UNIQUE NULL,
       'bookingDate' DATETIME NOT NULL,
