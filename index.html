@@ -1,6 +1,9 @@
 <!--
 Author: Nicholas Papavasileiou
 
+This is like a kanban board for the code, to remind what has been completed
+and what not
+
 STUFF TO BE COMPLETED
 *************************************************
 1. Do something with errors in errorGeoloc function, i.e dont display the map
@@ -12,7 +15,34 @@ STUFF TO BE COMPLETED
 4. Complete revealLocation function which will update the marker icon and label
 5. Fill calculatePath function between two points to show distance between markers
 6. Show path between markers on map
+7. Change colour of paths or background to make them easily visible
 *************************************************
+
+STUFF COMPLETED
+*************************************************
+1. Do something with errors in geolocation - displayed on the div tag instead of map
+2. Geolocation tested with smartphone via github pages - it all works
+3. Fixed accuracy of markers - added more decimal points
+*************************************************
+
+STUFF TO BE DONE
+*************************************************
+A. Work on points 5-6 with distance and path display
+B. Work with james to store into database and load them dynamically when page loads
+  B.1 locations
+  B.2 markers
+  B.3 bounds???
+  B.4 mapArgs???
+C. Make functions that interact with server as to get information above or
+    update current data. ie when player discovers building, save progress
+*************************************************
+
+IDEAS
+*************************************************
+ADD info windows on each marker
+ADD events, for example click event
+*************************************************
+More will be added in the future
 -->
 
 <html>
@@ -21,21 +51,24 @@ STUFF TO BE COMPLETED
       #map {
         /*width and height 100% for full size on mobile devices*/
         /*work with percentages on mobile devices*/
-        width: 50%;
-        height:50%;
+        width: 100%;
+        height: 100%;
       }
     </style>
   </head>
   <body>
     <div id="map"></div>
+    <!-- locations to load map -->
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA9mz_14PT9i5meW0Ds5xAHe5nBBmaZqXQ&callback=initMap" async defer></script>
     <script>
       var map;
       var markers;
       var playerMarker;
       var locationId;
-      var cage = 0.02;       //limit to map movement 0.004 good value
+      var cage = 0.004;       //limit to map movement 0.004 good value
       var iconPath = "icons/";
+      var directionsService;
+      var directionsRequest;
       //store these in the database
       //ask james
       var locations = {
@@ -69,17 +102,33 @@ STUFF TO BE COMPLETED
         mapTypeId: "roadmap",
         disableDefaultUI: true,
         restriction: bounds,
-        styles: [{
+        gestureHandling: "cooperative",
+        styles: [
           //removes the labels off the map
-          featureType: "all",
-          elementType: "labels",
-          stylers: [{visibility: "off"}]
-        }]
+          {
+            featureType: "all",
+            elementType: "labels",
+            stylers: [{visibility: "off"}]
+          },
+          //adds colour to road stroke
+          {
+            featureType: "road.local",
+            elementType: "geometry.stroke",
+            stylers: [{saturation: 100}]
+          },
+          {
+          //makes stroke of roads brighter
+            featureType: "road.local",
+            elementType: "geometry.stroke",
+            stylers: [{lightness: -50}]
+          }
+        ]
       };
 
       function initMap() {
         map = new google.maps.Map(document.getElementById('map'), mapArgs);
         playerMarker = new google.maps.Marker({icon: iconPath + "player_face.png"});
+        directionsService = new google.maps.DirectionsService();
         initMarkers(); //set building markers on map;
         locationId = navigator.geolocation.watchPosition(updatePos, errorGeoloc);
         playerMarker.setMap(map);
@@ -91,7 +140,7 @@ STUFF TO BE COMPLETED
       }
 
       function errorGeoloc(err) {
-        //do something with error
+        //error is displayed in the div tag instead of map
         var msg;
         switch (err.code) {
           case err.PERMISSION_DENIED:
@@ -112,7 +161,12 @@ STUFF TO BE COMPLETED
       }
 
       function initMarkers() {
-        //Add all buildings here
+        /*
+          In the future it will get the data for the markers from database
+          and add them straight to markers dictionary
+          the icons will change when location is discovered
+        */
+
         markers = {
           forum: new google.maps.Marker({position: locations.forum, icon: iconPath + "question_mark.png", title: "this is the forum", animation: google.maps.Animation.DROP, map: map}),
           harrison: new google.maps.Marker({position: locations.harrison, icon: iconPath + "question_mark.png", title: "this is harrison", animation: google.maps.Animation.DROP, map: map}),
@@ -144,6 +198,7 @@ STUFF TO BE COMPLETED
 
       function showPath(marker, marker) {
         //show path between two markers on the map
+        //the path the player can take is shown on the map
       }
     </script>
   </body>
