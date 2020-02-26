@@ -18,7 +18,7 @@
 	</head>
 	<body>
 	
-	<div id="mySidebar" class="sidebar">
+	<div id="mySidebar" class="sidebar"> <!-- move this to navbar -->
 		<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
 		<a href="#">About</a>
 		<a href="#">Services</a>

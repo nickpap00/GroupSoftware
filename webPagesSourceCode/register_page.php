@@ -57,34 +57,49 @@
 				}	
 			}
 			
+			function closeErr() {
+				document.getElementById("main_error_register_page").style.display = "none";
+			}
 			
 		</script>
 	</head>
 	
-	<body>
+<body>
 		
-		<div class="title_homepage"> REGISTER</div>
-		
-		
-		<div id="textBoxes_register_page">
-			<form id="register" action="registerPage.php" method="post">
-				<span class="label"> First Name: </span><input type="text" name="Firstname" id="Firstname"/>
-				<span class="label"> Username: </span><input type="text" name="Username" id="Username"/>
-				<span class="label"> Password: </span><input type="password" name="Password" id="Password"/>
-				<span class="label"> Confirm Password: </span><input type="password" name="CfmPassword" id="ConfirmPassword"/>
-				<span class="label"> User Type: </span><input type="text" name="UserType" id="UserType"/>
-			</form>
+		<div id="Sidebar" class="sidebar">
+			<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+			<a href="#">About</a>
+			<a href="#">Services</a>
+			<a href="#">Clients</a>
+			<a href="#">Contact</a>
 		</div>
+		
+		<div id="main">
+			<button class="openbtn" onclick="openNav()">&#9776; Menu </button>
+		</div>
+		
+		<center>
+			<div id="textBoxes_register_page" class="inputbox">
+				<form id="register" action="registerPage.php" method="post">
+				<h1>Register</h1>
+					<span class="label"> First Name: </span><input type="text" name="Firstname" id="Firstname"/>
+					<span class="label"> Username: </span><input type="text" name="Username" id="Username"/>
+					<span class="label"> Password: </span><input type="password" name="Password" id="Password"/>
+					<span class="label"> Confirm Password: </span><input type="password" name="CfmPassword" id="ConfirmPassword"/>
+					<span class="label"> User Type: </span><input type="text" name="UserType" id="UserType"/>
+					<button id="loginbutton" type="button" onClick="myFunction()" >Register</button> <!-- Calls the function -->
+					<button id="registerbutton" type="button" onclick="window.location='login_page.php'">Login</button>
+				</form>
+			</div>
+		</center>
 
-		<div>
+		<div  id="main_error_register_page" class="error_register_page">
+			<a href="javascript:void(0)" class="closebtn" onclick="closeErr()">&times;</a>
 			<p id="text"> Requirements: <br> Username longer than 6 characters </br> Password is to be longer than 6 characters </br> Password includes at least one capital letter and special character </br> User type must be either Student or Game Master </p>
 			<div id="error_register_page"><p><?=$error?></p></div>
 		</div>
 		
-		<div id="buttons_register_page">
-			<button type="button" onClick="myFunction()" >Register</button> <!-- Calls the function -->
-			<button type="button" onclick="window.location='login_page.php'">Login</button>
-		</div>
+		
 
 	</body>
 </html>

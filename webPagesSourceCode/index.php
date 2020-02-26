@@ -13,6 +13,17 @@
 	
 	
 	<body>
+		<div id="Sidebar" class="sidebar">
+			<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+			<a href="#">About</a>
+			<a href="#">Services</a>
+			<a href="#">Clients</a>
+			<a href="#">Contact</a>
+		</div>
+		
+		<div id="main">
+			<button class="openbtn" onclick="openNav()">&#9776; Menu </button>
+		</div>
 		
 		<div id="title_homepage">
 			<center><h1>Welcome <br> to <br> GROUP SOFTWARE PROJECT</h1></center>
