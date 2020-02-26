@@ -1,0 +1,150 @@
+<!--
+Author: Nicholas Papavasileiou
+
+STUFF TO BE COMPLETED
+*************************************************
+1. Do something with errors in errorGeoloc function, i.e dont display the map
+2. Test geolocation with smartphone because of the higher gps accuracy
+  2.1 Upload site on the web
+  2.2 Go to site via smartphone
+  2.3 Move around with smartphone
+3. Fix accuracy of building markers, use multiple decimal digits in their lat, lng
+4. Complete revealLocation function which will update the marker icon and label
+5. Fill calculatePath function between two points to show distance between markers
+6. Show path between markers on map
+*************************************************
+-->
+
+<html>
+  <head>
+    <style>
+      #map {
+        /*width and height 100% for full size on mobile devices*/
+        /*work with percentages on mobile devices*/
+        width: 50%;
+        height:50%;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="map"></div>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA9mz_14PT9i5meW0Ds5xAHe5nBBmaZqXQ&callback=initMap" async defer></script>
+    <script>
+      var map;
+      var markers;
+      var playerMarker;
+      var locationId;
+      var cage = 0.02;       //limit to map movement 0.004 good value
+      var iconPath = "icons/";
+      //store these in the database
+      //ask james
+      var locations = {
+        forum: {lat: 50.735466, lng: -3.533202},
+        harrison: {lat: 50.737759, lng: -3.532615},
+        car_park_forum: {lat: 50.736247, lng: -3.534458},
+        car_park_sports: {lat: 50.737641, lng: -3.536463},
+        car_park_queens: {lat: 50.733906, lng: -3.534868},
+        car_park_amory: {lat: 50.737383, lng: -3.530348},
+        into: {lat: 50.736111, lng: -3.533717},
+        great_hall: {lat: 50.735482, lng: -3.534436},
+        physics: {lat: 50.736922, lng: -3.536284},
+        newman: {lat: 50.736606, lng: -3.536127},
+        peter_chalk: {lat: 3.536127, lng: -3.536074},
+        queens: {lat: 50.734125, lng: -3.534583},
+        amory: {lat: 50.736525, lng: -3.531449},
+        streatham_court: {lat: 50.735832, lng: -3.530549}
+      };
+      //store in the database
+      var bounds = {
+        latLngBounds: {
+        north: locations.forum.lat + cage,
+        south: locations.forum.lat - cage,
+        east: locations.forum.lng + cage,
+        west: locations.forum.lng - cage
+        }
+      };
+      var mapArgs = {
+        center: locations.forum,
+        zoom: 18,
+        mapTypeId: "roadmap",
+        disableDefaultUI: true,
+        restriction: bounds,
+        styles: [{
+          //removes the labels off the map
+          featureType: "all",
+          elementType: "labels",
+          stylers: [{visibility: "off"}]
+        }]
+      };
+
+      function initMap() {
+        map = new google.maps.Map(document.getElementById('map'), mapArgs);
+        playerMarker = new google.maps.Marker({icon: iconPath + "player_face.png"});
+        initMarkers(); //set building markers on map;
+        locationId = navigator.geolocation.watchPosition(updatePos, errorGeoloc);
+        playerMarker.setMap(map);
+      }
+
+      function updatePos(pos) {
+        var pos = {lat: pos.coords.latitude, lng: pos.coords.longitude};
+        playerMarker.setPosition(pos);
+      }
+
+      function errorGeoloc(err) {
+        //do something with error
+        var msg;
+        switch (err.code) {
+          case err.PERMISSION_DENIED:
+            msg = "Please activate geolocation.";
+            break;
+          case err.POSITION_UNAVAILABLE:
+            msg = "Position unavailable.";
+            break;
+          case err.TIMEOUT:
+            msg = "Request for geolocation timed out.";
+            break;
+          case err.UNKNOWN_ERROR:
+            msg = "An unknown error has occurred.";
+            break;
+        }
+        var map = document.getElementById('map');
+        map.innerHTML = msg;
+      }
+
+      function initMarkers() {
+        //Add all buildings here
+        markers = {
+          forum: new google.maps.Marker({position: locations.forum, icon: iconPath + "question_mark.png", title: "this is the forum", animation: google.maps.Animation.DROP, map: map}),
+          harrison: new google.maps.Marker({position: locations.harrison, icon: iconPath + "question_mark.png", title: "this is harrison", animation: google.maps.Animation.DROP, map: map}),
+          car_park_forum: new google.maps.Marker({position: locations.car_park_forum, icon: iconPath + "parking.png", title: "this is a car park", animation: google.maps.Animation.DROP, map: map}),
+          car_park_sports: new google.maps.Marker({position: locations.car_park_sports, icon: iconPath + "parking.png", title: "this is a car park", animation: google.maps.Animation.DROP, map: map}),
+          car_park_queens: new google.maps.Marker({position: locations.car_park_queens, icon: iconPath + "parking.png", title: "this is a car park", animation: google.maps.Animation.DROP, map: map}),
+          car_park_amory: new google.maps.Marker({position: locations.car_park_amory, icon: iconPath + "parking.png", title: "this is a car park", animation: google.maps.Animation.DROP, map: map}),
+          into: new google.maps.Marker({position: locations.into, icon: iconPath + "question_mark.png", title: "this is into", animation: google.maps.Animation.DROP, map: map}),
+          great_hall: new google.maps.Marker({position: locations.great_hall, icon: iconPath + "question_mark.png", title: "this is great hall", animation: google.maps.Animation.DROP, map: map}),
+          physics: new google.maps.Marker({position: locations.physics, icon: iconPath + "question_mark.png", title: "this is physics building", animation: google.maps.Animation.DROP, map: map}),
+          newman: new google.maps.Marker({position: locations.newman, icon: iconPath + "question_mark.png", title: "this is newman", animation: google.maps.Animation.DROP, map: map}),
+          peter_chalk: new google.maps.Marker({position: locations.peter_chalk, icon: iconPath + "question_mark.png", title: "this is peter chalk", animation: google.maps.Animation.DROP, map: map}),
+          queens: new google.maps.Marker({position: locations.queens, icon: iconPath + "question_mark.png", title: "this is queens", animation: google.maps.Animation.DROP, map: map}),
+          amory: new google.maps.Marker({position: locations.amory, icon: iconPath + "question_mark.png", title: "this is amory", animation: google.maps.Animation.DROP, map: map}),
+          streatham_court: new google.maps.Marker({position: locations.streatham_court, icon: iconPath + "question_mark.png", title: "this is streatham_court", animation: google.maps.Animation.DROP, map: map})
+        };
+      }
+
+      function revealLocation(marker) {
+        //changes the icon and name of the markers
+        //happens when player goes to the new building
+      }
+
+      function calculatePath(marker, marker) {
+        //can calculate path between two initMarkers
+        //one can be player, other a building
+        //or two building markers
+      }
+
+      function showPath(marker, marker) {
+        //show path between two markers on the map
+      }
+    </script>
+  </body>
+</html>
