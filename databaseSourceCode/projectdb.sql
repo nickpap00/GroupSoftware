@@ -18,6 +18,7 @@ SET time_zone = "+00:00";
 
 --
 -- Database: `projectdb`
+-- Author(s): James Kitt, Zain Habib
 --
 
 -- --------------------------------------------------------
@@ -129,10 +130,10 @@ INSERT INTO `users` (`userID`, `firstName`, `username`, `password`, `accessID`) 
 --
 
 CREATE TABLE IF NOT EXISTS `tours` (
-  'tourID' INT(11) AUTO_INCREMENT PRIMARY KEY,
-    'creatorID' INT(11) NOT NULL,
-    'creationDate' DATE NULL,
-    'tourRoute' VARCHAR(255) NOT NULL
+  `tourID` INT(11) AUTO_INCREMENT,
+    `creatorID` INT(11) NOT NULL,
+    `creationDate` DATE NOT NULL,
+    `tourRoute` VARCHAR(255) NOT NULL
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 
 --
@@ -148,12 +149,12 @@ INSERT INTO `tours` (`tourID`, `creatorID`,  `creationDate`, `tourRoute`) VALUES
 --
 
 CREATE TABLE IF NOT EXISTS `bookings` (
-  'bookingID' INT(11) AUTO_INCREMENT PRIMARY KEY,
-      'tourID' INT(11) NOT NULL,
-      'userID' INT(11) UNIQUE NULL,
-      'bookingDate' DATETIME NOT NULL,
-      'lastLocation' INT,
-      'score' INT
+  `bookingID` INT(11) AUTO_INCREMENT,
+      `tourID` INT(11) NOT NULL,
+      `userID` INT(11) UNIQUE NULL,
+      `bookingDate` DATETIME NOT NULL,
+      `lastLocation` INT,
+      `score` INT
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 
 --
