@@ -1,5 +1,5 @@
 <html>
-
+<link rel="stylesheet" type="text/css" href="styles_coursework.css"></link>
 	<head>
 		<script src="jquery-3.2.1.min.js"></script>
 		
