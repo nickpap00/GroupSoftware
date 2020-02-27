@@ -1,56 +1,59 @@
 <!--
 Author: Nicholas Papavasileiou
 
-This is like a kanban board for the code, to remind what has been completed
-and what not
+This is like a kanban board for the code to keep track of tasks internally
+"DONE" word is for completed tasks
+"!" symbol is for tasks that need extra attention and pre-planning (WILL TAKE TIME)
+  the number of "!" shows the difficulty and thinking needed (1 being the lowest)
+Anything else without a symbol-word is normal priority
 
-STUFF TO BE COMPLETED
+STUFF TO BE COMPLETED - Tasks
 *************************************************
-1. Do something with errors in errorGeoloc function, i.e dont display the map
-2. Test geolocation with smartphone because of the higher gps accuracy
+DONE 1. Do something with errors in errorGeoloc function, i.e dont display the map
+DONE 2. Test geolocation with smartphone because of the higher gps accuracy
   2.1 Upload site on the web
   2.2 Go to site via smartphone
   2.3 Move around with smartphone
-3. Fix accuracy of building markers, use multiple decimal digits in their lat, lng
-4. Complete revealLocation function which will update the marker icon and label
-5. Fill calculatePath function between two points to show distance between markers
-6. Show path between markers on map
-7. Change colour of paths or background to make them easily visible
-*************************************************
-
-STUFF COMPLETED
-*************************************************
-1. Do something with errors in geolocation - displayed on the div tag instead of map
-2. Geolocation tested with smartphone via github pages - it all works
-3. Fixed accuracy of markers - added more decimal points
-*************************************************
-
-STUFF TO BE DONE
-*************************************************
-A. Work on points 5-6 with distance and path display
-B. Work with james to store into database and load them dynamically when page loads
-  B.1 locations
-  B.2 markers
-  B.3 bounds???
-  B.4 mapArgs???
-C. Make functions that interact with server as to get information above or
+DONE 3. Fix accuracy of building markers, use multiple decimal digits in their lat, lng
+! 4. Complete revealLocation function which will update the marker icon and label
+! 5. Fill calculatePath function between two points to show distance between markers
+! 6. Show path between markers on map
+DONE 7. Change colour of paths or background to make them easily visible
+!!! 8. Work with james to store into database and load them dynamically when page loads
+  8.1 locations
+  8.2 markers
+  8.3 bounds??
+  8.4 mapArgs??
+!!! 9. Make functions that interact with server as to get information above or
     update current data. ie when player discovers building, save progress
+10. Ask Aaron to do css for windows
+!! 11. Make configuration file for each game settings and load data based on that
+12. Make a setting for game masters to create a path and etc.
+13. Send and read json
+
+EXTRA IDEAS - Will be nice to have these features
+*************************************************
+DONE - ADD info windows on each marker
+DONE - ADD events, for example click event
 *************************************************
 
-IDEAS
+PROBLEMS - Require time and thinking
 *************************************************
-ADD info windows on each marker
-ADD events, for example click event
+1. Decide what to store in database, ie locations, markers, windows??
+2. Find way to not repeat code for every single marker
+  2.1 Make a function that with parameters and do the job?????
+  2.2 Move the markers from here to another file??????
+3. Make everything automatic - use loops for initialising stuff instead of hardcoding each thing
+  like current situations.
 *************************************************
-More will be added in the future
+
+More will be added in the future :)
 -->
 
 <html>
   <head>
     <style>
       #map {
-        /*width and height 100% for full size on mobile devices*/
-        /*work with percentages on mobile devices*/
         width: 100%;
         height: 100%;
       }
@@ -58,19 +61,159 @@ More will be added in the future
   </head>
   <body>
     <div id="map"></div>
-    <!-- locations to load map -->
+    <!-- load map -->
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA9mz_14PT9i5meW0Ds5xAHe5nBBmaZqXQ&callback=initMap" async defer></script>
     <script>
-      var map;
-      var markers;
-      var playerMarker;
+      var map; //map
+      var markers; //markers for locations on map
+      var playerMarker; //Player's marker
       var locationId;
-      var cage = 0.004;       //limit to map movement 0.004 good value
-      var iconPath = "icons/";
-      var directionsService;
-      var directionsRequest;
+      var cage = 0.006;       //limit to map movement (0.006 good value)
+      var iconPath = "icons/"; //path to images
+      var windowOpen = null; //indicates which infoWindow object is not closed()
+
+      //the content that the window will show when clicking markers
+      //add css here - ask Aaron
+      var contentString =
+        '<div>' +
+          '<h1>Building Name</h1>'+
+          '<div>'+
+            '<p>This is a building description</p>'+
+            '<button type="button" onclick="showPath(markers.harrison)">Get me here!</button>'+
+          '</div>'+
+        '</div>';
+      var forumString =
+        '<div>' +
+          '<h1>Forum</h1>'+
+          '<div>'+
+            '<p>This is forum</p>'+
+            '<button type="button" onclick="showPath(markers.forum)">Get me here!</button>'+
+          '</div>'+
+        '</div>';
+      var harrisonString =
+        '<div>' +
+          '<h1>Harrison</h1>'+
+          '<div>'+
+            '<p>This is harrison</p>'+
+            '<button type="button" onclick="showPath(markers.harrison)">Get me here!</button>'+
+          '</div>'+
+        '</div>';
+      var queensString =
+        '<div>' +
+          '<h1>Queens</h1>'+
+          '<div>'+
+            '<p>This is Queens</p>'+
+            '<button type="button" onclick="showPath(markers.queens)">Get me here!</button>'+
+          '</div>'+
+        '</div>';
+      var car_park_forumString =
+        '<div>' +
+          '<h1>Forum car park</h1>'+
+          '<div>'+
+            '<p>This is the forum car park</p>'+
+            '<button type="button" onclick="showPath(markers.car_park_forum)">Get me here!</button>'+
+          '</div>'+
+        '</div>';
+      var car_park_sportsString =
+        '<div>' +
+          '<h1>Sports centre car park</h1>'+
+          '<div>'+
+            '<p>This is the sports centre car park</p>'+
+            '<button type="button" onclick="showPath(markers.car_park_sports)">Get me here!</button>'+
+          '</div>'+
+        '</div>';
+      var car_park_queensString =
+        '<div>' +
+          '<h1>Queens car park</h1>'+
+          '<div>'+
+            '<p>This is the queens car park</p>'+
+            '<button type="button" onclick="showPath(markers.car_park_queens)">Get me here!</button>'+
+          '</div>'+
+        '</div>';
+      var car_park_amoryString =
+        '<div>' +
+          '<h1>Amory car park</h1>'+
+          '<div>'+
+            '<p>This is the amory car park</p>'+
+            '<button type="button" onclick="showPath(markers.car_park_amory)">Get me here!</button>'+
+          '</div>'+
+        '</div>';
+      var intoString =
+        '<div>' +
+          '<h1>INTO</h1>'+
+          '<div>'+
+            '<p>This is the INTO building</p>'+
+            '<button type="button" onclick="showPath(markers.into)">Get me here!</button>'+
+          '</div>'+
+        '</div>';
+      var great_hallString =
+        '<div>' +
+          '<h1>Great Hall</h1>'+
+          '<div>'+
+            '<p>This is the great hall</p>'+
+            '<button type="button" onclick="showPath(markers.great_hall)">Get me here!</button>'+
+          '</div>'+
+        '</div>';
+      var physicsString =
+        '<div>' +
+          '<h1>Physics</h1>'+
+          '<div>'+
+            '<p>This is the physics building</p>'+
+            '<button type="button" onclick="showPath(markers.physics)">Get me here!</button>'+
+          '</div>'+
+        '</div>';
+      var newmanString =
+        '<div>' +
+          '<h1>Newman</h1>'+
+          '<div>'+
+            '<p>This is newman </p>'+
+            '<button type="button" onclick="showPath(markers.newman)">Get me here!</button>'+
+          '</div>'+
+        '</div>';
+      var peter_chalkString =
+        '<div>' +
+          '<h1>Peter Chalk</h1>'+
+          '<div>'+
+            '<p>This is peter chalk</p>'+
+            '<button type="button" onclick="showPath(markers.peter_chalk)">Get me here!</button>'+
+          '</div>'+
+        '</div>';
+      var amoryString =
+        '<div>' +
+          '<h1>Amory</h1>'+
+          '<div>'+
+            '<p>This is amory</p>'+
+            '<button type="button" onclick="showPath(markers.amory)">Get me here!</button>'+
+          '</div>'+
+        '</div>';
+      var streatham_courtString =
+        '<div>' +
+          '<h1>Streatham Court</h1>'+
+          '<div>'+
+            '<p>This is streatham court</p>'+
+            '<button type="button" onclick="showPath(markers.streatham_court)">Get me here!</button>'+
+          '</div>'+
+        '</div>';
+      //variables for InfoWindow object
+      //hold them to a window json ie window.forum
+      var forumWindow;
+      var harrisonWindow;
+      var queensWindow;
+      var car_park_amoryWindow;
+      var car_park_sportsWindow;
+      var car_park_forumWindow;
+      var car_park_queensWindow;
+      var intoWindow;
+      var great_hallWindow;
+      var physicsWindow;
+      var newmanWindow;
+      var peter_chalkWindow;
+      var amoryWindow;
+      var streatham_courtWindow;
+
       //store these in the database
       //ask james
+      //coordinates of each location
       var locations = {
         forum: {lat: 50.735466, lng: -3.533202},
         harrison: {lat: 50.737759, lng: -3.532615},
@@ -82,12 +225,13 @@ More will be added in the future
         great_hall: {lat: 50.735482, lng: -3.534436},
         physics: {lat: 50.736922, lng: -3.536284},
         newman: {lat: 50.736606, lng: -3.536127},
-        peter_chalk: {lat: 3.536127, lng: -3.536074},
+        peter_chalk: {lat: 50.736450, lng: -3.536074},
         queens: {lat: 50.734125, lng: -3.534583},
         amory: {lat: 50.736525, lng: -3.531449},
         streatham_court: {lat: 50.735832, lng: -3.530549}
       };
       //store in the database
+      //block the user from swiping too far away from game's zone
       var bounds = {
         latLngBounds: {
         north: locations.forum.lat + cage,
@@ -96,13 +240,13 @@ More will be added in the future
         west: locations.forum.lng - cage
         }
       };
+      //arguments for map
       var mapArgs = {
         center: locations.forum,
         zoom: 18,
         mapTypeId: "roadmap",
         disableDefaultUI: true,
         restriction: bounds,
-        gestureHandling: "cooperative",
         styles: [
           //removes the labels off the map
           {
@@ -110,7 +254,7 @@ More will be added in the future
             elementType: "labels",
             stylers: [{visibility: "off"}]
           },
-          //adds colour to road stroke
+          //adds saturation to roads
           {
             featureType: "road.local",
             elementType: "geometry.stroke",
@@ -126,19 +270,128 @@ More will be added in the future
       };
 
       function initMap() {
+        //callback function to load map
+        //initialise map, marker
         map = new google.maps.Map(document.getElementById('map'), mapArgs);
         playerMarker = new google.maps.Marker({icon: iconPath + "player_face.png"});
+        //will be used for sending directions request
         directionsService = new google.maps.DirectionsService();
         initMarkers(); //set building markers on map;
+        //add player's location to map
         locationId = navigator.geolocation.watchPosition(updatePos, errorGeoloc);
         playerMarker.setMap(map);
+
+        //Adding events to each marker
+        //Clicking a marker will display a window with information
+        //information is help at marker_nameString variable
+        forumWindow = new google.maps.InfoWindow({content: forumString});
+        markers.forum.addListener('click', function() {
+          closeWindow();
+          forumWindow.open(map, markers.forum);
+          windowOpen = forumWindow;
+        });
+
+        harrisonWindow = new google.maps.InfoWindow({content: harrisonString});
+        markers.harrison.addListener('click', function() {
+          closeWindow();
+          harrisonWindow.open(map, markers.harrison);
+          windowOpen = harrisonWindow;
+        });
+
+        queensWindow = new google.maps.InfoWindow({content: queensString});
+        markers.queens.addListener('click', function() {
+          closeWindow();
+          queensWindow.open(map, markers.queens);
+          windowOpen = queensWindow;
+        });
+
+        car_park_amoryWindow = new google.maps.InfoWindow({content: car_park_amoryString});
+        markers.car_park_amory.addListener('click', function() {
+          closeWindow();
+          car_park_amoryWindow.open(map, markers.car_park_amory);
+          windowOpen = car_park_amoryWindow;
+        });
+
+        car_park_forumWindow = new google.maps.InfoWindow({content: car_park_forumString});
+        markers.car_park_forum.addListener('click', function() {
+          closeWindow();
+          car_park_forumWindow.open(map, markers.car_park_forum);
+          windowOpen = car_park_forumWindow;
+        });
+
+        car_park_queensWindow = new google.maps.InfoWindow({content: car_park_queensString});
+        markers.car_park_queens.addListener('click', function() {
+          closeWindow();
+          car_park_queensWindow.open(map, markers.car_park_queens);
+          windowOpen = car_park_queensWindow;
+        });
+
+        car_park_sportsWindow = new google.maps.InfoWindow({content: car_park_sportsString});
+        markers.car_park_sports.addListener('click', function() {
+          closeWindow();
+          car_park_sportsWindow.open(map, markers.car_park_sports);
+          windowOpen = car_park_sportsWindow;
+        });
+
+        intoWindow = new google.maps.InfoWindow({content: intoString});
+        markers.into.addListener('click', function() {
+          closeWindow();
+          intoWindow.open(map, markers.into);
+          windowOpen = intoWindow;
+        });
+
+        great_hallWindow = new google.maps.InfoWindow({content: great_hallString});
+        markers.great_hall.addListener('click', function() {
+          closeWindow();
+          great_hallWindow.open(map, markers.great_hall);
+          windowOpen = great_hallWindow;
+        });
+
+        physicsWindow = new google.maps.InfoWindow({content: physicsString});
+        markers.physics.addListener('click', function() {
+          closeWindow();
+          physicsWindow.open(map, markers.physics);
+          windowOpen = physicsWindow;
+        });
+
+        newmanWindow = new google.maps.InfoWindow({content: newmanString});
+        markers.newman.addListener('click', function() {
+          closeWindow();
+          newmanWindow.open(map, markers.newman);
+          windowOpen = newmanWindow;
+        });
+
+        peter_chalkWindow = new google.maps.InfoWindow({content: peter_chalkString});
+        markers.peter_chalk.addListener('click', function() {
+          closeWindow();
+          peter_chalkWindow.open(map, markers.peter_chalk);
+          windowOpen = peter_chalkWindow;
+        });
+
+        amoryWindow = new google.maps.InfoWindow({content: amoryString});
+        markers.amory.addListener('click', function() {
+          closeWindow();
+          amoryWindow.open(map, markers.amory);
+          windowOpen = amoryWindow;
+        });
+
+        streatham_courtWindow = new google.maps.InfoWindow({content: streatham_courtString});
+        markers.streatham_court.addListener('click', function() {
+          closeWindow();
+          streatham_courtWindow.open(map, markers.streatham_court);
+          windowOpen = streatham_courtWindow;
+        });
       }
 
+      //updates player's position on the map
+      //called at watchPosition()
       function updatePos(pos) {
+        //updating coordinates
         var pos = {lat: pos.coords.latitude, lng: pos.coords.longitude};
         playerMarker.setPosition(pos);
       }
 
+      //handles errors occurred when getting the player's location
       function errorGeoloc(err) {
         //error is displayed in the div tag instead of map
         var msg;
@@ -160,6 +413,7 @@ More will be added in the future
         map.innerHTML = msg;
       }
 
+      //initialises each marker, shows them on the map and adds them to markers
       function initMarkers() {
         /*
           In the future it will get the data for the markers from database
@@ -183,19 +437,25 @@ More will be added in the future
           amory: new google.maps.Marker({position: locations.amory, icon: iconPath + "question_mark.png", title: "this is amory", animation: google.maps.Animation.DROP, map: map}),
           streatham_court: new google.maps.Marker({position: locations.streatham_court, icon: iconPath + "question_mark.png", title: "this is streatham_court", animation: google.maps.Animation.DROP, map: map})
         };
+
       }
 
+      //closes the window displayed on marker
+      //the window that is open is stored in windowOpen variable
+      function closeWindow() {
+        if (!(windowOpen == null)) {
+          windowOpen.close();
+        }
+      }
+
+      //changes the marker's status when discovered by player
+      //the icon will change and the window will be added
       function revealLocation(marker) {
         //changes the icon and name of the markers
         //happens when player goes to the new building
       }
 
-      function calculatePath(marker, marker) {
-        //can calculate path between two initMarkers
-        //one can be player, other a building
-        //or two building markers
-      }
-
+      //shows the route which the player should take to go to a marker
       function showPath(marker, marker) {
         //show path between two markers on the map
         //the path the player can take is shown on the map
