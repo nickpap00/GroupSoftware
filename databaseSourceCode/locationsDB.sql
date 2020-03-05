@@ -101,3 +101,12 @@ INSERT INTO `locations` (`placeID`, `poiName`, `poiDescription`, `question`, `an
 (58, 'Xfi', '', '', '', '');
 
 
+-------------------
+
+--
+-- Indexes for table `locations`
+--
+ALTER TABLE `locations`
+ ADD PRIMARY KEY (`placeID`), ADD UNIQUE KEY `POIname` (`poiName`);
+
+
