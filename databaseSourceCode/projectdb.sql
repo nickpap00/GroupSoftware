@@ -101,11 +101,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for dumped tables
 --
 
---
--- AUTO_INCREMENT for table `locations`
---
-ALTER TABLE `locations`
-MODIFY `placeID` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=59;
+
 --
 -- AUTO_INCREMENT for table `users`
 --
