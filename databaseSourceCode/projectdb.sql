@@ -90,11 +90,6 @@ INSERT INTO `bookings` (`bookingID`, `tourID`, `userID`, `bookingDate`,
 -- Indexes for dumped tables
 --
 
---
--- Indexes for table `locations`
---
-ALTER TABLE `locations`
- ADD PRIMARY KEY (`placeID`), ADD UNIQUE KEY `POIname` (`poiName`);
 
 --
 -- Indexes for table `users`
