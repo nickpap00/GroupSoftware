@@ -1,5 +1,13 @@
-/* This is the javascript for the map */
-/* It can be moved to another file */
+/*
+  Reminders:
+    1. base and config specific arrays can be constructed and only general array can be sent to user
+      1.1 Make AJAX request to fill arrays (locations, )
+
+  Information:
+    1. Base arrays hold information that is shared in every configuration so its not repeated
+    2. Config arrays hold information that is configuration specific and may differ from user to user
+
+*/
 var iconPath = "icons/"; //folder with icons;
 
 /* arrays that hold location strings */
@@ -31,8 +39,6 @@ var configLocationsCoords = [ //coords of configuration specific locations
   {lat: 50.735832, lng: -3.530549}
 ];
 var locationsCoords = baseLocationsCoords.concat(configLocationsCoords); //baseLocationsCoords + configLocationsCoords
-console.log(locationsCoords);
-console.log(locations);
 
 /* change this according to each player */
 var unlocked = new Array(locationsLength);
@@ -52,8 +58,12 @@ var markers = new Array(locationsLength);
 
 /* arrays with icon file of each Marker object on the map */
 var baseIcons = new Array(baseLocationsLength);
+//baseIcons = ["map-pin.svg", "parking.svg", "parking.svg", "parking.svg", "parking.svg", "map-pin.svg"]
 var configIcons = new Array(configLocationsLength);
-var icons = new Array(locationsLength);
+var icons = baseIcons.concat(configIcons);//new Array(locationsLength);
+/*for (var i=baseLocationsLength; i<locationsLength; i++) {
+  icons[i] = "map-pin.svg";
+}*/
 
 var infoWindow;
 var playerMarker;
@@ -117,7 +127,11 @@ function initMap() {
 
   var centerControlDiv = document.createElement('div');
   var centerControl = new CenterControl(centerControlDiv, map);
-  map.controls[google.maps.ControlPosition.TOP_RIGHT].push(centerControlDiv);
+  map.controls[google.maps.ControlPosition.TOP_LEFT].push(centerControlDiv);
+
+  var toggleControlDiv = document.createElement('div');
+  var toggleControl = new ToggleControl(toggleControlDiv, map);
+  map.controls[google.maps.ControlPosition.TOP_RIGHT].push(toggleControlDiv);
 }
 
 function initMarkers(map) {
@@ -166,7 +180,6 @@ function addOptions() {
       text = text + '<option value='+ i +'>'+ makeName(locations[i]) +'</option>'
     }
   }
-
   return text;
 }
 
@@ -244,13 +257,13 @@ function showPath(button) {
   var startVal = document.getElementById('start').value;
   var startPos;
 
-  if (startVal < 0) {
+  if (startVal == -1) {
     startPos = playerMarker.getPosition();
   }
   else {
     startPos = locationsCoords[startVal];
   }
-
+  console.log(startPos);
   var request = {
     origin: startPos,
     destination: locationsCoords[button.id],
@@ -262,6 +275,8 @@ function showPath(button) {
   directionsService.route(request, function(result, status) {
     if (checkRequest(result, status)) {
       directionsRenderer.setDirections(result);
+      var last = directionsRenderer.getMap().controls[google.maps.ControlPosition.TOP_RIGHT].getLength() - 1;
+      directionsRenderer.getMap().controls[google.maps.ControlPosition.TOP_RIGHT].getAt(last).style.display = "inline";
     }
   });
 }
@@ -289,6 +304,35 @@ function CenterControl(controlDiv, m) {
   controlUI.addEventListener('click', function() {
       m.setCenter(locationsCoords[0]);
     });
+}
+
+function ToggleControl(controlDiv, m) {
+  var controlUI = document.createElement('div');
+  controlUI.style.backgroundColor = '#BB3F3F';
+  controlUI.style.border = '2px solid #fff';
+  controlUI.style.cursor = 'pointer';
+  controlUI.style.marginBottom = '22px';
+  controlUI.style.textAlign = 'center';
+  //controlUI.style.display = "none";
+  controlUI.title = 'Click to toggle Directions';
+  controlDiv.appendChild(controlUI);
+  controlDiv.style.display = "none";
+
+  var controlText = document.createElement('div');
+  controlText.style.color = 'rgb(25,25,25)';
+  controlText.style.fontFamily = 'Roboto,Arial,sans-serif';
+  controlText.style.fontSize = '16px';
+  controlText.style.lineHeight = '38px';
+  controlText.style.paddingLeft = '5px';
+  controlText.style.paddingRight = '5px';
+  controlText.innerHTML = 'Toggle Directions';
+  controlUI.appendChild(controlText);
+
+  controlUI.addEventListener('click', function() {
+   directionsRenderer.set('directions', null);
+   controlDiv.style.display = "none";
+   infoWindow.close();
+ });
 }
 
 function checkRequest(result, status) {
