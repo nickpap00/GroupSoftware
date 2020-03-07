@@ -88,7 +88,6 @@
       var directionsService;
       var directionsRenderer;
 
-
       function initMap() {
         var playerIcon = iconPath + "player_face.png";
 
@@ -296,12 +295,9 @@
 
       function CenterControl(controlDiv, m) {
         var controlUI = document.createElement('div');
-        controlUI.style.backgroundColor = '#BB3F3F';
-        controlUI.style.border = '2px solid #fff';
+        controlUI.style.backgroundColor = '#FDDB27FF';
         controlUI.style.cursor = 'pointer';
-        controlUI.style.marginBottom = '22px';
         controlUI.style.textAlign = 'center';
-        controlUI.title = 'Click to recenter the map';
         controlDiv.appendChild(controlUI);
 
         var controlText = document.createElement('div');
@@ -321,13 +317,9 @@
 
       function ToggleControl(controlDiv, m) {
         var controlUI = document.createElement('div');
-        controlUI.style.backgroundColor = '#BB3F3F';
-        controlUI.style.border = '2px solid #fff';
+        controlUI.style.backgroundColor = '#FDDB27FF';
         controlUI.style.cursor = 'pointer';
-        controlUI.style.marginBottom = '22px';
         controlUI.style.textAlign = 'center';
-        //controlUI.style.display = "none";
-        controlUI.title = 'Click to toggle Directions';
         controlDiv.appendChild(controlUI);
         controlDiv.style.display = "none";
 
