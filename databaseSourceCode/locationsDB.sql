@@ -30,9 +30,13 @@ CREATE TABLE IF NOT EXISTS `locations` (
 `placeID` int(11) NOT NULL,
   `poiName` varchar(255) NOT NULL,
   `poiDescription` varchar(500) DEFAULT NULL,
+  `latCoordinate` decimal (10, 7) NOT NULL,
+  `longCoordinate` decimal (10, 7) NOT NULL,
+  `iconPath`, varchar (255) NOT NULL,
   `question` varchar(255) NOT NULL,
   `answer` varchar(255) NOT NULL,
-  `clue` varchar(255) NOT NULL
+  `clue` varchar(255) NOT NULL,
+  `Discovered` bit NOT NULL
 ) ENGINE=InnoDB AUTO_INCREMENT=59 DEFAULT CHARSET=latin1;
 
 --
@@ -108,14 +112,12 @@ INSERT INTO `locations` (`placeID`, `poiName`, `poiDescription`, `question`, `an
 --
 ALTER TABLE `locations`
  ADD PRIMARY KEY (`placeID`), ADD UNIQUE KEY `POIname` (`poiName`);
- 
- 
+
+
  -------------------------------
- 
+
  --
 -- AUTO_INCREMENT for table `locations`
 --
 ALTER TABLE `locations`
 MODIFY `placeID` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=59;
-
-
