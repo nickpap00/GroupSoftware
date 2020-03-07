@@ -73,7 +73,7 @@ CREATE TABLE IF NOT EXISTS `bookings` (
       `tourID` INT(11) NOT NULL,
       `userID` INT(11) UNIQUE NULL,
       `bookingDate` DATETIME NOT NULL,
-      `lastLocation` INT,
+      `lastLocation` INT DEFAULT -1,
       `score` INT
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 
