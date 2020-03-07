@@ -208,3 +208,45 @@ p{
   font-size: 36px;
   margin-left: 50px;
 }	
+/*Map Styles*/
+.topNav {
+        background-color: green;
+      }
+.topNav a {
+        text-decoration: none;
+   }
+      .clueParagraph {
+        margin-top: 5px;
+        margin-bottom: 5px;
+        border: 2px solid black;
+      }
+      .clueParagraph p {
+        margin: 2px;
+      }
+      #map {
+        height: 70%;
+      }
+
+      #title {
+        text-align: center;
+        margin-top: 10px;
+        margin-bottom: 10px;
+      }
+/*Use to hide QR stuff*/
+#QR_scanner{
+	display:none;
+}
+#qr_div{
+	border:2px solid black;
+	background: none;
+	display: block;
+	margin: 10px auto;
+	text-align: center;
+	
+	width: 150px;
+	padding: 15px 15px;
+	outline: none;
+	border-radius: 2px;
+	transition: 0.25s;
+	cursor: pointer;
+}

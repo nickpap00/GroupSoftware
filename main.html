@@ -15,54 +15,44 @@
       .body {
         width: 100%;
       }
-      .topNav {
-        background-color: green;
-      }
-      .topNav a {
-        text-decoration: none;
-      }
-      .clueParagraph {
-        margin-top: 5px;
-        margin-bottom: 5px;
-        border: 2px solid black;
-      }
-      .clueParagraph p {
-        margin: 2px;
-      }
-      #map {
-        height: 70%;
-      }
-
-      #title {
-        text-align: center;
-        margin-top: 10px;
-        margin-bottom: 10px;
-      }
+      
     </style>
   </head>
+  <link rel="stylesheet" type="text/css" href="webPagesSourceCode\styles_coursework.css"></link>
   <body>
-    <!-- This is a menu. The names are placeholder ideas -->
-    <div id="sidebar" class="topNav">
-      <a href="javascript:void(0)" class="" onclick="closeNav()">&times;</a>
-      <a href="#">Leaderboards</a>
-			<a href="#">About</a>
-			<a href="#">Services</a>
-			<a href="#">Clients</a>
-			<a href="#">Contact</a>
-    </div>
-    <!-- Title of our game / seperation from top navigation -->
-    <div id="title">Add something here like a title</div>
+  
+    
+	<!-- Title of our game / seperation from top navigation -->
+    <div id="title"><h1>Add something here like a title</h1></div>
+	<!-- Creates Sidebar for sitewide links -->
+	<div id="Sidebar" class="sidebar">
+		<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+		<a href="#">Leaderboard</a>
+		<a href="#">About</a>
+		<a href="#">Services</a>
+		<a href="#">Clients</a>
+		<a href="#">Contact</a>
+	</div>
+		<div id="main">
+			<button class="openbtn" onclick="openNav()">&#9776; Menu </button>
+		</div>
+
     <!-- Map -->
     <div id="map"></div>
     <div class="clueParagraph">
       <p>This is a clue</p> <!-- This can be the clue box -->
     </div>
-    <div id="qr_scanner">
-      <button>This can be the qr scanner icon. Change this to something else</button>
+    <div id="qr_div">
+      <button class="button" onclick="document.getElementById('QR_scanner').click()">Scan!</button>
+		<input class="textfbox" type=text size=16 placeholder="Building name will appear here" class=qrcode-text readonly/>
+		<label class=qrcode-text-btn>
+		<input id="QR_scanner" type=file accept="image/*" capture=environment onchange="openQRCamera(this);" tabindex=-1></label> 
+		<input class="button" type=button value="Check In" />
     </div>
     <script>
     </script>
     <script src="mapCode.js"></script>
+	<script src="webPagesSourceCode\js\qr_scanner.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA9mz_14PT9i5meW0Ds5xAHe5nBBmaZqXQ&callback=initMap" async defer></script>
   </body>
 </html>
