@@ -1,0 +1,68 @@
+<html>
+  <head>
+    <style>
+      /*
+        These are just very basic custom css for each element
+       You can change anything you see fit
+
+       I'm the greatest web page designer to ever live - Nicholas
+
+       The page is terrible but its a start and a basic layout.
+
+       Add any buttons and features you want
+      */
+
+      .body {
+        width: 100%;
+      }
+      .topNav {
+        background-color: green;
+      }
+      .topNav a {
+        text-decoration: none;
+      }
+      .clueParagraph {
+        margin-top: 5px;
+        margin-bottom: 5px;
+        border: 2px solid black;
+      }
+      .clueParagraph p {
+        margin: 2px;
+      }
+      #map {
+        height: 70%;
+      }
+
+      #title {
+        text-align: center;
+        margin-top: 10px;
+        margin-bottom: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- This is a menu. The names are placeholder ideas -->
+    <div id="sidebar" class="topNav">
+      <a href="javascript:void(0)" class="" onclick="closeNav()">&times;</a>
+      <a href="#">Leaderboards</a>
+			<a href="#">About</a>
+			<a href="#">Services</a>
+			<a href="#">Clients</a>
+			<a href="#">Contact</a>
+    </div>
+    <!-- Title of our game / seperation from top navigation -->
+    <div id="title">Add something here like a title</div>
+    <!-- Map -->
+    <div id="map"></div>
+    <div class="clueParagraph">
+      <p>This is a clue</p> <!-- This can be the clue box -->
+    </div>
+    <div id="qr_scanner">
+      <button>This can be the qr scanner icon. Change this to something else</button>
+    </div>
+    <script>
+    </script>
+    <script src="mapCode.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA9mz_14PT9i5meW0Ds5xAHe5nBBmaZqXQ&callback=initMap" async defer></script>
+  </body>
+</html>

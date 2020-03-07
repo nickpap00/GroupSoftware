@@ -74,82 +74,70 @@
 
       /* arrays with icon file of each Marker object on the map */
       var baseIcons = new Array(baseLocationsLength);
-      baseIcons = ["question_mark.png", "parking1.png", "parking1.png", "parking1.png", "parking1.png", "question_mark.png"]
       var configIcons = new Array(configLocationsLength);
-      var icons = baseIcons.concat(configIcons);//new Array(locationsLength);
-      for (var i=baseLocationsLength; i<locationsLength; i++) {
-        icons[i] = "question_mark.png";
-      }
+      var icons = new Array(locationsLength);
 
       var infoWindow;
-      var playerMarker;
       var playerid;
+      var playerIcon = iconPath + "player_face.png";
 
       var directionsService;
       var directionsRenderer;
 
+      //bounds of map
+      var cage = 0.006;
+      var bounds = {
+        latLngBounds: {
+        north: locationsCoords[0].lat + cage,
+        south: locationsCoords[0].lat - cage,
+        east: locationsCoords[0].lng + cage,
+        west: locationsCoords[0].lng - cage
+        }
+      };
+      var mapArgs = {
+        center: locationsCoords[0],
+        zoom: 18,
+        mapTypeId: "roadmap",
+        disableDefaultUI: true,
+        restriction: bounds,
+        styles: [
+          //removes the labels off the map
+          {
+            featureType: "all",
+            elementType: "labels",
+            stylers: [{visibility: "off"}]
+          },
+          //adds saturation to roads
+          {
+            featureType: "road.local",
+            elementType: "geometry.stroke",
+            stylers: [{saturation: 100}]
+          },
+          {
+          //makes stroke of roads brighter
+            featureType: "road.local",
+            elementType: "geometry.stroke",
+            stylers: [{lightness: -50}]
+          }
+        ]
+      };
 
       function initMap() {
-        var playerIcon = iconPath + "player_face.png";
-
-        //bounds of map
-        var cage = 0.006;
-        var bounds = {
-          latLngBounds: {
-          north: locationsCoords[0].lat + cage,
-          south: locationsCoords[0].lat - cage,
-          east: locationsCoords[0].lng + cage,
-          west: locationsCoords[0].lng - cage
-          }
-        };
-        //map options
-        var mapArgs = {
-          center: locationsCoords[0],
-          zoom: 18,
-          mapTypeId: "roadmap",
-          disableDefaultUI: true,
-          restriction: bounds,
-          styles: [
-            //removes all labels off the map
-            {
-              featureType: "all",
-              elementType: "labels",
-              stylers: [{visibility: "off"}]
-            },
-            //style roads
-            {
-              featureType: "road.local",
-              elementType: "geometry.stroke",
-              stylers: [
-                {hue: "#97B3D0FF"},
-                {saturation: 100},
-                {lightness: -50}
-              ]
-            }
-          ]
-        };
         var map = new google.maps.Map(document.getElementById('map'), mapArgs); //map
         infoWindow = new google.maps.InfoWindow(); //infoWindow
-        playerMarker = new google.maps.Marker({icon: playerIcon, map: map}); //player's Marker
+        playerMarker = new google.maps.Marker({icon: playerIcon}); //player's Marker
         playerid = navigator.geolocation.watchPosition(updatePos, errorPos); //activate geolocation
         directionsService = new google.maps.DirectionsService(); //make request for directions
-        directionsRenderer = new google.maps.DirectionsRenderer( { polylineOptions: { strokeColor: "purple", strokeWeight: 5}, suppressMarkers: true, map: map}); //show directions on map
+        directionsRenderer = new google.maps.DirectionsRenderer( { polylineOptions: { strokeColor: "purple", strokeWeight: 5}, suppressMarkers: true}); //show directions on map
+        directionsRenderer.setMap(map);
 
         initMarkers(map);
         initEventListeners(map);
-
-        var centerControlDiv = document.createElement('div');
-        var centerControl = new CenterControl(centerControlDiv, map);
-        map.controls[google.maps.ControlPosition.TOP_LEFT].push(centerControlDiv);
-
-        var toggleControlDiv = document.createElement('div');
-        var toggleControl = new ToggleControl(toggleControlDiv, map);
-        map.controls[google.maps.ControlPosition.TOP_RIGHT].push(toggleControlDiv);
       }
 
       function initMarkers(map) {
         for (var i=0; i<locationsLength; i++) {
-          markers[i] = new google.maps.Marker({position: locationsCoords[i], animation: google.maps.Animation.DROP, icon: iconPath + icons[i], map: map});
+          markers[i] = new google.maps.Marker({position: locationsCoords[i], animation: google.maps.Animation.DROP, map: map});
         }
       }
 
@@ -193,6 +181,7 @@
             text = text + '<option value='+ i +'>'+ makeName(locations[i]) +'</option>'
           }
         }
+
         return text;
       }
 
@@ -218,8 +207,8 @@
             msg = "An unknown error has occurred.";
             break;
         }
-        var mapDiv = document.getElementById('map');
-        mapDiv.innerHTML = msg;
+        var map = document.getElementById('map');
+        map.innerHTML = msg;
       }
 
       function getDesc(ind) {
@@ -270,89 +259,35 @@
         var startVal = document.getElementById('start').value;
         var startPos;
 
-        if (startVal == -1) {
+        if (startVal < 0) {
           startPos = playerMarker.getPosition();
         }
         else {
           startPos = locationsCoords[startVal];
         }
-        console.log(startPos);
+
         var request = {
           origin: startPos,
           destination: locationsCoords[button.id],
-          provideRouteAlternatives: false, //make use of that
+          provideRouteAlternatives: false,
           travelMode: 'WALKING',
-          unitSystem: google.maps.UnitSystem.IMPERIAL //make use of that
+          unitSystem: google.maps.UnitSystem.IMPERIAL
         };
 
         directionsService.route(request, function(result, status) {
           if (checkRequest(result, status)) {
             directionsRenderer.setDirections(result);
-            var last = directionsRenderer.getMap().controls[google.maps.ControlPosition.TOP_RIGHT].getLength() - 1;
-            directionsRenderer.getMap().controls[google.maps.ControlPosition.TOP_RIGHT].getAt(last).style.display = "inline";
           }
         });
       }
 
-      function CenterControl(controlDiv, m) {
-        var controlUI = document.createElement('div');
-        controlUI.style.backgroundColor = '#BB3F3F';
-        controlUI.style.border = '2px solid #fff';
-        controlUI.style.cursor = 'pointer';
-        controlUI.style.marginBottom = '22px';
-        controlUI.style.textAlign = 'center';
-        controlUI.title = 'Click to recenter the map';
-        controlDiv.appendChild(controlUI);
-
-        var controlText = document.createElement('div');
-        controlText.style.color = 'rgb(25,25,25)';
-        controlText.style.fontFamily = 'Roboto,Arial,sans-serif';
-        controlText.style.fontSize = '16px';
-        controlText.style.lineHeight = '38px';
-        controlText.style.paddingLeft = '5px';
-        controlText.style.paddingRight = '5px';
-        controlText.innerHTML = 'Center Map';
-        controlUI.appendChild(controlText);
-
-        controlUI.addEventListener('click', function() {
-            m.setCenter(locationsCoords[0]);
-          });
-      }
-
-      function ToggleControl(controlDiv, m) {
-        var controlUI = document.createElement('div');
-        controlUI.style.backgroundColor = '#BB3F3F';
-        controlUI.style.border = '2px solid #fff';
-        controlUI.style.cursor = 'pointer';
-        controlUI.style.marginBottom = '22px';
-        controlUI.style.textAlign = 'center';
-        //controlUI.style.display = "none";
-        controlUI.title = 'Click to toggle Directions';
-        controlDiv.appendChild(controlUI);
-        controlDiv.style.display = "none";
-
-        var controlText = document.createElement('div');
-        controlText.style.color = 'rgb(25,25,25)';
-        controlText.style.fontFamily = 'Roboto,Arial,sans-serif';
-        controlText.style.fontSize = '16px';
-        controlText.style.lineHeight = '38px';
-        controlText.style.paddingLeft = '5px';
-        controlText.style.paddingRight = '5px';
-        controlText.innerHTML = 'Toggle Directions';
-        controlUI.appendChild(controlText);
-
-        controlUI.addEventListener('click', function() {
-         directionsRenderer.set('directions', null);
-         controlDiv.style.display = "none";
-         infoWindow.close();
-       });
-      }
-
       function checkRequest(result, status) {
         var msg = " ";
+        var valid = true;
 
         switch (status) {
           case google.maps.DirectionsStatus.OK:
+            directionsRenderer.setDirections(result);
             break;
           case google.maps.DirectionsStatus.NOT_FOUND:
             msg = "Cannot geocode path";
@@ -380,9 +315,9 @@
             break;
         }
         if (msg == " ") {
-          return true;
+          return valid;
         }
-        return false;
+        return valid;
       }
     </script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA9mz_14PT9i5meW0Ds5xAHe5nBBmaZqXQ&callback=initMap" async defer></script>
