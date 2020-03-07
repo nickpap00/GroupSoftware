@@ -58,12 +58,12 @@ var markers = new Array(locationsLength);
 
 /* arrays with icon file of each Marker object on the map */
 var baseIcons = new Array(baseLocationsLength);
-//baseIcons = ["map-pin.svg", "parking.svg", "parking.svg", "parking.svg", "parking.svg", "map-pin.svg"]
+baseIcons = ["question_mark.png", "parking1.png", "parking1.png", "parking1.png", "parking1.png", "question_mark.png"]
 var configIcons = new Array(configLocationsLength);
 var icons = baseIcons.concat(configIcons);//new Array(locationsLength);
-/*for (var i=baseLocationsLength; i<locationsLength; i++) {
-  icons[i] = "map-pin.svg";
-}*/
+for (var i=baseLocationsLength; i<locationsLength; i++) {
+  icons[i] = "question_mark.png";
+}
 
 var infoWindow;
 var playerMarker;
@@ -71,7 +71,6 @@ var playerid;
 
 var directionsService;
 var directionsRenderer;
-
 
 function initMap() {
   var playerIcon = iconPath + "player_face.png";
@@ -100,23 +99,20 @@ function initMap() {
         elementType: "labels",
         stylers: [{visibility: "off"}]
       },
-      //adds saturation to roads
+      //style roads
       {
         featureType: "road.local",
         elementType: "geometry.stroke",
-        stylers: [{saturation: 100}]
-      },
-      {
-      //makes stroke of roads brighter
-        featureType: "road.local",
-        elementType: "geometry.stroke",
-        stylers: [{lightness: -50}]
+        stylers: [
+          {hue: "#97B3D0FF"},
+          {saturation: 100},
+          {lightness: -50}
+        ]
       }
     ]
   };
   var map = new google.maps.Map(document.getElementById('map'), mapArgs); //map
   infoWindow = new google.maps.InfoWindow(); //infoWindow
-  console.log(playerIcon);
   playerMarker = new google.maps.Marker({icon: playerIcon, map: map}); //player's Marker
   playerid = navigator.geolocation.watchPosition(updatePos, errorPos); //activate geolocation
   directionsService = new google.maps.DirectionsService(); //make request for directions
@@ -136,7 +132,7 @@ function initMap() {
 
 function initMarkers(map) {
   for (var i=0; i<locationsLength; i++) {
-    markers[i] = new google.maps.Marker({position: locationsCoords[i], animation: google.maps.Animation.DROP, map: map});
+    markers[i] = new google.maps.Marker({position: locationsCoords[i], animation: google.maps.Animation.DROP, icon: iconPath + icons[i], map: map});
   }
 }
 
@@ -283,12 +279,9 @@ function showPath(button) {
 
 function CenterControl(controlDiv, m) {
   var controlUI = document.createElement('div');
-  controlUI.style.backgroundColor = '#BB3F3F';
-  controlUI.style.border = '2px solid #fff';
+  controlUI.style.backgroundColor = '#FDDB27FF';
   controlUI.style.cursor = 'pointer';
-  controlUI.style.marginBottom = '22px';
   controlUI.style.textAlign = 'center';
-  controlUI.title = 'Click to recenter the map';
   controlDiv.appendChild(controlUI);
 
   var controlText = document.createElement('div');
@@ -308,13 +301,9 @@ function CenterControl(controlDiv, m) {
 
 function ToggleControl(controlDiv, m) {
   var controlUI = document.createElement('div');
-  controlUI.style.backgroundColor = '#BB3F3F';
-  controlUI.style.border = '2px solid #fff';
+  controlUI.style.backgroundColor = '#FDDB27FF';
   controlUI.style.cursor = 'pointer';
-  controlUI.style.marginBottom = '22px';
   controlUI.style.textAlign = 'center';
-  //controlUI.style.display = "none";
-  controlUI.title = 'Click to toggle Directions';
   controlDiv.appendChild(controlUI);
   controlDiv.style.display = "none";
 
