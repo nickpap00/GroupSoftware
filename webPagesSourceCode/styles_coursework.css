@@ -279,40 +279,50 @@ p{
 	display:none;
 }
 .qr_div{
-	border:2px solid black;
-	background: none;
-	display: block;
+	border:0px solid black;
 	margin: 1px auto;
-	text-align: center;
-	width:40%;
+	width:100%;
 	/*Min width stops the div from being too small on mobile*/
-	min-width:40%;
-	max-width:50%;
+	min-width:100%;
+	max-width:100%;
 	padding: 1px 1px;
 	outline: none;
 	border-radius: 2px;
-	background-color: gray;
+	display: flex;
+	justify-content: left;
+	position: relative;
+	background-color:clear;
+	min-height:5%;
 }
 .qr_div button{
-		background-color:white;
-		width: 70%;
+		background-repeat:no-repeat;
+		width: 25%;
 		height: 5vh;
+		border-radius:25px;
 		
+}
+#scanbutton{
+	background-image: url("https://www.freepnglogos.com/uploads/camera-logo-png/camera-outline-icon-27.png");
+		background-size: 100px 75px;
+		background-position: center;
+		background-repeat:no-repeat;
+		width: 25%;
+		height: 5vh;
+		border-radius:25px;
 }
 /*Styling for qr textboxes*/
 .buildingtextbox{
-border:0;
-	background: white;
+	border:0;
+	background-color: clear;
 	display: block;
 	margin: 10px auto;
 	text-align: center;
-	border: 0px solid black;
-	border-bottom-width:2px;
+	border: 3px solid black;
+	font-size:3vw;
 	padding: 14px 10px;
-	width: 150px;
+	width: 45%;
 	outline: none;
-	border-radius: 2px;
-	transition: 0.25s;	
+	border-radius: 2px;	
 }	
 /*Stlying for clue paragraph*/
 .clueParagraph{
