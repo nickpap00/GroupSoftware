@@ -42,7 +42,7 @@ p{
 /* Styling for buttons that can be used appwide*/
 .button{
 	border: 2px solid black;
-	background: #0070cc;
+	background: white;
 	display: block;
 	margin: 10px auto;
 	text-align: center;
@@ -292,7 +292,7 @@ p{
 	display: flex;
 	justify-content: left;
 	position: relative;
-	background-color:clear;
+	background-color:#005dab;
 	min-height:5%;
 }
 .qr_div button{
