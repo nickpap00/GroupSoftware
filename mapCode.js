@@ -70,7 +70,7 @@ for (var i=baseLocationsLength; i<locationsLength; i++) {
 var infoWindow;
 var playerMarker;
 var playerid;
-var lastLoc = -1; /* php generated */
+var lastLoc = 12; /* php generated */
 
 var directionsService;
 var directionsRenderer;
@@ -153,7 +153,6 @@ function initEventListeners(map) {
       var ind = markers.indexOf(this); //get index of marker clicked
       buildingName = makeName(locations[ind]); //name to show
       buildingDescription = getDesc(ind); //description to show
-
       infoWindow.close();
       infoWindow.setContent('<div>' +
         '<h1>'+ buildingName +'</h1>' +
@@ -162,7 +161,7 @@ function initEventListeners(map) {
           '<strong>Start: </strong>' +
           '<select id=start>' +
             '<option value=-1>My position</option>' +
-            addOptions() +
+            addOptions(ind) +
           '</select>' +
           '<br>' + '<br>' +
           '<center>' +
@@ -175,13 +174,47 @@ function initEventListeners(map) {
   }
 }
 
+function addMarker() {
+  if (lastLoc == locationsLength) {
+    window.alert("Game finished");
+  }
+  var m = markers[lastLoc-1].getMap();
+  markers[lastLoc] = new google.maps.Marker({position: locationsCoords[lastLoc], animation: google.maps.Animation.DROP, icon: iconPath + icons[lastLoc], map: m});
+  markers[lastLoc].addListener('click', function() {
+    var ind = markers.indexOf(this); //get index of marker clicked
+    buildingName = makeName(locations[ind]); //name to show
+    buildingDescription = getDesc(ind); //description to show
+    infoWindow.close();
+    infoWindow.setContent('<div>' +
+      '<h1>'+ buildingName +'</h1>' +
+      '<div>' +
+        '<p>'+ buildingDescription +'</p>' +
+        '<strong>Start: </strong>' +
+        '<select id=start>' +
+          '<option value=-1>My position</option>' +
+          addOptions(ind) +
+        '</select>' +
+        '<br>' + '<br>' +
+        '<center>' +
+          '<button id='+ ind +' type="button" onclick="showPath(this)">Get me here!</button>' +
+        '</center>' +
+      '</div>' +
+    '</div>');
+    infoWindow.open(map, this);
+  });
+  m.setCenter(locationsCoords[lastLoc]);
 
+  lastLoc++;
+}
 /* loop through discovered buildings and appends to string
 returns the string*/
-function addOptions() {
+function addOptions(index) {
   var text = '';
   for (var i=0; i<lastLoc; i++) {
     if (unlocked[i]) {
+      if (index == i) {
+        continue;
+      }
       text = text + '<option value='+ i +'>'+ makeName(locations[i]) +'</option>'
     }
   }
@@ -314,7 +347,7 @@ function CenterControl(controlDiv, m) {
   controlUI.appendChild(controlText);
 
   controlUI.addEventListener('click', function() {
-      m.setCenter(locationsCoords[0]);
+      m.setCenter(playerMarker.getPosition());
     });
 }
 
