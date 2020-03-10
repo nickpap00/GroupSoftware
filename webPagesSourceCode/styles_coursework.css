@@ -38,6 +38,7 @@ p{
 .button:hover{
 	background-color: gray;
 }
+
 /* The sidebar menu */
 .sidebar {
   height: 100%; /* 100% Full-height */
@@ -250,3 +251,18 @@ p{
 	transition: 0.25s;
 	cursor: pointer;
 }
+/*Styling for qr textboxes*/
+.buildingtextbox{
+border:0;
+	background: white;
+	display: block;
+	margin: 10px auto;
+	text-align: center;
+	border: 0px solid black;
+	border-bottom-width:2px;
+	padding: 14px 10px;
+	width: 150px;
+	outline: none;
+	border-radius: 2px;
+	transition: 0.25s;	
+}	
