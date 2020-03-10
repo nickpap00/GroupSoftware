@@ -10,10 +10,12 @@ body {
 h1{
 	color: black;
 	margin-left: 4px;
-	font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+	font-family: 'Cairo', sans-serif;
 	font-weight: 300;
-	font-size:5vw;
+	font-size:6vw;
 	text-align:center;
+	padding:1px 1px;
+	
 }
 p{
 	color: black;
@@ -23,7 +25,6 @@ p{
 	font-size:4vw;
 	text-align:center;
 }
-@media(min-width:60em){html{font-size:100%}}
 /* Styling for buttons that can be used appwide*/
 .button{
 	border: 2px solid black;
@@ -42,7 +43,22 @@ p{
 .button:hover{
 	background-color: gray;
 }
-
+/*Stlying the header that will be at the top of the pages*/
+.head{	
+	display: flex;
+	justify-content: left;
+	position: relative;
+	background-color:#cce8ff;
+	min-height:5%;
+}
+.head h1{
+	text-align:center;
+}
+.head button{
+	margin-left: 1px;
+	height:5%;
+	background-color:clear;
+}
 /* The sidebar menu */
 .sidebar {
   height: 100%; /* 100% Full-height */
@@ -66,7 +82,6 @@ p{
   color: #818181;
   display: block;
   transition: 0.3s;
-  min-width:20%;
 }
 
 /* When you mouse over the navigation links, change their color */
@@ -76,29 +91,29 @@ p{
 
 /* Position and style the close button (top right corner) */
 .sidebar .closebtn {
-  min-height:5%;
-  min-width:5%;
+  min-height:5px;
+  min-width:5px;
   position: absolute;
   top: 0;
-  right: 25px;
+  right: 5px;
   font-size: 36px;
   margin-left: 50px;
 }
 
 /* The button used to open the sidebar */
 .openbtn {
-  min-width:25%;
+  min-width:20%;
   min-height:5%;
-  font-size: 4vw;
+  font-size: 3vw;
   cursor: pointer;
-  background-color: #111;
-  color: white;
+  background-color: clear;
+  color: black;
   padding: 1px 1px;
   border: none;
 }
 
 .openbtn:hover {
-  background-color: #444;
+  background-color: clear;
 }
 
 /* Style page content - use this if you want to push the page content to the right when you open the side navigation */
@@ -217,7 +232,9 @@ p{
   right: 25px;
   font-size: 36px;
   margin-left: 50px;
-}	
+}
+
+/*Main.html syling*/
 /*Map Styles*/
 .topNav {
         background-color: green;
@@ -278,3 +295,7 @@ border:0;
 	border-radius: 2px;
 	transition: 0.25s;	
 }	
+/*Stlying for clue paragraph*/
+.clueParagraph{
+	background-color:light gray;
+}
