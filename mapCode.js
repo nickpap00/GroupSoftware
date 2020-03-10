@@ -11,6 +11,7 @@
 var iconPath = "icons/"; //folder with icons;
 
 /* arrays that hold location strings */
+/* !!! php generated */
 var baseLocations = ["forum", "car_park_amory", "car_park_forum", "car_park_sports", "car_park_queens", "into"]; //shared in every config
 var configLocations = ["harrison", "physics", "newman", "peter_chalk", "queens", "amory", "streatham_court"]; //configuration specific
 var locations = baseLocations.concat(configLocations); //baseLocations + configLocations
@@ -21,6 +22,7 @@ var configLocationsLength = configLocations.length;
 var locationsLength = locations.length;
 
 /* arrays that hold coords for each location */
+/* !!! php generated */
 var baseLocationsCoords = [ //coords of shared locations
   {lat: 50.735466, lng: -3.533202},
   {lat: 50.737383, lng: -3.530348},
@@ -45,7 +47,7 @@ var unlocked = new Array(locationsLength);
 for (var i=0; i<locationsLength; i++) {
   unlocked[i] = true;
 }
-
+/* php generated */
 var markerDescriptions = new Array(locationsLength); //content for InfoWindow
 for (var i=0; i<locationsLength; i++) {
   markerDescriptions[i] = "this is a description for " + makeName(locations[i]);
@@ -68,9 +70,11 @@ for (var i=baseLocationsLength; i<locationsLength; i++) {
 var infoWindow;
 var playerMarker;
 var playerid;
+var lastLoc = -1; /* php generated */
 
 var directionsService;
 var directionsRenderer;
+var helpWindow;
 
 function initMap() {
   var playerIcon = iconPath + "player_face.png";
@@ -111,13 +115,17 @@ function initMap() {
       }
     ]
   };
+
   var map = new google.maps.Map(document.getElementById('map'), mapArgs); //map
   infoWindow = new google.maps.InfoWindow(); //infoWindow
   playerMarker = new google.maps.Marker({icon: playerIcon, map: map}); //player's Marker
   playerid = navigator.geolocation.watchPosition(updatePos, errorPos); //activate geolocation
   directionsService = new google.maps.DirectionsService(); //make request for directions
-  directionsRenderer = new google.maps.DirectionsRenderer( { polylineOptions: { strokeColor: "purple", strokeWeight: 5}, suppressMarkers: true, map: map}); //show directions on map
-
+  directionsRenderer = new google.maps.DirectionsRenderer( { polylineOptions: { strokeColor: "purple", strokeWeight: 5}, suppressMarkers: true, map: map} ); //show directions on map
+  if (lastLoc == -1) {
+    lastLoc = baseLocationsLength;
+    makeHelpWindow(map);
+  }
   initMarkers(map);
   initEventListeners(map);
 
@@ -131,7 +139,7 @@ function initMap() {
 }
 
 function initMarkers(map) {
-  for (var i=0; i<locationsLength; i++) {
+  for (var i=0; i<lastLoc; i++) {
     markers[i] = new google.maps.Marker({position: locationsCoords[i], animation: google.maps.Animation.DROP, icon: iconPath + icons[i], map: map});
   }
 }
@@ -140,7 +148,7 @@ function initEventListeners(map) {
   var buildingName;
   var buildingDescription;
 
-  for (var i=0; i<locationsLength; i++) {
+  for (var i=0; i<lastLoc; i++) {
     markers[i].addListener('click', function() {
       var ind = markers.indexOf(this); //get index of marker clicked
       buildingName = makeName(locations[ind]); //name to show
@@ -167,11 +175,12 @@ function initEventListeners(map) {
   }
 }
 
+
 /* loop through discovered buildings and appends to string
 returns the string*/
 function addOptions() {
   var text = '';
-  for (var i=0; i<locationsLength; i++) {
+  for (var i=0; i<lastLoc; i++) {
     if (unlocked[i]) {
       text = text + '<option value='+ i +'>'+ makeName(locations[i]) +'</option>'
     }
@@ -205,6 +214,21 @@ function errorPos(err) {
   mapDiv.innerHTML = msg;
 }
 
+function makeHelpWindow(map) {
+  helpWindow = new google.maps.InfoWindow();
+  helpWindow.setContent('<div>' +
+    '<center>' +
+      '<h1>Information</h1>' +
+      '<div>' +
+        '<p>You have to go to all the markers, scan a qr code found in the location and answer a couple of questions</p>' +
+      '</div>' +
+    '</center>'+
+  '</div>');
+  helpWindow.setPosition(locationsCoords[0]);
+  helpWindow.open(map);
+}
+
+/* @Deprecated */
 function getDesc(ind) {
   if (unlocked[ind]) {
     return markerDescriptions[ind];
@@ -244,11 +268,6 @@ function loadData() {
   xhttp.send();
 }
 
-/* load data received to arrays */
-function loadArrays(xhttp) {
-
-}
-
 function showPath(button) {
   var startVal = document.getElementById('start').value;
   var startPos;
@@ -259,7 +278,6 @@ function showPath(button) {
   else {
     startPos = locationsCoords[startVal];
   }
-  console.log(startPos);
   var request = {
     origin: startPos,
     destination: locationsCoords[button.id],
@@ -316,7 +334,7 @@ function ToggleControl(controlDiv, m) {
   controlText.style.lineHeight = '38px';
   controlText.style.paddingLeft = '5px';
   controlText.style.paddingRight = '5px';
-  controlText.innerHTML = 'Toggle Directions';
+  controlText.innerHTML = 'Close Directions';
   controlUI.appendChild(controlText);
 
   controlUI.addEventListener('click', function() {
