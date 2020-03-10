@@ -17,37 +17,38 @@
       }
       
     </style>
+	<link href="https://fonts.googleapis.com/css?family=Cairo&display=swap" rel="stylesheet">
   </head>
   <link rel="stylesheet" type="text/css" href="webPagesSourceCode\styles_coursework.css"></link>
   <body>
   
     
 	<!-- Title of our game / seperation from top navigation -->
-    <div id="title"><h1>Add something here like a title</h1></div>
+    <div id="title"></div>
 	<!-- Creates Sidebar for sitewide links -->
 	<div id="Sidebar" class="sidebar">
 		<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
 		<a href="#">Leaderboard</a>
 		<a href="#">About</a>
-		<a href="#">Services</a>
-		<a href="#">Clients</a>
 		<a href="#">Contact</a>
 	</div>
-		<div id="main">
+		<div class="head" id="main">
 			<button class="openbtn" onclick="openNav()">&#9776; Menu </button>
+			<h1>Shortcut</h1>
 		</div>
 
     <!-- Map -->
     <div id="map"></div>
+	<h3>Your next clue:</h3>
     <div class="clueParagraph">
       <p>This is a clue</p> <!-- This can be the clue box -->
     </div>
-    <div id="qr_div">
+    <div class="qr_div">
       <button class="button" onclick="document.getElementById('QR_scanner').click()">Scan!</button>
-		<input class="textfbox" type=text size=16 placeholder="Building name will appear here" class=qrcode-text readonly/>
+		<input class="buildingtextbox" type=text size=16 placeholder="Building name will appear here" class=qrcode-text readonly/>
 		<label class=qrcode-text-btn>
 		<input id="QR_scanner" type=file accept="image/*" capture=environment onchange="openQRCamera(this);" tabindex=-1></label> 
-		<input class="button" type=button value="Check In" />
+		<button class="button">Check In</button>
     </div>
     <script>
     </script>

@@ -10,16 +10,35 @@ body {
 h1{
 	color: black;
 	margin-left: 4px;
-	font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+	font-family: 'Cairo', sans-serif;
 	font-weight: 300;
+	font-size:6vw;
+	text-align:center;
+	padding:1px 1px;
+	margin-bottom:0px;
+	
+}
+h3{
+	color: black;
+	margin-left: 4px;
+	font-family: 'Cairo', sans-serif;
+	font-weight: 300;
+	font-size:4vw;
+	text-align:center-left;
+	padding:1px 1px;
+	border-bottom:0px;
+	margin-top: 1px;
+	margin-bottom:0px;
+	
 }
 p{
 	color: black;
 	margin-left: 4px;
 	font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
 	font-weight: 300;
+	font-size:4vw;
+	text-align:center;
 }
-
 /* Styling for buttons that can be used appwide*/
 .button{
 	border: 2px solid black;
@@ -27,9 +46,10 @@ p{
 	display: block;
 	margin: 10px auto;
 	text-align: center;
-	
-	width: 150px;
-	padding: 14px 40px;
+	font-size:5vw;	
+	min-width:25%;
+	min-height:10%;
+	padding: 1px 1px;
 	outline: none;
 	border-radius: 2px;
 	transition: 0.25s;
@@ -37,6 +57,22 @@ p{
 }
 .button:hover{
 	background-color: gray;
+}
+/*Stlying the header that will be at the top of the pages*/
+.head{	
+	display: flex;
+	justify-content: left;
+	position: relative;
+	background-color:#cce8ff;
+	min-height:5%;
+}
+.head h1{
+	text-align:center;
+}
+.head button{
+	margin-left: 1px;
+	height:5%;
+	background-color:clear;
 }
 /* The sidebar menu */
 .sidebar {
@@ -56,7 +92,7 @@ p{
 .sidebar a {
   padding: 8px 8px 8px 32px;
   text-decoration: none;
-  font-size: 25px;
+  font-size: 4vw;
   font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
   color: #818181;
   display: block;
@@ -70,25 +106,29 @@ p{
 
 /* Position and style the close button (top right corner) */
 .sidebar .closebtn {
+  min-height:5px;
+  min-width:5px;
   position: absolute;
   top: 0;
-  right: 25px;
+  right: 5px;
   font-size: 36px;
   margin-left: 50px;
 }
 
 /* The button used to open the sidebar */
 .openbtn {
-  font-size: 20px;
+  min-width:20%;
+  min-height:5%;
+  font-size: 3vw;
   cursor: pointer;
-  background-color: #111;
-  color: white;
-  padding: 10px 15px;
+  background-color: clear;
+  color: black;
+  padding: 1px 1px;
   border: none;
 }
 
 .openbtn:hover {
-  background-color: #444;
+  background-color: clear;
 }
 
 /* Style page content - use this if you want to push the page content to the right when you open the side navigation */
@@ -97,8 +137,8 @@ p{
   padding: 20px;
 }
 
-/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
-@media screen and (max-height: 450px) {
+/* On smaller screens, where width is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+@media screen and (max-width: 450px) {
   .sidebar {padding-top: 15px;}
   .sidebar a {font-size: 18px;}
 }
@@ -207,7 +247,9 @@ p{
   right: 25px;
   font-size: 36px;
   margin-left: 50px;
-}	
+}
+
+/*Main.html syling*/
 /*Map Styles*/
 .topNav {
         background-color: green;
@@ -236,17 +278,43 @@ p{
 #QR_scanner{
 	display:none;
 }
-#qr_div{
+.qr_div{
 	border:2px solid black;
 	background: none;
 	display: block;
-	margin: 10px auto;
+	margin: 1px auto;
 	text-align: center;
-	
-	width: 150px;
-	padding: 15px 15px;
+	width:40%;
+	/*Min width stops the div from being too small on mobile*/
+	min-width:40%;
+	max-width:50%;
+	padding: 1px 1px;
 	outline: none;
 	border-radius: 2px;
-	transition: 0.25s;
-	cursor: pointer;
+	background-color: gray;
+}
+.qr_div button{
+		background-color:white;
+		width: 70%;
+		height: 5vh;
+		
+}
+/*Styling for qr textboxes*/
+.buildingtextbox{
+border:0;
+	background: white;
+	display: block;
+	margin: 10px auto;
+	text-align: center;
+	border: 0px solid black;
+	border-bottom-width:2px;
+	padding: 14px 10px;
+	width: 150px;
+	outline: none;
+	border-radius: 2px;
+	transition: 0.25s;	
+}	
+/*Stlying for clue paragraph*/
+.clueParagraph{
+	background-color:yellow;
 }

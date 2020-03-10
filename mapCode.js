@@ -295,6 +295,7 @@ function showPath(button) {
   });
 }
 
+// Function to create and control centre map button and functionality
 function CenterControl(controlDiv, m) {
   var controlUI = document.createElement('div');
   controlUI.style.backgroundColor = '#FDDB27FF';
@@ -317,6 +318,7 @@ function CenterControl(controlDiv, m) {
     });
 }
 
+// Function to toggle directions on and off of the map
 function ToggleControl(controlDiv, m) {
   var controlUI = document.createElement('div');
   controlUI.style.backgroundColor = '#FDDB27FF';
@@ -342,6 +344,7 @@ function ToggleControl(controlDiv, m) {
  });
 }
 
+// Function to check requests are valid
 function checkRequest(result, status) {
   var msg = " ";
 
