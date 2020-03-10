@@ -5,10 +5,10 @@ This just makes it easier as I can easily search for styles and styles won't con
 body {
 	margin: 0;
 	padding: 0;
-	background-color:#005dab;
+	background-color:white;
 }
 h1{
-	color: black;
+	color: white;
 	margin-left: 4px;
 	font-family: 'Cairo', sans-serif;
 	font-weight: 300;
@@ -42,7 +42,7 @@ p{
 /* Styling for buttons that can be used appwide*/
 .button{
 	border: 2px solid black;
-	background: white;
+	background: #0070cc;
 	display: block;
 	margin: 10px auto;
 	text-align: center;
@@ -60,10 +60,11 @@ p{
 }
 /*Stlying the header that will be at the top of the pages*/
 .head{	
+	margin-top:0px;
 	display: flex;
 	justify-content: left;
 	position: relative;
-	background-color:clear;
+	background-color:#005dab;
 	min-height:5%;
 }
 .head h1{
@@ -72,7 +73,7 @@ p{
 .head button{
 	margin-left: 1px;
 	height:5%;
-	background-color:clear;
+	background-color:white;
 }
 /* The sidebar menu */
 .sidebar {
@@ -121,10 +122,10 @@ p{
   min-height:5%;
   font-size: 3vw;
   cursor: pointer;
-  background-color: clear;
+  background-color: #005dab;
   color: black;
   padding: 1px 1px;
-  border: none;
+  border: 2px solid black;
 }
 
 .openbtn:hover {
