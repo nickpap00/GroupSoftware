@@ -12,14 +12,18 @@ h1{
 	margin-left: 4px;
 	font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
 	font-weight: 300;
+	font-size:5vw;
+	text-align:center;
 }
 p{
 	color: black;
 	margin-left: 4px;
 	font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
 	font-weight: 300;
+	font-size:4vw;
+	text-align:center;
 }
-
+@media(min-width:60em){html{font-size:100%}}
 /* Styling for buttons that can be used appwide*/
 .button{
 	border: 2px solid black;
@@ -27,9 +31,9 @@ p{
 	display: block;
 	margin: 10px auto;
 	text-align: center;
-	
-	width: 150px;
-	padding: 14px 40px;
+	font-size:4vw;	
+	min-width:25%;
+	padding: 1px 1px;
 	outline: none;
 	border-radius: 2px;
 	transition: 0.25s;
@@ -38,6 +42,7 @@ p{
 .button:hover{
 	background-color: gray;
 }
+
 /* The sidebar menu */
 .sidebar {
   height: 100%; /* 100% Full-height */
@@ -56,11 +61,12 @@ p{
 .sidebar a {
   padding: 8px 8px 8px 32px;
   text-decoration: none;
-  font-size: 25px;
+  font-size: 4vw;
   font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
   color: #818181;
   display: block;
   transition: 0.3s;
+  min-width:20%;
 }
 
 /* When you mouse over the navigation links, change their color */
@@ -70,6 +76,8 @@ p{
 
 /* Position and style the close button (top right corner) */
 .sidebar .closebtn {
+  min-height:5%;
+  min-width:5%;
   position: absolute;
   top: 0;
   right: 25px;
@@ -79,11 +87,13 @@ p{
 
 /* The button used to open the sidebar */
 .openbtn {
-  font-size: 20px;
+  min-width:25%;
+  min-height:5%;
+  font-size: 4vw;
   cursor: pointer;
   background-color: #111;
   color: white;
-  padding: 10px 15px;
+  padding: 1px 1px;
   border: none;
 }
 
@@ -97,8 +107,8 @@ p{
   padding: 20px;
 }
 
-/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
-@media screen and (max-height: 450px) {
+/* On smaller screens, where width is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+@media screen and (max-width: 450px) {
   .sidebar {padding-top: 15px;}
   .sidebar a {font-size: 18px;}
 }
@@ -240,13 +250,31 @@ p{
 	border:2px solid black;
 	background: none;
 	display: block;
-	margin: 10px auto;
+	margin: 1px auto;
 	text-align: center;
 	
 	width: 150px;
-	padding: 15px 15px;
+	/*Min width stops the div from being too small on mobile*/
+	min-width:25%;
+	padding: 1px 1px;
 	outline: none;
 	border-radius: 2px;
 	transition: 0.25s;
 	cursor: pointer;
 }
+
+/*Styling for qr textboxes*/
+.buildingtextbox{
+border:0;
+	background: white;
+	display: block;
+	margin: 10px auto;
+	text-align: center;
+	border: 0px solid black;
+	border-bottom-width:2px;
+	padding: 14px 10px;
+	width: 150px;
+	outline: none;
+	border-radius: 2px;
+	transition: 0.25s;	
+}	
