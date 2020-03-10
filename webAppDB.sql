@@ -1,7 +1,19 @@
-drop schema if exists treasuresearch;
-create schema treasuresearch;
-use treasuresearch;
+--
+-- Database: `webAppDB`
+-- Author(s): James Kitt
+--
 
+drop schema if exists webAppDB;
+create schema webAppDB;
+use webAppDB;
+
+--
+-- -- Table Structures -- --
+--
+
+--
+-- Table structure for table `Locations`
+--
 CREATE TABLE Locations (
     placeID INT AUTO_INCREMENT PRIMARY KEY,
     POIname VARCHAR(255) UNIQUE NOT NULL,
@@ -14,6 +26,9 @@ CREATE TABLE Locations (
     clue VARCHAR(255) NOT NULL
 )  ENGINE=INNODB AUTO_INCREMENT=59 DEFAULT CHARSET=LATIN1;
 
+--
+-- Table structure for table `users`
+--
 CREATE TABLE Users (
     userID INT AUTO_INCREMENT PRIMARY KEY,
     displayname VARCHAR(255) UNIQUE NOT NULL,
@@ -22,6 +37,9 @@ CREATE TABLE Users (
     AccessID INTEGER NOT NULL
 )  ENGINE=INNODB AUTO_INCREMENT=4 DEFAULT CHARSET=LATIN1;
 
+--
+-- Table structure for table `Bookings`
+--
 CREATE TABLE Bookings (
     bookingID INT AUTO_INCREMENT PRIMARY KEY,
     tourID INT NOT NULL,
@@ -31,12 +49,16 @@ CREATE TABLE Bookings (
     score INT
 );
 
+--
+-- Table structure for table `Tours`
+--
 CREATE TABLE Tours (
     tourID INT AUTO_INCREMENT PRIMARY KEY,
     creatorID INT NOT NULL,
     creationDate DATETIME NULL,
     tourRoute VARCHAR(255) NOT NULL
 )  ENGINE=INNODB AUTO_INCREMENT=2 DEFAULT CHARSET=LATIN1;
+
 
 -- --------------------------------------------------------
 --
@@ -48,11 +70,11 @@ CREATE TABLE Tours (
 --
 
 INSERT INTO locations (placeID, poiName, poiDescription,
-  iconPath, question, answer, 
+  iconPath, question, answer,
   clue)
    VALUES
 (1, 'Amory', 'The college of social sciences is housed here, but the lecture
-   theatre “Moot Room” is shared as well as a number of smaller areas.', 
+   theatre “Moot Room” is shared as well as a number of smaller areas.',
     '', 'How many people can sit in the Moot room?', '260', 'Sounds like the
     french word for love'),
 (2, 'Queen`s', 'The building for the Foreign Languages department. It also
@@ -101,7 +123,7 @@ INSERT INTO locations (placeID, poiName, poiDescription,
     technologies.', '', 'How much money has been invested into this
     building?', '£1.2 million', 'Computerized arts workshop'),
 (13, 'Exeter Northcott Theatre', 'A theatre space that holds lectures as well as
-   shows throughout the academic year.', '', 'What year was the theatre 
+   shows throughout the academic year.', '', 'What year was the theatre
    opened?', '1967', 'Up, baby bed, stage'),
 (14, 'Estate Service Centre', 'Ensures that campus is fit for service',
   '', 'Who is the director of these services?', 'Hugh McCann', ''),
@@ -256,23 +278,22 @@ ALTER TABLE bookings
 MODIFY bookingID int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
 
 
-SELECT 
+SELECT
     *
 FROM
     locations;
 
-SELECT 
+SELECT
     *
 FROM
     tours;
-    
-SELECT 
+
+SELECT
     *
 FROM
     users;
 
-SELECT 
+SELECT
     *
 FROM
     bookings;
-    

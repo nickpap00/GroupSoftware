@@ -1,23 +1,23 @@
-<html> 
+<html>
 <link rel="stylesheet" type="text/css" href="styles_coursework.css"></link>
-	<head> 
-	
-		<?php 
+	<head>
+
+		<?php
 			include_once("scriptandstyles.php"); // This includes the scriptandstyles page which includes all the style sheet and the jquery scripts
 			session_start(); // Starts the session so this page can access the details from the session
-			  
+
 			include_once("redirect.php"); // Includes a redirect.php page which means if the user has pressed back to get to this page they'll be sent to the previous page
-			  
+
 			$error=""; // Sets the variable error equal to an empty string
 			if(isset($_REQUEST["error"])) { // Requests error from the login page and if its set/equal to something it'll execute the code below
 				$error=$_REQUEST["error"]; // Sets the variable error equal to what its been sent from the login page
 			}
-		?>	
+		?>
 		<script type='text/javascript'>
 			$('#password').keydown(function(e){ // Function that takes the parameter e and uses the input box with ID password
 				if(e.keyCode === 13){ // If what the user has entered on their keyboard is equal to 13/enter button it'll execute the code below
 					myFunction(); // Calls myFunction
-				 }  
+				 }
 			});
 
 			function myFunction() {
@@ -42,8 +42,8 @@
 		</script>
 		<link rel="icon" href="pictures/padlock.png"/>
 	</head>
-	
-	
+
+
 	<body>
 		<div id="Sidebar" class="sidebar"> <!-- move this to navbar -->
 			<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
@@ -52,32 +52,32 @@
 			<a href="#">Clients</a>
 			<a href="#">Contact</a>
 		</div>
-		
-		<div id="main">
+
+		<div id="main"> <!-- button to open navbar-->
 			<button class="openbtn" onclick="openNav()">&#9776; Menu</button>
 		</div>
 
-		<center><div class="inputbox">
-					
+		<center><div class="inputbox"> <!-- Input fields required for login form-->
+
 			<form id="login" action="loginPage.php" method="post">
 				<h1> Login </h1>
 				<span>
 					<span></span><input id="username" name="Username" type="text" placeholder="Username">
 				</span>
-			
+
 				<span>
 					<span></span><input id="password" name="Password" type="password" placeholder="Password" onKeydown="memSort(event);">
 				</span>
-				
+
 				<div><p id="displaytext_loginpage"><?=$error?></p></div>
-				
+
 				<span>
 					<input id="loginbutton" type="button" value="Login" onclick="myFunction()"/>
 					<input id="registerbutton" type="button" value="Register" onclick="window.location='register_page.php'"/>
 				</span>
-			
+
 			</form>
-				
+
 		</div></center>
-	</body>    
-</html>  
+	</body>
+</html>
