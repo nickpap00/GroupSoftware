@@ -8,7 +8,7 @@ body {
 	background-color:white;
 }
 h1{
-	color: white;
+	color: black;
 	margin-left: 4px;
 	font-family: 'Cairo', sans-serif;
 	font-weight: 300;
@@ -69,6 +69,7 @@ p{
 }
 .head h1{
 	text-align:center;
+	color: white;
 }
 .head button{
 	margin-left: 1px;
@@ -327,5 +328,5 @@ p{
 }	
 /*Stlying for clue paragraph*/
 .clueParagraph{
-	background-color:yellow;
+	background-color:FF9B00;
 }
