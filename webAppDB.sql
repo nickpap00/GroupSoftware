@@ -105,23 +105,25 @@ INSERT INTO locations (placeID, poiName, poiDescription,
    rooms, library and extensive landscaped gardens with BBQ area.', '',
    'What time is Sunday mass?', '11:30am', 'Church?'),
 (8, 'Clayden', 'Provides computational teaching and accommodation for the Q-Step
-   Centre.', '', '', '', ''),
+   Centre.', '', 'How much money is has been invested into the Q-step program
+   throughout the UK', '£19.5 million', 'Rhymes with "K den..."'),
 (9, 'Cornwall House', 'The home of the Lemon Grove and other social areas such
-  as the Grove Diner.', '', 'When is pancake day in the diner?',
-  'Everyday', 'Kernow House'),
+  as the Grove Diner.', '', 'When is pancake day in the diner?', 'Everyday',
+  'Kernow House'),
 (10, 'Cornwall House Swimming Pool', 'The home of the Lemon Grove and other
   social areas such as the Grove Diner.', '', 'How hot is the pool?', '29
    degrees Celcius', 'You may go for a splash'),
 (11, 'Devonshire House', 'From study space to activity rooms, the Guild boasts a
-   range of different spaces to suit your needs. ', '', '', '', 'The home
-    of the county you`re in'),
+   range of different spaces to suit your needs. ', '', 'The loft study space in
+    the Devonshire house can seat how many people?', '118 people', 'The home of
+    the county you`re in'),
 (12, 'Digital Humanities Lab', 'The Digital Humanities Lab is a state of the art
    facility offering unique spaces, equipment and training for staff and
    students. A specialist team conducts and supports innovative Digital
    Humanities research, offers training and teaching, and undertakes the digital
-    preservation and display of historic material and artefacts using advanced
-    technologies.', '', 'How much money has been invested into this
-    building?', '£1.2 million', 'Computerized arts workshop'),
+   preservation and display of historic material and artefacts using advanced
+   technologies.', '', 'How much money has been invested into this building?',
+   '£1.2 million', 'Computerized arts workshop'),
 (13, 'Exeter Northcott Theatre', 'A theatre space that holds lectures as well as
    shows throughout the academic year.', '', 'What year was the theatre
    opened?', '1967', 'Up, baby bed, stage'),
@@ -133,7 +135,8 @@ INSERT INTO locations (placeID, poiName, poiDescription,
    '104', 'The place for children'),
 (16, 'The Forum', 'The Forum is a centrepiece, located at the heart of the
   Streatham Campus. It contains many areas including the largest lecture theatre
-   on the Streatham campus. ', '','', '', 'SID lives here'),
+  on the Streatham campus. ', '', 'How much money was invested into the Forum?',
+  '£48 million', 'SID lives here'),
 (17, 'Geoffrey Pope', 'The Geoffrey Pope building, the central hub of
   Biosciences in Exeter, is one of the tallest buildings on Streatham Campus and
    has magnificent views over the campus and the Exe Valley. ', '', 'How
@@ -150,7 +153,10 @@ INSERT INTO locations (placeID, poiName, poiDescription,
   led by Professor Andrew Randall and Professor Robert Pawlak. ', '',
   'Partly funded by the Alzheimers Society, how old is this organisation?', '40
   years old', 'On the prince of Wales road one can find laboratories'),
-(21, 'Henry Wellcome Building for Biocatalysis', '','', '', '', ''),
+(21, 'Henry Wellcome Building for Biocatalysis', 'This building houses the Exeter
+   Biocatalysis centre which is a multidisciplinary centre that has been
+   established to study enzymes','', 'Enzymes can be defined as what?', 'Natures
+   Enzymes', 'Not a welcome building but a wellcome building'),
 (22, 'Hope Hall', 'Hope Hall accommodates research and administrative staff from
    the College of Engineering, Mathematics and Physical Sciences, postgraduate
    students of the Business School and the Health, Safety and Environment
@@ -178,12 +184,19 @@ INSERT INTO locations (placeID, poiName, poiDescription,
    includes five big event spaces, each holding between 80 and 200 people. ',
    '', 'what is the name of the theatre space?', 'Broadwood', 'K'),
 (28, 'Knightley', 'Stategy and security institute and college of social sciences
-   and international studies', '', '','', 'Deus Vault'),
-(29, 'Lafrowda House', '', '', '','', ''),
+   and international studies', '', 'What fields are taught and researched in the
+    Strategy and Security Institute?', 'Global Security and strategy, particularly
+    in regards to being under intense pressure', 'Deus Vault'),
+(29, 'Lafrowda House', 'Lafrowda house is a large residence on campus on which
+  is very close Cornwall house and its social activities', '', 'How many minutes
+   walk away from lafrowda house is the city centre?', '15 minutes', 'Large
+   residence that overlooks a pool'),
 (30, 'Laver', 'School of Geography, Archaeology and Earth Resources; IT
   Services. ', '', 'Who is this building named after?', 'A member of the
    university council', 'To wash in french'),
-(31, 'Lazenby', '', '', '','', ''),
+(31, 'Lazenby', 'This building contains the centre for Rural Policy Research
+  which is part of the college of social sciences & international studies', '',
+  '', '', ''),
 (32, 'Library', 'The largest collection of books on the university campus. Open
   to staff and students 24/7.', '', 'How many floors are there in the
   library?', '3', 'Where you might find a selection of reading materials'),
@@ -191,8 +204,11 @@ INSERT INTO locations (placeID, poiName, poiDescription,
 transformative science to engineer control of complex biological systems. LSI
 merges research in biology and medicine with ground breaking physical sciences
 technologies and powerful mathematical modelling capabilities. ', '',
-'When was LSI opened?', '2016', ''),
-(34, 'Mary Harris Memorial Chapel', '', '', '','', ''),
+'When was LSI opened?', '2016', 'A system that is not dead is a...'),
+(34, 'Mary Harris Memorial Chapel', 'A Chapel situate at the heart of Streatham
+  campus where everyone is welcome not just university members', '', 'What time
+  can you atend Choral Eucharist or Evensong at the chapel on Sundays?', '7 pm',
+  'A religious building dedicated to someone with initials M.H.'),
 (35, 'Newman Building', 'A collection of shared lecture theatres.', '',
   'How many seats are in Newman Blue?', '350', 'You have a friend in singer song
    writer Randy ______'),
@@ -213,17 +229,31 @@ technologies and powerful mathematical modelling capabilities. ', '',
   regular quiz nights and Rameoke, to pre-Lemmy bar on Saturdays, we have
   something for everyone.', '', 'How much are the curly fries?' ,
   '£2.25', 'Random Access Memory'),
-(41, 'Redcot', '', '', '', '', ''),
+(41, 'Redcot', 'The residence of the Vice chancellor of the university', '',
+  'What tree in the garden of Redcot produced fruit in 2008 for the first time
+  in 15 years?', 'Banana', 'Maroon baby bed'),
 (42, 'Reed Hall', 'A grade II listed building that’s used for events and
   meetings, set in wonderful gardens', '', 'How many people can be
   seated in the dining hall', '140 persons', 'The old mansion'),
-(43, 'Reed Mews Wellbeing Centre', '', '','', '', ''),
-(44, 'Roborough', '', '', '','', ''),
-(45, 'Russell Seal Fitness Centre', '', '','', '', ''),
-(46, 'Sir Christopher Ondaatje Devon Cricket Centre', '', '', '', '',
-   ''),
-(47, 'Sir Henry Wellcome Building for Mood Disorders', '', '', '', '',
-   ''),
+(43, 'Reed Mews Wellbeing Centre', 'This is the first Wellbeing centre ever
+  opened on campus', '', 'In which month of 2012 did this centre open?',
+  'September', 'Where you can go if you are concerned about your mental health'),
+(44, 'Roborough', 'This building hosts three large rehearsal spaces that are
+  fully equiped for lighting and sound. The spaces can be opened up into one huge
+   flat-floored performance space.', '', 'What was the original purpose of this
+   building when it first opened in 1940?', 'The university library', 'A place
+   that offers great practice spaces for the drama department'),
+(45, 'Russell Seal Fitness Centre', 'A fitness centre situated on Streatham
+  campus that aims to provide the ultimate Gym experience to its customers.', '',
+   'How many pieces of Cardio equipment are there in the Gym?', 'Around 100',
+   'Where you can go to play tennis and lift some weights'),
+(46, 'Sir Christopher Ondaatje Devon Cricket Centre', 'Opened in 2009, the
+  £2million Sir Christopher Ondaatje Devon Cricket Centre offers players from
+  the University of Exeter and wider community an opportunity to play cricket
+  and improve their game.', '', 'What is the floor area of the indoor playing
+  area?', '800 square meters', 'Named after a prominent Canadian-english
+  philanthropist born in Sri Lanka'),
+(47, 'Sir Henry Wellcome Building for Mood Disorders', '', '', '', '', ''),
 (48, 'Research', '', '', '', '', ''),
 (49, 'Sports Park', '', '', '', '', ''),
 (50, 'St David`s Retail Services', '', '', '', '', ''),
@@ -231,10 +261,17 @@ technologies and powerful mathematical modelling capabilities. ', '',
 (52, 'Streatham Farm', '', '', '', '', ''),
 (53, 'Student Health Centre', '', '', '', '', ''),
 (54, 'Tennis Centre', '', '', '','', ''),
-(55, 'Thomlea', '', '', '','', ''),
-(56, 'University reception and Great Hall', '', '', '', '', ''),
-(57, 'Washington Singer', '', '', '', '', ''),
-(58, 'Xfi', '', '', '', '', '');
+(55, 'Thornlea', 'A listed building that was the residence of Alderman W.H. Reed,
+   former mayor of Exeter', '', 'This building was referbished in 2006 and its works cost how much?', '£770k', 'Evey rose has its...'),
+(56, 'University reception and Great Hall', '', '', '', ''),
+(57, 'Washington Singer', 'Washington Singer is the home for the Psychology
+  department and the College of Life and Environmental Sciences.', '', 'What was
+   planted at the rear of the builiding in 2015 as a part of the Plan Bee
+   Campaign?', 'Wildflower Meadow', 'A vocalist from the capital of the USA'),
+(58, 'Xfi', 'The Xfi centre for Finance and Investment is a graduate teaching
+  and research institute which is commited to being a internationally recognised
+  centre for excellence in financial market research', '', 'When did the vision
+  of Xfi begin to form?', '2001', 'It is not Sci-fi it`s...');
 
 --
 -- Dumping data for table `users`
