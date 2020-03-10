@@ -32,7 +32,7 @@ CREATE TABLE IF NOT EXISTS `locations` (
   `poiDescription` varchar(500) DEFAULT NULL,
   `latCoordinate` decimal (10, 7) NOT NULL,
   `longCoordinate` decimal (10, 7) NOT NULL,
-  `iconPath`, varchar (255) NOT NULL,
+  `iconPath` varchar (255) NOT NULL,
   `question` varchar(255) NOT NULL,
   `answer` varchar(255) NOT NULL,
   `clue` varchar(255) NOT NULL,
@@ -96,7 +96,7 @@ INSERT INTO `locations` (`placeID`, `poiName`, `poiDescription`,
     technologies.', '', '', '', 'How much money has been invested into this
     building?', '£1.2 million', 'Computerized arts workshop'),
 (13, 'Exeter Northcott Theatre', 'A theatre space that holds lectures as well as
-   shows throughout the academic year.', '', '', '', 'What year was the theatre 
+   shows throughout the academic year.', '', '', '', 'What year was the theatre
    opened?', '1967', 'Up, baby bed, stage'),
 (14, 'Estate Service Centre', 'Ensures that campus is fit for service', '', '',
   '', 'Who is the director of these services?', 'Hugh McCann', ''),
