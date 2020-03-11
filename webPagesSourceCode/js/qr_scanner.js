@@ -12,6 +12,13 @@ function closeNav() {
 
 /*Qr Scanner Code*/
 
+function QR_checkin() {
+				var QR = document.getElementById('QR_textbox').value;
+				if (QR.length == 0){
+					alert("No Building Entered");
+				}
+}
+
 /*Opens the camera on moblie devices or file explorer on desktop*/
 function openQRCamera(node) {
 		console.log(node);
