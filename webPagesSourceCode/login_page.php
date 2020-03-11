@@ -47,10 +47,8 @@
 	<body>
 		<div id="Sidebar" class="sidebar"> <!-- move this to navbar -->
 			<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-			<a href="#">About</a>
-			<a href="#">Services</a>
-			<a href="#">Clients</a>
-			<a href="#">Contact</a>
+			<a href="about.html">About</a>
+			<a href="contact.html">Contact</a>
 		</div>
 
 		<div id="main"> <!-- button to open navbar-->
