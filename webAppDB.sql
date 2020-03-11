@@ -334,6 +334,7 @@ INSERT INTO users (userID, displayName, username, passW, accessID) VALUES
 --
 INSERT INTO tours (tourID, creatorID,  creationDate, tourRoute) VALUES
 (1,1, '2020-02-11','1,5,17,6,3');
+(2,1, '2020-03-11','16,40,11,18,19,23,32,35,38'); -- computer science route
 
 -- --------------------------------------------------------
 
