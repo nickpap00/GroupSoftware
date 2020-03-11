@@ -1,7 +1,7 @@
 /*Navbar Code*/
 function openNav() {
-				document.getElementById("Sidebar").style.width = "250px";
-				document.getElementById("main").style.marginLeft = "250px";
+				document.getElementById("Sidebar").style.width = "40%";
+				document.getElementById("main").style.marginLeft = "25%";
 			}
 
 			/* Set the width of the sidebar to 0 and the left margin of the page content to 0 */
@@ -21,8 +21,10 @@ function openQRCamera(node) {
 			qrcode.callback = function(res) {
 				if(res instanceof Error) {
 					alert("No QR code found. Please make sure the QR code is within the camera's frame and try again.");
+					addMarker(); //REMOVE IN FINAL
 				} else {
 					node.parentNode.previousElementSibling.value = res;
+					addMarker();
 				}
 			};
 		qrcode.decode(reader.result);
@@ -30,7 +32,7 @@ function openQRCamera(node) {
 	reader.readAsDataURL(node.files[0]);
 	/* Packed with Google Closure
 *
-* Ported to JavaScript by Lazar Laszlo 2011 
+* Ported to JavaScript by Lazar Laszlo 2011
 * lazarsoft@gmail.com, www.lazarsoft.info
 *
 * Copyright 2007 ZXing authors

@@ -1,6 +1,8 @@
+<!-- This is the HTML code required for the index -->
 <html>
 <body>
-		
+
+		<!-- This is the side navbar on the page -->
 		<div id="Sidebar" class="sidebar">
 			<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
 			<a href="#">About</a>
@@ -8,7 +10,8 @@
 			<a href="#">Clients</a>
 			<a href="#">Contact</a>
 		</div>
-		
+
+		<!-- This is the populates the main page with the required buttons and fields -->
 		<div id="main">
 			<button class="openbtn" onclick="openNav()">&#9776; Menu </button>
 		</div>
@@ -16,7 +19,7 @@
 <input type=text size=16 placeholder="Building" class=qrcode-text readonly>
 <input type="image" src="camera.png" id="camera_icon" onclick="document.getElementById('QR_scanner').click();" />
 <label class=qrcode-text-btn>
-<input id="QR_scanner" type=file accept="image/*" capture=environment onchange="openQRCamera(this);" tabindex=-1></label> 
+<input id="QR_scanner" type=file accept="image/*" capture=environment onchange="openQRCamera(this);" tabindex=-1></label>
 <input type=button value="Enter" />
 </body>
 <script type='text/javascript'>
@@ -31,6 +34,7 @@
 				document.getElementById("main").style.marginLeft = "0";
 			}
 
+			//function is usedd to open the camerea and look for QR codes in the picture taken.
 	function openQRCamera(node) {
 		console.log(node);
 		var reader = new FileReader();
@@ -48,7 +52,7 @@
 	reader.readAsDataURL(node.files[0]);
 	/* Packed with Google Closure
 *
-* Ported to JavaScript by Lazar Laszlo 2011 
+* Ported to JavaScript by Lazar Laszlo 2011
 * lazarsoft@gmail.com, www.lazarsoft.info
 *
 * Copyright 2007 ZXing authors
