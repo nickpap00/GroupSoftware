@@ -12,6 +12,17 @@ function closeNav() {
 
 /*Qr Scanner Code*/
 
+function QR_checkin() {
+				/*QR is the name of the building found in the qr code*/
+				var QR = document.getElementById('QR_textbox').value;
+				if (QR.length == 0){
+					alert("No Building Entered");
+				}else{
+					/*Query Database for thr building and should update points here can only get points if the clue=qr building*/
+					/*Potentially retreive the questions here*/
+				}
+}
+
 /*Opens the camera on moblie devices or file explorer on desktop*/
 function openQRCamera(node) {
 		console.log(node);

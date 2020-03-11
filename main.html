@@ -1,22 +1,8 @@
 <html>
   <head>
-    <style>
-      /*
-        These are just very basic custom css for each element
-       You can change anything you see fit
-
-       I'm the greatest web page designer to ever live - Nicholas
-
-       The page is terrible but its a start and a basic layout.
-
-       Add any buttons and features you want
-      */
-
-      .body {
-        width: 100%;
-      }
-
-    </style>
+    <script src="mapCode.js"></script>
+	<script src="webPagesSourceCode\js\qr_scanner.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA9mz_14PT9i5meW0Ds5xAHe5nBBmaZqXQ&callback=initMap" async defer></script>
 	<link href="https://fonts.googleapis.com/css?family=Cairo&display=swap" rel="stylesheet">
   </head>
   <link rel="stylesheet" type="text/css" href="webPagesSourceCode\styles_coursework.css"></link>
@@ -45,15 +31,23 @@
     </div>
     <div class="qr_div">
       <button  id="scanbutton" class="button" onclick="document.getElementById('QR_scanner').click()"></button>
-		<input class="buildingtextbox" type=text size=16 placeholder="Building name will appear here" class=qrcode-text readonly/>
+		<input id="QR_textbox" class="buildingtextbox" type=text size=16 placeholder="Building name will appear here" class=qrcode-text readonly/>
 		<label class=qrcode-text-btn>
 		<input id="QR_scanner" type=file accept="image/*" capture=environment onchange="openQRCamera(this);" tabindex=-1></label>
-		<button class="button">Check In</button>
+		<button class="button" onclick="QR_checkin()">Check In</button>
     </div>
-    <script>
-    </script>
-    <script src="mapCode.js"></script>
-	<script src="webPagesSourceCode\js\qr_scanner.js"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA9mz_14PT9i5meW0Ds5xAHe5nBBmaZqXQ&callback=initMap" async defer></script>
+	 <!-- Popup Form to show questions when they scan a building -->
+	<div class="form-popup" id="popup_questions">
+  <form action="/action_page.php" class="form-container">
+    <h1>Question Time</h1>
+	<p>A question goes here</p>
+    <input type="radio" id="male" name="gender" value="male">
+	<label for="male">Male</label><br>
+	<input type="radio" id="female" name="gender" value="female">
+	<label for="female">Female</label><br>
+	<input type="radio" id="other" name="gender" value="other">
+	<label for="other">Other</label>
+  </form>
+</div>
   </body>
 </html>

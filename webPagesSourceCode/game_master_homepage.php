@@ -36,6 +36,7 @@ session_start();
 	</div>
 	<div class="route_creation">
 		<h3>Alternativley create your own routes here:</h3>
+		<input id="main_button" type="button" value="Make Route" onclick="myFunction()"/>
 	</div>
 
 	<script src="js\qr_scanner.js"></script>
