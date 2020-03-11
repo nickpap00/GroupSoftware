@@ -167,10 +167,11 @@ p{
 	display: block;
 	margin: 10px auto;
 	text-align: center;
+	font-size:4vw;
 	border: 0px solid black;
 	border-bottom-width:2px;
 	padding: 14px 10px;
-	width: 200px;
+	width: 50%;
 	outline: none;
 	border-radius: 2px;
 	transition: 0.25s;
@@ -212,8 +213,8 @@ p{
 	display: block;
 	margin: 10px auto;
 	text-align: center;
-	
-	width: 150px;
+	font-size:4vw;
+	width: 50%;
 	padding: 14px 40px;
 	outline: none;
 	border-radius: 2px;
@@ -229,8 +230,8 @@ p{
 	display: block;
 	margin: 10px auto;
 	text-align: center;
-	
-	width: 150px;
+	font-size:4vw;
+	width: 50%;
 	padding: 14px 40px;
 	outline: none;
 	border-radius: 2px;
