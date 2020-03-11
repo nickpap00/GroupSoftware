@@ -2,6 +2,7 @@
 	session_start(); // Starts the session so this page can access the details from the session
 ?>
 <html>
+ <title>Login</title>
 <link rel="stylesheet" type="text/css" href="../css/styles_coursework.css"></link>
 	<head>
 

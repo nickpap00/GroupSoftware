@@ -1,6 +1,6 @@
 <?php session_start(); ?>
 <html>
-
+ <title>Main</title>
 	<head>
 	    <?php 
 	    	include_once("php/scriptandstyles.php");

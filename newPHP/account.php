@@ -1,5 +1,6 @@
 <?php session_start();  ?>
 <html>
+ <title>Account</title>
 	<head>
 		<?php include_once("scriptandstyles.php"); // This includes the scriptandstyles page which includes all the style sheet and the jquery scripts
 			  require_once("userClassObject.php"); // Includes userClassObject.php - lets me access the variables in the session

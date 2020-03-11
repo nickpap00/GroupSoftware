@@ -1,4 +1,5 @@
 <html> 
+ <title>Register</title>
 <link rel="stylesheet" type="text/css" href="../css/styles_coursework.css">
 	<head> 
 	

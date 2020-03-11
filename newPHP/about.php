@@ -1,4 +1,5 @@
 <html>
+ <title>About</title>
   <head>
 	<link href="https://fonts.googleapis.com/css?family=Cairo&display=swap" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="../css/styles_coursework.css">
