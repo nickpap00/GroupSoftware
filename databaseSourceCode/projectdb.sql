@@ -57,7 +57,7 @@ CREATE TABLE IF NOT EXISTS `tours` (
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `tours`
+-- Dumping data for table `tables`
 --
 INSERT INTO `tours` (`tourID`, `creatorID`,  `creationDate`, `tourRoute`) VALUES
 (1,1, `2020-02-11`,`1,5,17,6,3`);
