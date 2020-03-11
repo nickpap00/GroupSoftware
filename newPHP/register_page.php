@@ -77,10 +77,8 @@
 		
 		<div id="Sidebar" class="sidebar">
 			<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-			<a href="#">About</a>
-			<a href="#">Services</a>
-			<a href="#">Clients</a>
-			<a href="#">Contact</a>
+			<a href="about.php">About</a>
+			<a href="contact.php">Contact</a>
 		</div>
 		
 		<div id="main">

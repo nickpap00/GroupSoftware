@@ -15,7 +15,7 @@
           <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
     	  <a href="index.php">Home</a>
           <a href="about.php">About</a>
-          <a href="">Contact</a>
+          <a href="contact.php">Contact</a>
         </div>
         
         <div class="head" id="main">
