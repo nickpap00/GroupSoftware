@@ -1,0 +1,58 @@
+<html>
+  <head>
+    <style>
+      /*
+        These are just very basic custom css for each element
+       You can change anything you see fit
+
+       I'm the greatest web page designer to ever live - Nicholas
+
+       The page is terrible but its a start and a basic layout.
+
+       Add any buttons and features you want
+      */
+
+      .body {
+        width: 100%;
+      }
+
+    </style>
+	<link href="https://fonts.googleapis.com/css?family=Cairo&display=swap" rel="stylesheet">
+  </head>
+  <link rel="stylesheet" type="text/css" href="styles_coursework.css"></link>
+  <body>
+
+
+	<!-- Title of our game / seperation from top navigation -->
+    <div id="title"></div>
+	<!-- Creates Sidebar for sitewide links -->
+	<div id="Sidebar" class="sidebar">
+		<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+		<a href="#">Leaderboard</a>
+		<a href="webPagesSourceCode/about.html">About</a>
+		<a href="webPagesSourceCode/contact.html">Contact</a>
+	</div>
+		<div class="head" id="main">
+			<button class="openbtn" onclick="openNav()">&#9776; Menu </button>
+			<h1>Game Master Home</h1>
+		</div>
+	<div class="route_selection">
+		<h3>Select a Route from the list below to make a game.</h3>
+			<label for="routes">Choose a route:</label>
+
+			<select id="routes">
+				<option value="r1">R1</option>
+				<option value="r2">R2</option>
+				<option value="r3">R3</option>
+				<option value="r3">R4</option>
+			</select>
+			<input id="main_button" type="button" value="Make Game" onclick="myFunction()"/>
+	</div>
+	<div class="route_creation">
+		<h3>Alternativley create your own routes here:</h3>
+	</div>
+
+	<script src="js\qr_scanner.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA9mz_14PT9i5meW0Ds5xAHe5nBBmaZqXQ&callback=initMap" async defer></script>
+  </body>
+</html>

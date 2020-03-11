@@ -152,8 +152,7 @@ p{
 	font-weight: 300;
 	border: 2px solid black;
 	border-radius: 8px;
-	background-color: #005dab;
-	height:fit-content;
+	background-color:#005dab;
 	width: 75%;
 	padding: 40px;
 	position: absolute;
@@ -168,18 +167,17 @@ p{
 	display: block;
 	margin: 10px auto;
 	text-align: center;
+	font-size:4vw;
 	border: 0px solid black;
 	border-bottom-width:2px;
 	padding: 14px 10px;
 	width: 50%;
-	height: 10%;
-	font-size:3vw;
 	outline: none;
 	border-radius: 2px;
 	transition: 0.25s;
 }
 .inputbox input[type = "text"]:focus,.inputbox input[type = "password"]:focus{
-	width: 55%;
+	width: 280px;
 }
 .inputbox input[type = "button"]{
 	border:0;
@@ -187,23 +185,58 @@ p{
 	display: block;
 	margin: 10px auto;
 	text-align: center;
-	font-size: 3vw;
-	width: 45%;
+	
+	width: 150px;
 	padding: 14px 40px;
 	outline: none;
 	border-radius: 2px;
 	transition: 0.25s;
 	cursor: pointer;
 }
-
+#main_button{
+	border:2px solid black;
+	background: white;
+	display: block;
+	margin: 10px auto;
+	text-align: center;
+	font-size:4vw;
+	width: 55%;
+	padding: 14px 40px;
+	outline: none;
+	border-radius: 2px;
+	transition: 0.25s;
+	cursor: pointer;
+}
 #loginbutton{
 	border: 2px solid #29d666;
+	background: none;
+	display: block;
+	margin: 10px auto;
+	text-align: center;
+	font-size:4vw;
+	width: 50%;
+	padding: 14px 40px;
+	outline: none;
+	border-radius: 2px;
+	transition: 0.25s;
+	cursor: pointer;
 }
 #loginbutton:hover{
 	background: #29d666;
 }
 #registerbutton{
 	border: 2px solid orange;
+	background: none;
+	display: block;
+	margin: 10px auto;
+	text-align: center;
+	font-size:4vw;
+	width: 50%;
+	padding: 14px 40px;
+	outline: none;
+	border-radius: 2px;
+	transition: 0.25s;
+	cursor: pointer;
 }
 #registerbutton:hover{
 	background: orange;
@@ -310,4 +343,30 @@ p{
 /*Stlying for clue paragraph*/
 .clueParagraph{
 	background-color:FF9B00;
+}
+
+/*GameMaster Stlying*/
+
+.route_selection{
+	margin: 10px auto;
+	padding: 5px 5px;
+	border:2px solid black;
+	width:90%;
+	position:block;
+	border-radius:5px;
+	text-align:center;
+	font-family:"HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+	font-weight: 300;
+	font-size:4vw;
+}
+.route_selection select{
+	margin:auto;
+	display:block;
+	width:25%;
+	height:auto;
+	font-size:4vw;
+	background-color:orange;
+}
+.select-selected{
+	background-color:#005dab;
 }
