@@ -24,7 +24,7 @@ CREATE TABLE Locations (
     Question VARCHAR(255) NOT NULL,
     Answer VARCHAR(255) NOT NULL,
     clue VARCHAR(255) NOT NULL
-)  ENGINE=INNODB AUTO_INCREMENT=59 DEFAULT CHARSET=LATIN1;
+)  ENGINE=INNODB AUTO_INCREMENT=63 DEFAULT CHARSET=LATIN1;
 
 --
 -- Table structure for table `users`
@@ -45,7 +45,7 @@ CREATE TABLE Bookings (
     tourID INT NOT NULL,
     userID INT UNIQUE NULL,
     bookingDate DATETIME NOT NULL,
-    lastLocation VARCHAR(40),
+    lastLocation INT DEFAULT -1,
     score INT
 );
 
@@ -97,7 +97,7 @@ INSERT INTO locations (placeID, poiName, poiDescription, latCoordinate, longCoor
   purpose rooms.', '50.729917', '-3.538355', 'A_icon.png', 'Names after Lord Alexander of
   Weedon QC, what significance does he have to the university?', 'Former
   chancellor', 'The name is shared with a great king of Macedonia'),
-(6, 'byme_house', 'Owned by the University, it is used as office space for
+(6, 'byrne_house', 'Owned by the University, it is used as office space for
   Egenis, the Centre for the Study of Life.','50.734465', '-3.525386', 'B_icon.png', 'Now
   due for demolition what is the name of the building', 'Spreytonway', 'You can
   say it is like a ring of fire'),
@@ -340,6 +340,10 @@ INSERT INTO users (userID, displayName, username, passW, accessID) VALUES
 INSERT INTO tours (tourID, creatorID,  creationDate, tourRoute) VALUES
 (1,1, '2020-02-11','1,5,17,6,3');
 (2,1, '2020-03-11','16,40,11,18,19,23,32,35,38'); -- computer science route
+
+
+INSERT INTO bookings (bookingID, tourID, userID, bookingDate, score) VALUES
+(1,2,1,'2020-03-11', 0);
 
 -- --------------------------------------------------------
 
