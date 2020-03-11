@@ -128,9 +128,10 @@ INSERT INTO locations (placeID, poiName, poiDescription, latCoordinate, longCoor
    invested into this building?', '£1.2 million', 'Computerized arts workshop'),
 (13, 'Exeter Northcott Theatre', 'A theatre space that holds lectures as well as
    shows throughout the academic year.','50.735883', '-3.535268', '', 'What year
-    was the theatre opened?', '1967', 'Up, baby bed, stage'),
+   was the theatre opened?', '1967', 'Up, baby bed, stage'),
 (14, 'Estate Service Centre', 'Ensures that campus is fit for service',
-  '50.735199', '-5.540634', '', 'Who is the director of these services?', 'Hugh McCann', ''),
+  '50.735199', '-5.540634', '', 'Who is the director of these services?',
+  'Hugh McCann', 'Initials E.S.C'),
 (15, 'Family Centre', 'There is a new nursery on the Streatham Campus. Owlets
   provides high quality childcare and early learning for babies from 3 months to
    five years old. ', '50.736777', '-3.537898', '', 'How many children can the
@@ -204,7 +205,8 @@ INSERT INTO locations (placeID, poiName, poiDescription, latCoordinate, longCoor
    'A member of the university council', 'To wash in french'),
 (31, 'Lazenby', 'This building contains the centre for Rural Policy Research
   which is part of the college of social sciences & international studies',
-  '50.734021', '-3.525131', '', '', ''),
+  '50.734021', '-3.525131', '', 'What are the A level entry requirements for BSc
+   Human Sciences?', 'AAB-ABB', 'blayzen'),
 (32, 'Library', 'The largest collection of books on the university campus. Open
   to staff and students 24/7.', '50.735175', '-3.531898', '', 'How many floors
   are there in the library?', '3', 'Where you might find a selection of reading
@@ -276,16 +278,24 @@ INSERT INTO locations (placeID, poiName, poiDescription, latCoordinate, longCoor
    domains of activity does the research of the mood disorder work within?',
    'Understanding, Access, Translation', 'Where one may go to study depression'),
 (48, 'Research', 'This building as connected to the Washington Singer building',
-  '50.737613', '-3.532603', '', '', '', 'A building named after an act of investigating something new'),
+  '50.737613', '-3.532603', '', 'What fields does the university offer research
+  oppoortunities in?', 'Sciences, social sciences, business, humanities and
+  arts', 'A building named after an act of investigating something new'),
 (49, 'Sports Park', 'A large multi-purpose sports facility that contains a gym,
   astroturf pitches, squash courts, sports halls, cricket, Tennis, Golf
-  facilities and swimming pools', '50.737798', '-3.537260', '', 'How much money
+  facilities and swimming pools', '50.737798', '-3.537260','', 'How much money
   has been invested in the tennis centre over the last 15 years?', '£3 million',
   'rotpss karp'),
 (50, 'St David`s Retail Services', '', '50.729338', '-3.543483', '', '', '', ''),
-(51, 'Streatham Court', '', '50.735717', '-3.530950', '', '', '', ''),
+(51, 'Streatham Court', 'Streatham court is one of three buildings over which
+  the business school is spread and is home to the business school career zone.',
+  '50.735717', '-3.530950', '', 'What is the capacity of lecture theatre A in
+  streatham court?', '268', 'A court but not one a sport is played on'),
 (52, 'Streatham Farm', '', '50.735231', '-3.532308', '', '', '', ''),
-(53, 'Student Health Centre', '', '50.735819', '-3.538091', '', '', '', 'psuedo hospital'),
+(53, 'Student Health Centre', 'Where sutdents can go for any minor health
+  concerns they may have that they feel do no warrent a trip to the hospital',
+  '50.735819', '-3.538091', '', 'At what time on weekdays excluding Tuesdays
+  does the student health centre open?', '8.30am', 'psuedo hospital'),
 (54, 'Tennis Centre', 'Home to some of the best facilities in the south west.
   The centre has four indoor acrylic courts, Six indoor covered Matchplay 2
   courts and Two outdoor Macadam court', '50.738854', '-3.536593', '', 'Where
@@ -294,7 +304,11 @@ INSERT INTO locations (placeID, poiName, poiDescription, latCoordinate, longCoor
   former mayor of Exeter', '50.730127', '-3.538668' '', 'This building was
   referbished in 2006 and its works cost how much?', '£770k', 'Evey rose has
   its...'),
-(56, 'University reception and Great Hall', '', '50.735447', '-3.534468', '', '', ''),
+(56, 'University reception and Great Hall', 'The reception handles general
+  enquiries and visitors to the University and the great hall is where may large
+  events take place such as graduation', '50.735447', '-3.534468', '', 'What is
+  the number to call the main switchboard at the university?', '01392661000',
+  'The first place you tend to visit when you enter a business building'),
 (57, 'Washington Singer', 'Washington Singer is the home for the Psychology
   department and the College of Life and Environmental Sciences.', '50.733171',
   '-3.536535', '', 'What was planted at the rear of the builiding in 2015 as a
