@@ -165,118 +165,146 @@ INSERT INTO locations (placeID, poiName, poiDescription, latCoordinate, longCoor
 (22, 'Hope Hall', 'Hope Hall accommodates research and administrative staff from
    the College of Engineering, Mathematics and Physical Sciences, postgraduate
    students of the Business School and the Health, Safety and Environment
-   Office. ', '50.733847', '-3.526583', '', 'This building has a bar inside, what is the name of
-   this bar?', 'The Badger bar', 'An optimistic building'),
+   Office. ', '50.733847', '-3.526583', '', 'This building has a bar inside,
+   what is the name of this bar?', 'The Badger bar', 'An optimistic building'),
 (23, 'Innovation Centre', 'Originally a separate building for start-up companies
    from the University is now being transformed into the home of the Comp Sci
-   Department.', '50.738360', '-3.531078', '', 'How many computers are in the lovelace lab?', '',
-   'This building is said to be revolutionary'),
+   Department.', '50.738360', '-3.531078', '', 'How many computers are in the
+   lovelace lab?', '', 'This building is said to be revolutionary'),
 (24, 'Institute of Arab and Islamic Studies', 'The Institute of Arab and Islamic
    Studies is a centre for research and teaching in the Arab and Muslim world.',
-	 '50.736378', '-3.537213', '', 'The Sharjah Scholarship is available to MArabic students, how
-    much is this scholarship?', '£1,500 per year', 'This building is built in a
-    middle eastern theme'),
+	 '50.736378', '-3.537213', '', 'The Sharjah Scholarship is available to Marabic
+    students, how much is this scholarship?', '£1,500 per year', 'This building
+    is built in a middle eastern theme'),
 (25, 'INTO international Study centre', 'The focus of the INTO University of
   Exeter joint venture is to provide academic pathways that enable international
    students to progress to University of Exeter degree programmes. ',
-    '50.736098', '-3.533812', '', 'Approximately how many different nationalities of students attend the
-   university?', '130', 'The opposite of OUT OF'),
+    '50.736098', '-3.533812', '', 'Approximately how many different nationalities
+    of students attend the university?', '130', 'The opposite of OUT OF'),
 (26, 'Kay Building', 'Formerly known as the Kay Laboratories, this building is
-  adjacent to the Harrison Building. ', '50.737745', '-3.531855', '', 'Who is this building named
-  after?', 'Harry Kay (former vice-chancellor)', 'It has a large chimney'),
+  adjacent to the Harrison Building. ', '50.737745', '-3.531855', '', 'Who is
+  this building named after?', 'Harry Kay (former vice-chancellor)', 'It has a
+  large chimney'),
 (27, 'Kay House Duryard', 'Refurbished in recent years, the University’s
   state-of-the-art music facility is an incredibly versatile venue. The building
    includes five big event spaces, each holding between 80 and 200 people. ',
-   '50.740977', '-3.544562', '', 'what is the name of the theatre space?', 'Broadwood', 'K'),
+   '50.740977', '-3.544562', '', 'what is the name of the theatre space?',
+   'Broadwood', 'K'),
 (28, 'Knightley', 'Stategy and security institute and college of social sciences
-   and international studies', '50.732628', '-3.538142', '', 'What fields are taught and researched in the
-    Strategy and Security Institute?', 'Global Security and strategy, particularly
-    in regards to being under intense pressure', 'Deus Vault'),
+   and international studies', '50.732628', '-3.538142', '', 'What fields are
+   taught and researched in the Strategy and Security Institute?', 'Global
+   Security and strategy, particularly in regards to being under intense
+   pressure', 'Deus Vault'),
 (29, 'Lafrowda House', 'Lafrowda house is a large residence on campus on which
-  is very close Cornwall house and its social activities', '50.735311', '-3.528104', '', 'How many minutes
-   walk away from lafrowda house is the city centre?', '15 minutes', 'Large
-   residence that overlooks a pool'),
+  is very close Cornwall house and its social activities', '50.735311',
+  '-3.528104', '', 'How many minutes walk away from lafrowda house is the city
+  centre?', '15 minutes', 'Large residence that overlooks a pool'),
 (30, 'Laver', 'School of Geography, Archaeology and Earth Resources; IT
-  Services. ', '50.737371', '-3.533482', '', 'Who is this building named after?', 'A member of the
-   university council', 'To wash in french'),
+  Services. ', '50.737371', '-3.533482', '', 'Who is this building named after?',
+   'A member of the university council', 'To wash in french'),
 (31, 'Lazenby', 'This building contains the centre for Rural Policy Research
-  which is part of the college of social sciences & international studies', '50.734021', '-3.525131', '', '', ''),
+  which is part of the college of social sciences & international studies',
+  '50.734021', '-3.525131', '', '', ''),
 (32, 'Library', 'The largest collection of books on the university campus. Open
-  to staff and students 24/7.', '50.735175', '-3.531898', '', 'How many floors are there in the
-  library?', '3', 'Where you might find a selection of reading materials'),
+  to staff and students 24/7.', '50.735175', '-3.531898', '', 'How many floors
+  are there in the library?', '3', 'Where you might find a selection of reading
+  materials'),
 (33, 'Living Systems', 'The Living Systems Institute (LSI) pioneer’s
-transformative science to engineer control of complex biological systems. LSI
-merges research in biology and medicine with ground breaking physical sciences
-technologies and powerful mathematical modelling capabilities. ', '50.737068', '-3.534877', '',
-'When was LSI opened?', '2016', 'A system that is not dead is a...'),
+  transformative science to engineer control of complex biological systems. LSI
+  merges research in biology and medicine with ground breaking physical sciences
+  technologies and powerful mathematical modelling capabilities. ', '50.737068',
+  '-3.534877', '', 'When was LSI opened?', '2016', 'A system that is not dead is
+  a...'),
 (34, 'Mary Harris Memorial Chapel', 'A Chapel situate at the heart of Streatham
-  campus where everyone is welcome not just university members', '50.733530', '-3.534708', '', 'What time
-  can you atend Choral Eucharist or Evensong at the chapel on Sundays?', '7 pm',
-  'A religious building dedicated to someone with initials M.H.'),
-(35, 'Newman Building', 'A collection of shared lecture theatres.', '50.736527', '-3.535866', '',
-  'How many seats are in Newman Blue?', '350', 'You have a friend in singer song
-   writer Randy ______'),
+  campus where everyone is welcome not just university members', '50.733530',
+  '-3.534708', '', 'What time can you atend Choral Eucharist or Evensong at the
+  chapel on Sundays?', '7 pm', 'A religious building dedicated to someone with
+  initials M.H.'),
+(35, 'Newman Building', 'A collection of shared lecture theatres.', '50.736527',
+   '-3.535866', '', 'How many seats are in Newman Blue?', '350', 'You have a
+   friend in singer song writer Randy ______'),
 (36, 'Northcote House', 'Where the majority of administrative staff are located
-  including, estate patrol. timetabling, and financial services.', '50.735320', '-3.535000', '',
-  'Name after Stafford Northcote, what was his title?', 'First earl of
-  Iddesleigh', 'Up, coat, home'),
+  including, estate patrol. timetabling, and financial services.', '50.735320',
+  '-3.535000', '','Name after Stafford Northcote, what was his title?', 'First
+  earl of Iddesleigh', 'Up, coat, home'),
 (37, 'Old Library', 'The Old Library is open throughout the academic year as a
   self-service library. The building also has seminar rooms that are shared. ',
-  '50.733276', '-3.534085', '', 'On what level is seminar room C?', '-1', 'Ancient book place'),
+  '50.733276', '-3.534085', '', 'On what level is seminar room C?', '-1',
+  'Ancient book place'),
 (38, 'Peter Chalk Centre', 'Seminar Rooms and study spaces are available here.',
-   '50.736252', '-3.536090', '', 'How many seminar rooms are there.', '', 'Rabbit Draw Middle'),
+   '50.736252', '-3.536090', '', 'How many seminar rooms are there.', '', 'Rabbit
+   Draw Middle'),
 (39, 'Physics', 'The largst building on campus standing at 38m and built in
-  1967', '50.737179', '-3.536048', '', 'How many floors does this building have?', '11 (including
-    below ground)', 'The tall one'),
+  1967', '50.737179', '-3.536048', '', 'How many floors does this building have?',
+   '11 (including below ground)', 'The tall one'),
 (40, 'The Ram', 'Open from 09:00 every day, bringing you freshly prepared pub
   grub and friendly service, the Ram Bar is your social hub on campus. From
   regular quiz nights and Rameoke, to pre-Lemmy bar on Saturdays, we have
-  something for everyone.', '50.735228', '-3.534398', '', 'How much are the curly fries?' ,
-  '£2.25', 'Random Access Memory'),
-(41, 'Redcot', 'The residence of the Vice chancellor of the university', '50.733330', '-3.538249', '',
-  'What tree in the garden of Redcot produced fruit in 2008 for the first time
-  in 15 years?', 'Banana', 'Maroon baby bed'),
+  something for everyone.', '50.735228', '-3.534398', '', 'How much are the
+  curly fries?', '£2.25', 'Random Access Memory'),
+(41, 'Redcot', 'The residence of the Vice chancellor of the university',
+  '50.733330', '-3.538249', '', 'What tree in the garden of Redcot produced fruit
+   in 2008 for the first time in 15 years?', 'Banana', 'Maroon baby bed'),
 (42, 'Reed Hall', 'A grade II listed building that’s used for events and
-  meetings, set in wonderful gardens', '50.735231', '-3.537504', '', 'How many people can be
-  seated in the dining hall', '140 persons', 'The old mansion'),
+  meetings, set in wonderful gardens', '50.735231', '-3.537504', '', 'How many
+  people can be seated in the dining hall', '140 persons', 'The old mansion'),
 (43, 'Reed Mews Wellbeing Centre', 'This is the first Wellbeing centre ever
-  opened on campus', '50.735996', '-3.538275', '', 'In which month of 2012 did this centre open?',
-  'September', 'Where you can go if you are concerned about your mental health'),
+  opened on campus', '50.735996', '-3.538275', '', 'In which month of 2012 did
+  this centre open?','September', 'Where you can go if you are concerned about
+  your mental health'),
 (44, 'Roborough', 'This building hosts three large rehearsal spaces that are
   fully equiped for lighting and sound. The spaces can be opened up into one huge
-   flat-floored performance space.', '50.733227', '-3.535198', '', 'What was the original purpose of this
-   building when it first opened in 1940?', 'The university library', 'A place
-   that offers great practice spaces for the drama department'),
+   flat-floored performance space.', '50.733227', '-3.535198', '', 'What was the
+   original purpose of this building when it first opened in 1940?', 'The
+   university library', 'A place that offers great practice spaces for the drama
+   department'),
 (45, 'Russell Seal Fitness Centre', 'A fitness centre situated on Streatham
-  campus that aims to provide the ultimate Gym experience to its customers.', '50.737995', '-3.536727', '',
-   'How many pieces of Cardio equipment are there in the Gym?', 'Around 100',
-   'Where you can go to play tennis and lift some weights'),
+  campus that aims to provide the ultimate Gym experience to its customers.',
+  '50.737995', '-3.536727', '', 'How many pieces of Cardio equipment are there
+  in the Gym?', 'Around 100', 'Where you can go to play tennis and lift some
+  weights'),
 (46, 'Sir Christopher Ondaatje Devon Cricket Centre', 'Opened in 2009, the
   £2million Sir Christopher Ondaatje Devon Cricket Centre offers players from
   the University of Exeter and wider community an opportunity to play cricket
-  and improve their game.', '50.738364', '-3.537414', '', 'What is the floor area of the indoor playing
-  area?', '800 square meters', 'Named after a prominent Canadian-english
-  philanthropist born in Sri Lanka'),
-(46, 'Sir Christopher Ondaatje Devon Cricket Centre', '', '50.738364', '-3.537414', '', '', '', ''),
-(47, 'Sir Henry Wellcome Building for Mood Disorders', '', '50.733355', '-3.536252', '', '', '', ''),
-(48, 'Research', '', '50.737613', '-3.532603', '', '', '', ''),
-(49, 'Sports Park', '', '50.737798', '-3.537260', '', '', '', ''),
+  and improve their game.', '50.738364', '-3.537414', '', 'What is the floor
+  area of the indoor playing area?', '800 square meters', 'Named after a
+  prominent Canadian-english philanthropist born in Sri Lanka'),
+(47, 'Sir Henry Wellcome Building for Mood Disorders', 'The mood disorder centre
+   is a partnership between the NHS and the university of exeter that aims to
+   conduct psychological research, assessment, treatment and training to benefit
+   people that suffer from depression', '50.733355', '-3.536252', '', 'What three
+   domains of activity does the research of the mood disorder work within?',
+   'Understanding, Access, Translation', 'Where one may go to study depression'),
+(48, 'Research', 'This building as connected to the Washington Singer building',
+  '50.737613', '-3.532603', '', '', '', 'A building named after an act of investigating something new'),
+(49, 'Sports Park', 'A large multi-purpose sports facility that contains a gym,
+  astroturf pitches, squash courts, sports halls, cricket, Tennis, Golf
+  facilities and swimming pools', '50.737798', '-3.537260', '', 'How much money
+  has been invested in the tennis centre over the last 15 years?', '£3 million',
+  'rotpss karp'),
 (50, 'St David`s Retail Services', '', '50.729338', '-3.543483', '', '', '', ''),
 (51, 'Streatham Court', '', '50.735717', '-3.530950', '', '', '', ''),
 (52, 'Streatham Farm', '', '50.735231', '-3.532308', '', '', '', ''),
-(53, 'Student Health Centre', '', '50.735819', '-3.538091', '', '', '', ''),
-(54, 'Tennis Centre', '', '50.738854', '-3.536593', '', '', '', ''),
+(53, 'Student Health Centre', '', '50.735819', '-3.538091', '', '', '', 'psuedo hospital'),
+(54, 'Tennis Centre', 'Home to some of the best facilities in the south west.
+  The centre has four indoor acrylic courts, Six indoor covered Matchplay 2
+  courts and Two outdoor Macadam court', '50.738854', '-3.536593', '', 'Where
+  are the two outdoor Macadam courts located?', 'Mardon Hall', 'stinne rentec'),
 (55, 'Thornlea', 'A listed building that was the residence of Alderman W.H. Reed,
-   former mayor of Exeter', '50.730127', '-3.538668' '', 'This building was referbished in 2006 and its works cost how much?', '£770k', 'Evey rose has its...'),
+  former mayor of Exeter', '50.730127', '-3.538668' '', 'This building was
+  referbished in 2006 and its works cost how much?', '£770k', 'Evey rose has
+  its...'),
 (56, 'University reception and Great Hall', '', '50.735447', '-3.534468', '', '', ''),
 (57, 'Washington Singer', 'Washington Singer is the home for the Psychology
-  department and the College of Life and Environmental Sciences.', '50.733171', '-3.536535', '', 'What was
-   planted at the rear of the builiding in 2015 as a part of the Plan Bee
-   Campaign?', 'Wildflower Meadow', 'A vocalist from the capital of the USA'),
+  department and the College of Life and Environmental Sciences.', '50.733171',
+  '-3.536535', '', 'What was planted at the rear of the builiding in 2015 as a
+  part of the Plan Bee Campaign?', 'Wildflower Meadow', 'A vocalist from the
+  capital of the USA'),
 (58, 'Xfi', 'The Xfi centre for Finance and Investment is a graduate teaching
   and research institute which is commited to being a internationally recognised
-  centre for excellence in financial market research', '50.736035', '-3.530353', '', 'When did the vision
-  of Xfi begin to form?', '2001', 'It is not Sci-fi it`s...');
+  centre for excellence in financial market research', '50.736035', '-3.530353',
+  '', 'When did the vision of Xfi begin to form?', '2001', 'It is not Sci-fi
+  it`s...');
 
 --
 -- Dumping data for table `users`
