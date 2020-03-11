@@ -69,7 +69,7 @@ CREATE TABLE Tours (
 -- Dumping data for table `locations`
 --
 
-INSERT INTO locations (placeID, poiName, poiDescription, latCoordinate, longCoordinate
+INSERT INTO locations (placeID, poiName, poiDescription, latCoordinate, longCoordinate,
   iconPath, question, answer,
   clue)
    VALUES
@@ -116,7 +116,7 @@ INSERT INTO locations (placeID, poiName, poiDescription, latCoordinate, longCoor
   social areas such as the Grove Diner.', '50.734522', '-3.529325', 'C_icon.png', 'How hot
    is the pool?', '29 degrees Celcius', 'You may go for a splash'),
 (11, 'devonshire_house', 'From study space to activity rooms, the Guild boasts a
-   range of different spaces to suit your needs. ', '50.735153', '-3.534298' 'D_icon.png',
+   range of different spaces to suit your needs. ', '50.735153', '-3.534298', 'D_icon.png',
     'The loft study space in the Devonshire house can seat how many people?',
     '118 people', 'The home of the county you`re in'),
 (12, 'digital_humanities_lab', 'The Digital Humanities Lab is a state of the art
@@ -301,7 +301,7 @@ INSERT INTO locations (placeID, poiName, poiDescription, latCoordinate, longCoor
   courts and Two outdoor Macadam court', '50.738854', '-3.536593', 'T_icon.png', 'Where
   are the two outdoor Macadam courts located?', 'Mardon Hall', 'stinne rentec'),
 (55, 'thornlea', 'A listed building that was the residence of Alderman W.H. Reed,
-  former mayor of Exeter', '50.730127', '-3.538668' 'T_icon.png', 'This building was
+  former mayor of Exeter', '50.730127', '-3.538668', 'T_icon.png', 'This building was
   referbished in 2006 and its works cost how much?', '£770k', 'Evey rose has
   its...'),
 (56, 'university_reception_and_great_hall', 'The reception handles general
