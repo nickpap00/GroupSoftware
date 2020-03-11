@@ -170,8 +170,9 @@ INSERT INTO locations (placeID, poiName, poiDescription, latCoordinate, longCoor
    what is the name of this bar?', 'The Badger bar', 'An optimistic building'),
 (23, 'innovation_centre', 'Originally a separate building for start-up companies
    from the University is now being transformed into the home of the Comp Sci
-   Department.', '50.738360', '-3.531078', 'I_icon.png', 'How many computers are in the
-   lovelace lab?', '', 'This building is said to be revolutionary'),
+   Department.', '50.738360', '-3.531078', 'I_icon.png', 'In what year was Augusta
+    Ada Lovelace whom the Lovelace lab was named after born?', '1815', 'This
+    building is said to be revolutionary'),
 (24, 'institute_of_arab_and_islamic_studies', 'The Institute of Arab and Islamic
    Studies is a centre for research and teaching in the Arab and Muslim world.',
 	 '50.736378', '-3.537213', 'I_icon.png', 'The Sharjah Scholarship is available to Marabic
@@ -234,8 +235,8 @@ INSERT INTO locations (placeID, poiName, poiDescription, latCoordinate, longCoor
   '50.733276', '-3.534085', 'O_icon.png', 'On what level is seminar room C?', '-1',
   'Ancient book place'),
 (38, 'peter_chalk_centre', 'Seminar Rooms and study spaces are available here.',
-   '50.736252', '-3.536090', 'P_icon.png', 'How many seminar rooms are there.', '', 'Rabbit
-   Draw Middle'),
+   '50.736252', '-3.536090', 'P_icon.png', 'What is the name of the cafe in Peter
+    Chalk', 'Barisca', 'Rabbit Draw Middle'),
 (39, 'physics', 'The largst building on campus standing at 38m and built in
   1967', '50.737179', '-3.536048', 'P_icon.png', 'How many floors does this building have?',
    '11 (including below ground)', 'The tall one'),
@@ -318,7 +319,11 @@ INSERT INTO locations (placeID, poiName, poiDescription, latCoordinate, longCoor
   and research institute which is commited to being a internationally recognised
   centre for excellence in financial market research', '50.736035', '-3.530353',
   'X_icon.png', 'When did the vision of Xfi begin to form?', '2001', 'It is not Sci-fi
-  it`s...');
+  it`s...'),
+(59, 'car_park_amory', 'This is a car park outside of Amory.', '50.737383', '-3.530348', 'parking1.png', '', '', ''),
+(60, 'car_park_forum', 'This is a car park outside of forum', '50.736247', '-3.534458', 'parking1.png', '', '', ''),
+(61, 'car_park_sports', 'This is a car park outside of the sports park', '50.737641', '-3.536463', 'parking1.png', '', '', ''),
+(62, 'car_park_queens', 'This is a car park outside of Queens', '50.733906', '-3.534868', 'parking1.png', '', '', '');
 
 --
 -- Dumping data for table `users`
