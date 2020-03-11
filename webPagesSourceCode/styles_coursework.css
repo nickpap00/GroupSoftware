@@ -152,8 +152,9 @@ p{
 	font-weight: 300;
 	border: 2px solid black;
 	border-radius: 8px;
-	background-color: white;
-	width: 300px;
+	background-color: #005dab;
+	height:fit-content;
+	width: 75%;
 	padding: 40px;
 	position: absolute;
 	top: 50%;
@@ -170,13 +171,15 @@ p{
 	border: 0px solid black;
 	border-bottom-width:2px;
 	padding: 14px 10px;
-	width: 200px;
+	width: 50%;
+	height: 10%;
+	font-size:3vw;
 	outline: none;
 	border-radius: 2px;
 	transition: 0.25s;
 }
 .inputbox input[type = "text"]:focus,.inputbox input[type = "password"]:focus{
-	width: 280px;
+	width: 55%;
 }
 .inputbox input[type = "button"]{
 	border:0;
@@ -184,8 +187,8 @@ p{
 	display: block;
 	margin: 10px auto;
 	text-align: center;
-	
-	width: 150px;
+	font-size: 3vw;
+	width: 45%;
 	padding: 14px 40px;
 	outline: none;
 	border-radius: 2px;
@@ -195,34 +198,12 @@ p{
 
 #loginbutton{
 	border: 2px solid #29d666;
-	background: none;
-	display: block;
-	margin: 10px auto;
-	text-align: center;
-	
-	width: 150px;
-	padding: 14px 40px;
-	outline: none;
-	border-radius: 2px;
-	transition: 0.25s;
-	cursor: pointer;
 }
 #loginbutton:hover{
 	background: #29d666;
 }
 #registerbutton{
 	border: 2px solid orange;
-	background: none;
-	display: block;
-	margin: 10px auto;
-	text-align: center;
-	
-	width: 150px;
-	padding: 14px 40px;
-	outline: none;
-	border-radius: 2px;
-	transition: 0.25s;
-	cursor: pointer;
 }
 #registerbutton:hover{
 	background: orange;
