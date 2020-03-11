@@ -1,0 +1,499 @@
+<?php
+
+$baseMarkerDescriptionsPHP = array();
+$configMarkerDescriptionsPHP = array();
+$markerDescriptionsPHP = array();
+
+$baseIconsPHP = array();
+$configIconsPHP = array();
+$iconsPHP = array();
+
+$baseLocationsPHP = array("forum", "car_park_amory", "car_park_forum", "car_park_sports", "car_park_queens");
+$configLocationsPHP = array();
+$locationsPHP = array();
+
+$baseLatCoordsPHP = array();
+$baseLongCoordsPHP = array();
+$baseCoordsPHP = array();
+
+$configLatCoordsPHP = array();
+$configLongCoordsPHP = array();
+$configCoordsPHP = array();
+
+$latCoordsPHP = array();
+$longCoordsPHP = array();
+$coordsPHP = array();
+
+$lastLocationPHP = 3;
+
+
+$conn = new mysqli("localhost", "grpsoftw_admin", "adminroot", "grpsoftw_shortcutDB");
+if ($conn->connect_error) {
+    die("Connection failed: ". $conn->connect_error);
+}
+else { /* Query to get route for each player */
+    $tourID = 1;
+    $userID = 1;
+    $lastLocationQuery = "SELECT lastLocation FROM Bookings WHERE userID=".$userID.";";
+    $lastLocationResult = $conn->query($lastLocationQuery);
+    if ($lastLocation)
+    for ($i=0; $i<count($baseLocationsPHP); $i++) {
+        $baseLocationsQuery = "SELECT poiDescriptions, latCoordinate, longCoordinate, iconPath, FROM Locations WHERE poiName =". baseLocationsPHP[$i] .";";
+        $baseLocationsResult = $conn->query($baseLocationsQuery);
+        if ($baseLocationsResult->mysqli_num_rows > 0) {
+            $baseLocationsData = $baseLocationsResult->fetch_assoc();
+            array_push($baseMarkerDescriptionsPHP, $baseLocationsData["poiDescriptions"]);
+            array_push($baseLatCoordsPHP, "lat: ".$baseLocationsData["latCoordinate"]);
+            array_push($baseLongCoordsPHP, "lng ".$baseLocationsData["longCoordinate"]);
+            array_push($baseIconsPath, $baseLocationsData["iconPath"]);
+            //array_push($)
+        }
+        else {
+            //failed to get rows
+        }
+    }
+    
+    $routeQuery = "SELECT tourRoute FROM Tours WHERE tourID =".$tourID.";"; //change tourID
+    $routeResult = $conn->query($route);
+    if ($routeResult->mysqli_num_rows > 0 ) {
+        $rows = $result->fetch_assoc();
+        for ($i=0; $i<$routeResult->mysql_num_rows; $i++) {
+            $dataQuery = "SELECT poiName, poiDescriptions, latCoordinate, longCoordinate, iconPath FROM Locations WHERE placeID =".rows["tourRoute"].";";
+            $dataResult = $conn->query($dataQuery);
+            if ($dataResult->mysqli_num_rows > 0) {
+                $data = $dataResult->fetch_assoc();
+                array_push($configLocationsPHP, $data["poiName"]);
+                array_push($configMarkerDescriptionsPHP, $data["poiDescriptions"]);
+                array_push($configIconsPHP, $data["iconPath"]);
+                array_push($configLatCoordsPHP, $data["latCoordinate"]);
+                array_push($configLongCoordsPHP, $data["longCoordinate"]);
+            }
+            else {
+                //failed to get rows
+            }
+        }
+    }
+    
+    //concatinate lat and long
+    
+    else {
+        //failed to get rows
+    }
+}
+//$configLocationsPHP = array("harrison", "physics", "newman", "peter_chalk", "queens", "amory", "streatham_court");
+?>
+<html>
+    <head>
+        
+    </head>
+    <body>
+        <div id="map"></div>
+    </body>
+</html>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA9mz_14PT9i5meW0Ds5xAHe5nBBmaZqXQ&callback=initMap" async defer></script>
+<script>
+var iconPath = "../icons/"; //folder with icons;
+
+/* arrays that hold location strings */
+var baseLocations = <?php echo json_encode($baseLocationsPHP)?>;
+//["forum", "car_park_amory", "car_park_forum", "car_park_sports", "car_park_queens", "into"]; //shared in every config
+var configLocations = <?php echo json_encode($configLocationsPHP)?>; //["harrison", "physics", "newman", "peter_chalk", "queens", "amory", "streatham_court"]; //configuration specific
+var locations = baseLocations.concat(configLocations); //baseLocations + configLocations
+
+/* number of locations in each array */
+var baseLocationsLength = baseLocations.length;
+var configLocationsLength = configLocations.length;
+var locationsLength = locations.length;
+
+/* arrays that hold coords for each location */
+/* !!! php generated */
+var baseLocationsCoords = [ //coords of shared locations
+  {lat: 50.735466, lng: -3.533202},
+  {lat: 50.737383, lng: -3.530348},
+  {lat: 50.736247, lng: -3.534458},
+  {lat: 50.737641, lng: -3.536463},
+  {lat: 50.733906, lng: -3.534868},
+  {lat: 50.736111, lng: -3.533717}
+];
+var configLocationsCoords = [ //coords of configuration specific locations
+  {lat: 50.737759, lng: -3.532615},
+  {lat: 50.736922, lng: -3.536284},
+  {lat: 50.736606, lng: -3.536127},
+  {lat: 50.736450, lng: -3.536074},
+  {lat: 50.734125, lng: -3.534583},
+  {lat: 50.736525, lng: -3.531449},
+  {lat: 50.735832, lng: -3.530549}
+];
+var locationsCoords = baseLocationsCoords.concat(configLocationsCoords); //baseLocationsCoords + configLocationsCoords
+
+/* change this according to each player */
+/* CHANGE THIS ACCORDING TO LASTLOCATION VARIABLE */
+var unlocked = new Array(locationsLength);
+for (var i=0; i<locationsLength; i++) {
+  unlocked[i] = true;
+}
+/* php generated */
+var baseMarkerDescriptions = <?php echo json_encode($baseMarkerDescriptionsPHP)?>;
+var configMarkerDescriptions = <?php echo json_encode($configMarkerDescriptionsPHP)?>;
+var markerDescriptions = baseMarkerDescriptions.concat(configMarkerDescriptions);
+
+/* arrays with Marker objects for each location */
+var baseMarkers = new Array(baseLocationsLength);
+var configMarkers = new Array(configLocationsLength);
+var markers = new Array(locationsLength);
+
+/* arrays with icon file of each Marker object on the map */
+var baseIcons = <?php echo json_encode($baseIconsPHP)?>;
+//baseIcons = ["question_mark.png", "parking1.png", "parking1.png", "parking1.png", "parking1.png", "question_mark.png"]
+var configIcons = <?php echo json_encode($configIconsPHP)?>;
+var icons = baseIcons.concat(configIcons);
+
+var infoWindow;
+var playerMarker;
+var playerid;
+var lastLoc = <?php echo $lastLocationPHP?>; //12; /* php generated */
+
+var directionsService;
+var directionsRenderer;
+var helpWindow;
+
+function initMap() {
+  var playerIcon = iconPath + "player_face.png";
+
+  //bounds of map
+  var cage = 0.006;
+  var bounds = {
+    latLngBounds: {
+    north: locationsCoords[0].lat + cage,
+    south: locationsCoords[0].lat - cage,
+    east: locationsCoords[0].lng + cage,
+    west: locationsCoords[0].lng - cage
+    }
+  };
+  //map options
+  var mapArgs = {
+    center: locationsCoords[0],
+    zoom: 18,
+    mapTypeId: "roadmap",
+    disableDefaultUI: true,
+    restriction: bounds,
+    gestureHandling: "greedy",
+    styles: [
+      //removes all labels off the map
+      {
+        featureType: "all",
+        elementType: "labels",
+        stylers: [{visibility: "off"}]
+      },
+      //style roads
+      {
+        featureType: "road.local",
+        elementType: "geometry.stroke",
+        stylers: [
+          {hue: "#97B3D0FF"},
+          {saturation: 100},
+          {lightness: -50}
+        ]
+      }
+    ]
+  };
+
+  var map = new google.maps.Map(document.getElementById('map'), mapArgs); //map
+  infoWindow = new google.maps.InfoWindow(); //infoWindow
+  playerMarker = new google.maps.Marker({icon: playerIcon, map: map}); //player's Marker
+  playerid = navigator.geolocation.watchPosition(updatePos, errorPos); //activate geolocation
+  directionsService = new google.maps.DirectionsService(); //make request for directions
+  directionsRenderer = new google.maps.DirectionsRenderer( { polylineOptions: { strokeColor: "purple", strokeWeight: 5}, suppressMarkers: true, map: map} ); //show directions on map
+  if (lastLoc == -1) {
+    lastLoc = baseLocationsLength;
+    makeHelpWindow(map);
+  }
+  initMarkers(map);
+  initEventListeners(map);
+
+  var centerControlDiv = document.createElement('div');
+  var centerControl = new CenterControl(centerControlDiv, map);
+  map.controls[google.maps.ControlPosition.TOP_LEFT].push(centerControlDiv);
+
+  var toggleControlDiv = document.createElement('div');
+  var toggleControl = new ToggleControl(toggleControlDiv, map);
+  map.controls[google.maps.ControlPosition.TOP_RIGHT].push(toggleControlDiv);
+}
+
+function initMarkers(map) {
+  for (var i=0; i<lastLoc; i++) {
+    markers[i] = new google.maps.Marker({position: locationsCoords[i], animation: google.maps.Animation.DROP, map: map});
+  }
+}
+
+function initEventListeners(map) {
+  var buildingName;
+  var buildingDescription;
+
+  for (var i=0; i<lastLoc; i++) {
+    markers[i].addListener('click', function() {
+      var ind = markers.indexOf(this); //get index of marker clicked
+      buildingName = makeName(locations[ind]); //name to show
+      buildingDescription = getDesc(ind); //description to show
+      infoWindow.close();
+      infoWindow.setContent(
+        '<div>' +
+          '<h1>'+ buildingName + '</h1>' +
+          '<div>' +
+            '<p>'+ buildingDescription +'</p>' +
+            '<strong>Start: </strong>' +
+            '<select id=start>' +
+              '<option value=-1>My position</option>' +
+              addOptions(ind) +
+            '</select>' +
+            '<br>' + '<br>' +
+            '<center>' +
+              '<button id='+ ind +' type="button" onclick="showPath(this)">Get me here!</button>' +
+            '</center>' +
+          '</div>' +
+      '</div>');
+      infoWindow.open(map, this);
+    });
+  }
+}
+
+function addMarker() {
+  if (lastLoc == locationsLength) {
+    window.alert("Game finished");
+  }
+  var m = markers[lastLoc-1].getMap();
+  markers[lastLoc] = new google.maps.Marker({position: locationsCoords[lastLoc], animation: google.maps.Animation.DROP, icon: iconPath + icons[lastLoc], map: m});
+  markers[lastLoc].addListener('click', function() {
+    var ind = markers.indexOf(this); //get index of marker clicked
+    buildingName = makeName(locations[ind]); //name to show
+    buildingDescription = getDesc(ind); //description to show
+    infoWindow.close();
+    infoWindow.setContent('<div>' +
+      '<h1>'+ buildingName +'</h1>' +
+      '<div>' +
+        '<p>'+ buildingDescription +'</p>' +
+        '<strong>Start: </strong>' +
+        '<select id=start>' +
+          '<option value=-1>My position</option>' +
+          addOptions(ind) +
+        '</select>' +
+        '<br>' + '<br>' +
+        '<center>' +
+          '<button id='+ ind +' type="button" onclick="showPath(this)">Get me here!</button>' +
+        '</center>' +
+      '</div>' +
+    '</div>');
+    infoWindow.open(m, this);
+  });
+  m.setCenter(locationsCoords[lastLoc]);
+  lastLoc++;
+}
+/* loop through discovered buildings and appends to string
+returns the string*/
+function addOptions(index) {
+  var text = '';
+  for (var i=0; i<lastLoc; i++) {
+    if (unlocked[i]) {
+      if (index == i) {
+        continue;
+      }
+      text = text + '<option value='+ i +'>'+ makeName(locations[i]) +'</option>'
+    }
+  }
+  return text;
+}
+
+function updatePos(pos) {
+  var p = {lat: pos.coords.latitude, lng: pos.coords.longitude};
+  playerMarker.setPosition(p);
+}
+
+function errorPos(err) {
+  //error is displayed in the div tag instead of map
+  var msg;
+  switch (err.code) {
+    case err.PERMISSION_DENIED:
+      msg = "Please activate geolocation.";
+      break;
+    case err.POSITION_UNAVAILABLE:
+      msg = "Position unavailable.";
+      break;
+    case err.TIMEOUT:
+      msg = "Request for geolocation timed out.";
+      break;
+    case err.UNKNOWN_ERROR:
+      msg = "An unknown error has occurred.";
+      break;
+  }
+  var mapDiv = document.getElementById('map');
+  mapDiv.innerHTML = msg;
+}
+
+function makeHelpWindow(map) {
+  helpWindow = new google.maps.InfoWindow();
+  helpWindow.setContent('<div>' +
+    '<center>' +
+      '<h1>Information</h1>' +
+      '<div>' +
+        '<p>You have to go to all the markers, scan a qr code found in the location and answer a couple of questions</p>' +
+      '</div>' +
+    '</center>'+
+  '</div>');
+  helpWindow.setPosition(locationsCoords[0]);
+  helpWindow.open(map);
+}
+
+/* @Deprecated */
+function getDesc(ind) {
+  if (unlocked[ind]) {
+    return markerDescriptions[ind];
+  }
+  return "You haven't discovered this building";
+}
+
+/* capitalize first letter of string */
+function capitalize(s) {
+  if (!(s.length == 0)) {
+    return s[0].toUpperCase() + s.slice(1);
+  }
+}
+
+/* replace all "_" chars with " " */
+function replaceChar(s) {
+  var regex = /_/g;
+  return s.replace(regex, " ");
+}
+
+/* Capitalize first letter and replace "_" with spaces */
+function makeName(s) {
+  s = capitalize(s);
+  s = replaceChar(s);
+  return s;
+}
+
+/* get locations for user */
+function loadData() {
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      loadArrays(this);
+    }
+  };
+  xhttp.open("POST", "comp_sci.txt", true);
+  xhttp.send();
+}
+
+function showPath(button) {
+  var startVal = document.getElementById('start').value;
+  var startPos;
+
+  if (startVal == -1) {
+    startPos = playerMarker.getPosition();
+  }
+  else {
+    startPos = locationsCoords[startVal];
+  }
+  var request = {
+    origin: startPos,
+    destination: locationsCoords[button.id],
+    provideRouteAlternatives: false, //make use of that
+    travelMode: 'WALKING',
+    unitSystem: google.maps.UnitSystem.IMPERIAL //make use of that
+  };
+
+  directionsService.route(request, function(result, status) {
+    if (checkRequest(result, status)) {
+      directionsRenderer.setDirections(result);
+      var last = directionsRenderer.getMap().controls[google.maps.ControlPosition.TOP_RIGHT].getLength() - 1;
+      directionsRenderer.getMap().controls[google.maps.ControlPosition.TOP_RIGHT].getAt(last).style.display = "inline";
+    }
+  });
+}
+
+// Function to create and control centre map button and functionality
+function CenterControl(controlDiv, m) {
+  var controlUI = document.createElement('div');
+  controlUI.style.backgroundColor = '#FDDB27FF';
+  controlUI.style.cursor = 'pointer';
+  controlUI.style.textAlign = 'center';
+  controlDiv.appendChild(controlUI);
+
+  var controlText = document.createElement('div');
+  controlText.style.color = 'rgb(25,25,25)';
+  controlText.style.fontFamily = 'Roboto,Arial,sans-serif';
+  controlText.style.fontSize = '16px';
+  controlText.style.lineHeight = '38px';
+  controlText.style.paddingLeft = '5px';
+  controlText.style.paddingRight = '5px';
+  controlText.innerHTML = 'Center Map';
+  controlUI.appendChild(controlText);
+
+  controlUI.addEventListener('click', function() {
+      m.setCenter(playerMarker.getPosition());
+    });
+}
+
+// Function to toggle directions on and off of the map
+function ToggleControl(controlDiv, m) {
+  var controlUI = document.createElement('div');
+  controlUI.style.backgroundColor = '#FDDB27FF';
+  controlUI.style.cursor = 'pointer';
+  controlUI.style.textAlign = 'center';
+  controlDiv.appendChild(controlUI);
+  controlDiv.style.display = "none";
+
+  var controlText = document.createElement('div');
+  controlText.style.color = 'rgb(25,25,25)';
+  controlText.style.fontFamily = 'Roboto,Arial,sans-serif';
+  controlText.style.fontSize = '16px';
+  controlText.style.lineHeight = '38px';
+  controlText.style.paddingLeft = '5px';
+  controlText.style.paddingRight = '5px';
+  controlText.innerHTML = 'Close Directions';
+  controlUI.appendChild(controlText);
+
+  controlUI.addEventListener('click', function() {
+   directionsRenderer.set('directions', null);
+   controlDiv.style.display = "none";
+   infoWindow.close();
+ });
+}
+
+// Function to check requests are valid
+function checkRequest(result, status) {
+  var msg = " ";
+
+  switch (status) {
+    case google.maps.DirectionsStatus.OK:
+      break;
+    case google.maps.DirectionsStatus.NOT_FOUND:
+      msg = "Cannot geocode path";
+      break;
+    case google.maps.DirectionsStatus.ZERO_RESULTS:
+      msg = "Cannot find any directions";
+      break;
+    case google.maps.DirectionsStatus.MAX_WAYPOINTS_EXCEEDED:
+      msg = "Limit of waypoints reached";
+      break;
+    case google.maps.DirectionsStatus.MAX_ROUTE_LENGTH_EXCEEDED:
+      msg = "Route is too long";
+      break;
+    case google.maps.DirectionsStatus.INVALID_REQUEST:
+      msg = "Request is invalid";
+      break;
+    case google.maps.DirectionsStatus.OVER_QUERY_LIMIT:
+      msg = "Webpage sent too many results";
+      break;
+    case google.maps.DirectionsStatus.REQUEST_DENIED:
+      msg = "Request denied";
+      break;
+    case google.maps.DirectionsStatus.UNKNOWN_ERROR:
+      msg = "An unknown error has occurred";
+      break;
+  }
+  if (msg == " ") {
+    return true;
+  }
+  return false;
+}
+</script>
