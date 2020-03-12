@@ -1,0 +1,511 @@
+/* This is my css page which contains all of my styles for all of my pages.
+The general format of the names is pagename_whatitis or the other way around.
+This just makes it easier as I can easily search for styles and styles won't conflict with eachother */
+
+body {
+	margin: 0;
+	padding: 0;
+	background-color:white;
+}
+h1{
+	color: black;
+	margin-left: 4px;
+	font-family: 'Cairo', sans-serif;
+	font-weight: 300;
+	font-size:6vw;
+	text-align:center;
+	padding:1px 1px;
+	margin-bottom:0px;
+	
+}
+h3{
+	color: black;
+	margin-left: 4px;
+	font-family: 'Cairo', sans-serif;
+	font-weight: 300;
+	font-size:4vw;
+	text-align:center-left;
+	padding:1px 1px;
+	border-bottom:0px;
+	margin-top: 1px;
+	margin-bottom:0px;
+	
+}
+p{
+	color: black;
+	margin-left: 3px;
+	font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+	font-weight: 300;
+	font-size:3vw;
+	text-align:center;
+}
+
+table{ 
+    width:90%;
+    border: 2px solid black;
+    background-color:white;
+    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+	font-weight: 300;
+    font-size:2vw;
+    text-align:center;
+    left:50%;
+}
+th{
+    color:white;
+    background-color:#005dab;
+}
+tr:hover {background-color: #f5f5f5;}
+/* Styling for buttons that can be used appwide*/
+.button{
+	border: 2px solid black;
+	background: white;
+	display: block;
+	margin: 10px auto;
+	text-align: center;
+	font-size:5vw;	
+	min-width:25%;
+	min-height:10%;
+	padding: 1px 1px;
+	outline: none;
+	border-radius: 2px;
+	transition: 0.25s;
+	cursor: pointer;
+}
+.button:hover{
+	background-color: gray;
+}
+/*Stlying the header that will be at the top of the pages*/
+.head{	
+	margin-top:0px;
+	display: flex;
+	justify-content: left;
+	position: relative;
+	background-color:#005dab;
+	min-height:5%;
+}
+.head h1{
+	text-align:center;
+	color: white;
+}
+.head button{
+	float:left;
+	
+	height:5%;
+	background-color:white;
+}
+/* The sidebar menu */
+.sidebar {
+  height: 100%; /* 100% Full-height */
+  width: 0; /* 0 width - change this with JavaScript */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Stay on top */
+  top: 0;
+  left: 0;
+  background-color: #111; /* Black*/
+  overflow-x: hidden; /* Disable horizontal scroll */
+  padding-top: 60px; /* Place content 60px from the top */
+  transition: 0.5s; /* 0.5 second transition effect to slide in the sidebar */
+}
+
+/* The sidebar links */
+.sidebar a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 4vw;
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+/* When you mouse over the navigation links, change their color */
+.sidebar a:hover {
+  color: #f1f1f1;
+}
+
+/* Position and style the close button (top right corner) */
+.sidebar .closebtn {
+  min-height:5px;
+  min-width:5px;
+  position: absolute;
+  top: 0;
+  right: 5px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+/* The button used to open the sidebar */
+.openbtn {
+  min-width:20%;
+  min-height:5%;
+  font-size: 3vw;
+  cursor: pointer;
+  background-color: #005dab;
+  color: black;
+  padding: 1px 1px;
+  border: 2px solid black;
+}
+
+.openbtn:hover {
+  background-color: clear;
+}
+
+/* Style page content - use this if you want to push the page content to the right when you open the side navigation */
+#main {
+  transition: margin-left .5s; /* If you want a transition effect */
+  padding: 20px;
+}
+
+/* On smaller screens, where width is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+@media screen and (max-width: 450px) {
+  .sidebar {padding-top: 15px;}
+  .sidebar a {font-size: 18px;}
+}
+/*Styles the form*/
+.inputbox{
+	color: white;
+	margin-left: 4px;
+	font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+	font-weight: 300;
+	border: 2px solid black;
+	border-radius: 8px;
+	background-color:#005dab;
+	width: 75%;
+	padding: 40px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	text-align: center;
+}
+.inputbox input[type = "text"],.inputbox input[type = "password"]{
+    color:white;
+	border:0;
+	background: none;
+	display: block;
+	margin: 10px auto;
+	text-align: center;
+	font-size:4vw;
+	border: 0px solid black;
+	border-bottom-width:2px;
+	padding: 14px 10px;
+	width: 50%;
+	outline: none;
+	border-radius: 2px;
+	transition: 0.25s;
+}
+.inputbox input[type = "text"]:focus,.inputbox input[type = "password"]:focus{
+	width: 280px;
+}
+.inputbox input[type = "button"]{
+	border:0;
+	background: none;
+	display: block;
+	margin: 10px auto;
+	text-align: center;
+	
+	width: 150px;
+	padding: 14px 40px;
+	outline: none;
+	border-radius: 2px;
+	transition: 0.25s;
+	cursor: pointer;
+}
+.inputbox input[type = "submit"]{
+	border:0;
+	background: none;
+	display: block;
+	margin: 10px auto;
+	text-align: center;
+	
+	width: 150px;
+	padding: 14px 40px;
+	outline: none;
+	border-radius: 2px;
+	transition: 0.25s;
+	cursor: pointer;
+}
+#main_button{
+	border:2px solid black;
+	background: white;
+	display: block;
+	margin: 10px auto;
+	text-align: center;
+	font-size:4vw;
+	width: 55%;
+	padding: 14px 40px;
+	outline: none;
+	border-radius: 2px;
+	transition: 0.25s;
+	cursor: pointer;
+}
+#loginbutton{
+	border: 2px solid #29d666;
+	background: none;
+	display: block;
+	margin: 10px auto;
+	text-align: center;
+	font-size:4vw;
+	width: 50%;
+	padding: 14px 40px;
+	outline: none;
+	border-radius: 2px;
+	transition: 0.25s;
+	cursor: pointer;
+}
+#loginbutton:hover{
+	background: #29d666;
+}
+#registerbutton{
+	border: 2px solid orange;
+	background: none;
+	display: block;
+	margin: 10px auto;
+	text-align: center;
+	font-size:4vw;
+	width: 50%;
+	padding: 14px 40px;
+	outline: none;
+	border-radius: 2px;
+	transition: 0.25s;
+	cursor: pointer;
+}
+#registerbutton:hover{
+	background: orange;
+}
+.error_register_page{
+	color: black;
+	margin-left: 4px;
+	font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+	font-weight: 300;
+	border: 4px solid red;
+	border-radius: 8px;
+	background-color: #007dab;
+	width: 400px;
+	padding: 40px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	text-align: center;
+}
+.closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+/*Main.html syling*/
+/*Map Styles*/
+.topNav {
+        background-color: green;
+      }
+.topNav a {
+        text-decoration: none;
+   }
+      .clueParagraph {
+        margin-top: 5px;
+        margin-bottom: 5px;
+        border: 2px solid black;
+      }
+      .clueParagraph p {
+        margin: 2px;
+      }
+      #map {
+        height: 70%;
+      }
+
+      #title {
+        text-align: center;
+        margin-top: 10px;
+        margin-bottom: 10px;
+      }
+/*Use to hide QR stuff*/
+#QR_scanner{
+	display:none;
+}
+.qr_div{
+	border:0px solid black;
+	margin: 1px auto;
+	width:100%;
+	/*Min width stops the div from being too small on mobile*/
+	min-width:100%;
+	max-width:100%;
+	padding: 1px 1px;
+	outline: none;
+	border-radius: 2px;
+	display: flex;
+	justify-content: left;
+	position: relative;
+	background-color:#005dab;
+	min-height:5%;
+}
+.qr_div button{
+		background-repeat:no-repeat;
+		width: 25%;
+		height: 5vh;
+		border-radius:25px;
+		
+}
+#scanbutton{
+	background-image: url("https://www.freepnglogos.com/uploads/camera-logo-png/camera-outline-icon-27.png");
+		background-size: 100px 75px;
+		background-position: center;
+		background-repeat:no-repeat;
+		width: 25%;
+		height: 5vh;
+		border-radius:25px;
+}
+/*Styling for qr textboxes*/
+.buildingtextbox{
+	border:0;
+	background-color: clear;
+	display: block;
+	margin: 10px auto;
+	text-align: center;
+	border: 3px solid black;
+	font-size:3vw;
+	padding: 14px 10px;
+	width: 45%;
+	outline: none;
+	border-radius: 25px;	
+}	
+/*Stlying for clue paragraph*/
+.clueParagraph{
+	background-color:FF9B00;
+}
+/*Question Stlying*/
+.form-questions{
+	border:3px solid black;
+	background-color: clear;
+	display: block;
+	margin: 10px auto;
+	text-align: center;
+	border: 3px solid black;
+	font-size:3vw;
+	padding: 14px 10px;
+	width: 60%;
+	outline: none;
+	border-radius: 25px;
+}
+/* The container */
+.container {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 3vw;
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+font-weight: 300;
+  
+}
+
+/* Hide the browser's default radio button */
+.container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+/* Create a custom radio button */
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: #eee;
+  border-radius: 50%;
+}
+
+/* On mouse-over, add a grey background color */
+.container:hover input ~ .checkmark {
+  background-color: #ccc;
+}
+
+/* When the radio button is checked, add a blue background */
+.container input:checked ~ .checkmark {
+  background-color: #005dab;
+}
+
+/* Create the indicator (the dot/circle - hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the indicator (dot/circle) when checked */
+.container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the indicator (dot/circle) */
+.container .checkmark:after {
+ 	top: 9px;
+	left: 9px;
+	width: 8px;
+	height: 8px;
+	border-radius: 50%;
+	background: white;
+}
+
+/*GameMaster Stlying*/
+
+.route_selection{
+	margin: 10px auto;
+	padding: 5px 5px;
+	border:2px solid black;
+	width:90%;
+	position:block;
+	border-radius:5px;
+	text-align:center;
+	font-family:"HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+	font-weight: 300;
+	font-size:4vw;
+}
+.route_selection select{
+	margin:auto;
+	display:block;
+	width:25%;
+	height:auto;
+	font-size:4vw;
+	background-color:orange;
+}
+.select-selected{
+	background-color:#005dab;
+}
+
+#hide{
+    border: 2px solid black;
+	background: white;
+	display: block;
+	margin: 10px auto;
+	text-align: center;
+	font-size:5vw;	
+	min-width:25%;
+	min-height:10%;
+	padding: 1px 1px;
+	outline: none;
+	border-radius: 2px;
+	transition: 0.25s;
+	cursor: pointer;
+}
+
+/*Game master*/
+.textbox{
+	border:0;
+	background-color: clear;
+	display: block;
+	margin: 10px auto;
+	text-align: center;
+	border: 3px solid black;
+	font-size:3vw;
+	padding: 14px 10px;
+	width: 45%;
+	outline: none;
+	border-radius: 25px;	
+}	

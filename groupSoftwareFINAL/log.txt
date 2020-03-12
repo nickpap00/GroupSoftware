@@ -1,0 +1,959 @@
+commit e9317036429ba2182bb1062e53fb99573a5547d0
+Author: jameskitt234 <57361252+jameskitt234@users.noreply.github.com>
+Date:   Thu Mar 12 07:37:00 2020 +0000
+
+    Create READMEFORADMINS.TXT
+
+commit 146a1083f74eaeb0596dc901ed6532921e16288a
+Author: jameskitt234 <57361252+jameskitt234@users.noreply.github.com>
+Date:   Thu Mar 12 04:23:10 2020 +0000
+
+    Update student_homepage.php
+    
+    Add welcome message to student home page
+
+commit d94b29c769b9f3d4e2ea19ef52346d1b0d67a937
+Author: jameskitt234 <57361252+jameskitt234@users.noreply.github.com>
+Date:   Thu Mar 12 00:35:53 2020 +0000
+
+    Update webAppDB.sql
+    
+    Addition of incorrect answers for multiple choice questions
+
+commit 3a2817162ae711ef7807d7599cb118da849f18fb
+Author: jameskitt234 <57361252+jameskitt234@users.noreply.github.com>
+Date:   Wed Mar 11 22:36:13 2020 +0000
+
+    Update webAppDB.sql
+
+commit 72499dbff69a26382e84d57abdecbda590c7d14d
+Author: KernowCoder <56916502+KernowCoder@users.noreply.github.com>
+Date:   Wed Mar 11 20:45:01 2020 +0000
+
+    Tittles added
+
+commit 0f342935985af4dfdb91ff2e1811210998c15a6e
+Author: KernowCoder <56916502+KernowCoder@users.noreply.github.com>
+Date:   Wed Mar 11 20:17:38 2020 +0000
+
+    Links Sorted
+
+commit 9f02def036a7700f6a55b167bf67a0789df1e2a1
+Author: nickpap00 <nikos.papavasileiou@hotmail.com>
+Date:   Wed Mar 11 20:08:32 2020 +0000
+
+    php stuff, fix links
+
+commit b8dfed0a14c504e8be0d40aa458119be4dbd4a19
+Merge: d8de2e8 653a2ab
+Author: KernowCoder <56916502+KernowCoder@users.noreply.github.com>
+Date:   Wed Mar 11 19:52:55 2020 +0000
+
+    Merge branch 'master' of https://github.com/nickpap00/GroupSoftware
+
+commit d8de2e840b02ccef64c7ca7bd33f7db304503b31
+Author: KernowCoder <56916502+KernowCoder@users.noreply.github.com>
+Date:   Wed Mar 11 19:52:48 2020 +0000
+
+    Update styles_coursework.css
+
+commit 653a2ab8b38b9d39db32d028984499661683ba8c
+Author: jameskitt234 <57361252+jameskitt234@users.noreply.github.com>
+Date:   Wed Mar 11 19:05:46 2020 +0000
+
+    Update webAppDB.sql
+
+commit ecbf01aa01ca549fcff910587371283c4326029a
+Merge: 0d9b845 59aa80a
+Author: jameskitt234 <57361252+jameskitt234@users.noreply.github.com>
+Date:   Wed Mar 11 18:02:45 2020 +0000
+
+    Merge branch 'master' of https://github.com/nickpap00/GroupSoftware
+
+commit 0d9b845f32a1c65ac911abfb7ca5c2d81c46a993
+Author: jameskitt234 <57361252+jameskitt234@users.noreply.github.com>
+Date:   Wed Mar 11 18:02:28 2020 +0000
+
+    Update webAppDB.sql
+
+commit 59aa80a0c1d7a07ddcd6721e2946f79bfb6a1139
+Merge: 96b4f6a 6d22025
+Author: KernowCoder <56916502+KernowCoder@users.noreply.github.com>
+Date:   Wed Mar 11 17:58:26 2020 +0000
+
+    Merge branch 'master' of https://github.com/nickpap00/GroupSoftware
+
+commit 96b4f6a87d546661ba96b6ff217f09f04d06b401
+Author: KernowCoder <56916502+KernowCoder@users.noreply.github.com>
+Date:   Wed Mar 11 17:58:19 2020 +0000
+
+    Question time added
+
+commit 6d2202507a48f75e9e18d3b14990833eb90c29d9
+Merge: ea263cb da3a896
+Author: jameskitt234 <57361252+jameskitt234@users.noreply.github.com>
+Date:   Wed Mar 11 17:38:46 2020 +0000
+
+    Merge branch 'master' of https://github.com/nickpap00/GroupSoftware
+
+commit ea263cb7d80a204e3527fdfe759d6c31e6cd5b51
+Author: jameskitt234 <57361252+jameskitt234@users.noreply.github.com>
+Date:   Wed Mar 11 17:38:10 2020 +0000
+
+    Update webAppDB.sql
+
+commit da3a896119a0a510ee0713cf2964c9dc0425cf2e
+Author: SalehLootah <44471487+SalehLootah@users.noreply.github.com>
+Date:   Wed Mar 11 17:33:07 2020 +0000
+
+    Poster
+    
+    Need to add screenshot of leaderboard
+
+commit 17054184e8fab55486cef4441e6176cb28daa980
+Merge: fb15a9a 0cea6c3
+Author: jameskitt234 <57361252+jameskitt234@users.noreply.github.com>
+Date:   Wed Mar 11 16:24:49 2020 +0000
+
+    Merge branch 'master' of https://github.com/nickpap00/GroupSoftware
+
+commit fb15a9acc5ffcb7f4e5232eb32a9e4af1e813465
+Author: jameskitt234 <57361252+jameskitt234@users.noreply.github.com>
+Date:   Wed Mar 11 16:24:29 2020 +0000
+
+    Update webAppDB.sql
+
+commit 0cea6c3eb8fd95422f7aee84525a2ee454d0e4ad
+Author: KernowCoder <56916502+KernowCoder@users.noreply.github.com>
+Date:   Wed Mar 11 16:13:01 2020 +0000
+
+    Update qr_scanner.js
+
+commit fed95a2fe3c899fecf25c6d7fc711bb70da567aa
+Author: KernowCoder <56916502+KernowCoder@users.noreply.github.com>
+Date:   Wed Mar 11 16:02:18 2020 +0000
+
+    Changed qr code stuff
+
+commit cd3bc797905a003be2cbd7cb895afbcf33b43c1e
+Merge: 1446b30 a9604c7
+Author: jameskitt234 <57361252+jameskitt234@users.noreply.github.com>
+Date:   Wed Mar 11 15:04:53 2020 +0000
+
+    Merge branch 'master' of https://github.com/nickpap00/GroupSoftware
+
+commit 1446b301f05f2827ff163ca59f3a768600938697
+Author: jameskitt234 <57361252+jameskitt234@users.noreply.github.com>
+Date:   Wed Mar 11 15:04:38 2020 +0000
+
+    Update webAppDB.sql
+
+commit a9604c71bbc193b73b20cb5098c97329cd172889
+Merge: 09999c5 b77c985
+Author: KernowCoder <56916502+KernowCoder@users.noreply.github.com>
+Date:   Wed Mar 11 14:53:25 2020 +0000
+
+    Merge branch 'master' of https://github.com/nickpap00/GroupSoftware
+
+commit 09999c577587ab0b2194789dddfd8a97fc9a1bdf
+Author: KernowCoder <56916502+KernowCoder@users.noreply.github.com>
+Date:   Wed Mar 11 14:49:45 2020 +0000
+
+    Made Game master homepage php
+
+commit b77c985c3dde7535e911cf87ce037afe0a8c1827
+Merge: 904a4be 73a6570
+Author: jameskitt234 <57361252+jameskitt234@users.noreply.github.com>
+Date:   Wed Mar 11 14:40:01 2020 +0000
+
+    Merge branch 'master' of https://github.com/nickpap00/GroupSoftware
+
+commit 904a4be937c80c7b2d2974c2d6b41123fd40cee7
+Author: jameskitt234 <57361252+jameskitt234@users.noreply.github.com>
+Date:   Wed Mar 11 14:39:53 2020 +0000
+
+    Update webAppDB.sql
+
+commit 73a6570f3b19bc8343f5cb628012bbb5e062f7f5
+Author: KernowCoder <56916502+KernowCoder@users.noreply.github.com>
+Date:   Wed Mar 11 14:21:35 2020 +0000
+
+    Update styles_coursework.css
+
+commit 4206ae5e2731d8b526348245fdfd2e490b6d90c8
+Merge: fa0f224 b6d09db
+Author: KernowCoder <56916502+KernowCoder@users.noreply.github.com>
+Date:   Wed Mar 11 13:50:23 2020 +0000
+
+    Merge branch 'master' of https://github.com/nickpap00/GroupSoftware
+
+commit fa0f224bdd55261f8562bb032d6ec3834db70e39
+Author: KernowCoder <56916502+KernowCoder@users.noreply.github.com>
+Date:   Wed Mar 11 13:50:13 2020 +0000
+
+    Added game master page
+
+commit b6d09dbe113e047aa2900348bb4d62fab0219719
+Author: jameskitt234 <57361252+jameskitt234@users.noreply.github.com>
+Date:   Wed Mar 11 13:37:34 2020 +0000
+
+    Update webAppDB.sql
+
+commit 8a56079c9a44e568b15458e548a4e9ffadcef8b6
+Merge: 65c35f4 ec37e52
+Author: KernowCoder <56916502+KernowCoder@users.noreply.github.com>
+Date:   Wed Mar 11 12:11:43 2020 +0000
+
+    Merge branch 'master' of https://github.com/nickpap00/GroupSoftware
+
+commit 65c35f4c0cbdb27ed2cd0199485eae117052b5c6
+Author: KernowCoder <56916502+KernowCoder@users.noreply.github.com>
+Date:   Wed Mar 11 12:11:03 2020 +0000
+
+    Sidebar links ammended
+
+commit ec37e52b9e99a1c453b75943bd29f317714b9dac
+Merge: 6650d97 70f587e
+Author: jameskitt234 <57361252+jameskitt234@users.noreply.github.com>
+Date:   Wed Mar 11 11:53:16 2020 +0000
+
+    Merge pull request #3 from nickpap00/revert-2-subDirectory
+    
+    Revert "Sub directory"
+
+commit 70f587ea5771b30f546741b6f46e2e9c8bd9aa18
+Author: jameskitt234 <57361252+jameskitt234@users.noreply.github.com>
+Date:   Wed Mar 11 11:52:40 2020 +0000
+
+    Revert "Sub directory"
+
+commit 6650d971b81ddcfe9143192bad4cfb53694357b6
+Merge: 9465ed8 47fa4cf
+Author: jameskitt234 <57361252+jameskitt234@users.noreply.github.com>
+Date:   Wed Mar 11 11:52:30 2020 +0000
+
+    Merge pull request #2 from nickpap00/subDirectory
+    
+    Sub directory
+
+commit 9465ed849bbc2f02551377acadc05018f1b3da14
+Author: KernowCoder <56916502+KernowCoder@users.noreply.github.com>
+Date:   Wed Mar 11 11:50:20 2020 +0000
+
+    Update styles_coursework.css
+
+commit 47fa4cfa598fee45b7b807c28fb6610b579a2c13
+Merge: 9a0f2e3 1429e59
+Author: zainhabib1 <57769966+zainhabib1@users.noreply.github.com>
+Date:   Wed Mar 11 02:14:21 2020 +0000
+
+    Merge branch 'master' of https://github.com/nickpap00/GroupSoftware
+
+commit 1429e59d6bebf70baed7c057671badf4b6a9e50c
+Author: jameskitt234 <57361252+jameskitt234@users.noreply.github.com>
+Date:   Tue Mar 10 22:19:03 2020 +0000
+
+    Update webAppDB.sql
+    
+    Added more location information to the database
+
+commit 19224a79ac1f861f6fa5ed8885b867072373a84f
+Author: jameskitt234 <57361252+jameskitt234@users.noreply.github.com>
+Date:   Tue Mar 10 20:15:03 2020 +0000
+
+    Icons resized
+    
+    all remaining icons have been resized as required
+
+commit d839978be7acf8335e9f4d4389d4cb78d2ac56d1
+Author: jameskitt234 <57361252+jameskitt234@users.noreply.github.com>
+Date:   Tue Mar 10 15:26:10 2020 +0000
+
+    Update about.html
+
+commit 7c21713beb3c885b22a1a71a9c3b2dcf2adf5a99
+Author: jameskitt234 <57361252+jameskitt234@users.noreply.github.com>
+Date:   Tue Mar 10 15:24:01 2020 +0000
+
+    Update contact.html
+
+commit 99bace42c23bdf8084c6629f2349c064d9f29044
+Author: jameskitt234 <57361252+jameskitt234@users.noreply.github.com>
+Date:   Tue Mar 10 15:22:55 2020 +0000
+
+    Update contact.html
+
+commit 619e810820d58a2251fa8b3ce3b8ba91bd30bdbd
+Author: jameskitt234 <57361252+jameskitt234@users.noreply.github.com>
+Date:   Tue Mar 10 15:21:52 2020 +0000
+
+    Update about.html
+
+commit 254ae4d351dd8e9e0dcf3c6ab106c9dec93287fa
+Author: jameskitt234 <57361252+jameskitt234@users.noreply.github.com>
+Date:   Tue Mar 10 15:20:30 2020 +0000
+
+    Update contact.html
+
+commit 6682a7a5b494a607485393c9eed96e17f59023a7
+Author: jameskitt234 <57361252+jameskitt234@users.noreply.github.com>
+Date:   Tue Mar 10 15:19:42 2020 +0000
+
+    Update contact.html
+
+commit a30a33f01daafacf00be19721321573b05ebacec
+Author: jameskitt234 <57361252+jameskitt234@users.noreply.github.com>
+Date:   Tue Mar 10 15:18:37 2020 +0000
+
+    Update contact.html
+
+commit 28d18d1d572b83bafd10b5c9113a2520f32b6bf3
+Author: jameskitt234 <57361252+jameskitt234@users.noreply.github.com>
+Date:   Tue Mar 10 15:15:52 2020 +0000
+
+    Update contact.html
+
+commit bc9b77eda7f6283a9eae0aecc4c3c7183125f4ef
+Merge: 63e6814 f81d9b3
+Author: jameskitt234 <57361252+jameskitt234@users.noreply.github.com>
+Date:   Tue Mar 10 15:13:00 2020 +0000
+
+    Merge branch 'master' of https://github.com/nickpap00/GroupSoftware
+
+commit 63e68147897668ed0fc4bc48cf7acfcde77dd3cf
+Author: jameskitt234 <57361252+jameskitt234@users.noreply.github.com>
+Date:   Tue Mar 10 15:12:46 2020 +0000
+
+    links
+
+commit f81d9b3d68b4d1c2a9fda410c79ff17f44b35115
+Merge: f4f2a1e f6b468f
+Author: KernowCoder <56916502+KernowCoder@users.noreply.github.com>
+Date:   Tue Mar 10 15:11:03 2020 +0000
+
+    Merge branch 'master' of https://github.com/nickpap00/GroupSoftware
+
+commit f4f2a1e7079e628f1e48bcc1a4cf98acfc32b253
+Author: KernowCoder <56916502+KernowCoder@users.noreply.github.com>
+Date:   Tue Mar 10 15:10:58 2020 +0000
+
+    Update styles_coursework.css
+
+commit f6b468fc7fadc6bb13264feb046fcc7773776d41
+Author: jameskitt234 <57361252+jameskitt234@users.noreply.github.com>
+Date:   Tue Mar 10 15:09:10 2020 +0000
+
+    link to home
+
+commit 01d4dc066130fb977c41ed8a005fa748d4a099e0
+Author: KernowCoder <56916502+KernowCoder@users.noreply.github.com>
+Date:   Tue Mar 10 15:08:40 2020 +0000
+
+    Update styles_coursework.css
+
+commit 1e797e59a298b04cc45b819662bcc2d775050cc9
+Author: jameskitt234 <57361252+jameskitt234@users.noreply.github.com>
+Date:   Tue Mar 10 15:02:09 2020 +0000
+
+    update
+
+commit 27d2a9aa6a862661c83300de60a7b3f065533e95
+Author: jameskitt234 <57361252+jameskitt234@users.noreply.github.com>
+Date:   Tue Mar 10 14:59:09 2020 +0000
+
+    Update contact.html
+
+commit c181a8908216cee5c7fc5f9ce885d257b8ae55b7
+Author: jameskitt234 <57361252+jameskitt234@users.noreply.github.com>
+Date:   Tue Mar 10 14:57:51 2020 +0000
+
+    Update about.html
+
+commit 05d1d84d94f8ae85744e7aa3a1cd3bbc7ed7c199
+Author: jameskitt234 <57361252+jameskitt234@users.noreply.github.com>
+Date:   Tue Mar 10 14:55:58 2020 +0000
+
+    Update about.html
+
+commit 0b2a17be0ebf56538416114ae8d859179f1590d1
+Merge: bc3a4dd c2e8f6a
+Author: KernowCoder <56916502+KernowCoder@users.noreply.github.com>
+Date:   Tue Mar 10 14:50:55 2020 +0000
+
+    Merge branch 'master' of https://github.com/nickpap00/GroupSoftware
+
+commit c2e8f6a34c5e4bbcc3cf1b00115eb4a0b099eb09
+Merge: ee4f286 faf08ec
+Author: jameskitt234 <57361252+jameskitt234@users.noreply.github.com>
+Date:   Tue Mar 10 14:44:18 2020 +0000
+
+    Merge branch 'master' of https://github.com/nickpap00/GroupSoftware
+
+commit ee4f286d06c4a22657439068e0b4edc456b71db6
+Author: jameskitt234 <57361252+jameskitt234@users.noreply.github.com>
+Date:   Tue Mar 10 14:43:56 2020 +0000
+
+    Update main.html
+
+commit bc3a4dd78a3137b2b71534e5f73d1e65c71898c3
+Author: KernowCoder <56916502+KernowCoder@users.noreply.github.com>
+Date:   Tue Mar 10 14:40:48 2020 +0000
+
+    Applied Css to the About and Contact Pages
+
+commit faf08ecdccbba55e6fb108578f8ad454472c41b4
+Merge: 670d6f3 9f36a35
+Author: nickpap00 <nikos.papavasileiou@hotmail.com>
+Date:   Tue Mar 10 14:36:36 2020 +0000
+
+    Merge branch 'master' of https://github.com/nickpap00/GroupSoftware
+
+commit 670d6f372d5f45dca5c7eaa04438e65260027241
+Author: nickpap00 <nikos.papavasileiou@hotmail.com>
+Date:   Tue Mar 10 14:36:22 2020 +0000
+
+    updated code
+
+commit 9f36a3547c544b6d80ebe9e39c490aa7ac80c379
+Merge: 88a07c9 43c7d32
+Author: KernowCoder <56916502+KernowCoder@users.noreply.github.com>
+Date:   Tue Mar 10 14:30:17 2020 +0000
+
+    Merge branch 'master' of https://github.com/nickpap00/GroupSoftware
+
+commit 88a07c9eb9d21cf9c7a196dbf1eb489558ce3a0a
+Author: KernowCoder <56916502+KernowCoder@users.noreply.github.com>
+Date:   Tue Mar 10 14:29:56 2020 +0000
+
+    Added a 5
+
+commit 43c7d32d4c5a3f7b30e1b212185b209a5f7a7f5d
+Merge: 048ad97 3fbe8f3
+Author: jameskitt234 <57361252+jameskitt234@users.noreply.github.com>
+Date:   Tue Mar 10 14:26:11 2020 +0000
+
+    Merge branch 'master' of https://github.com/nickpap00/GroupSoftware
+
+commit 048ad97f329d59fad3dfe4d30a2463a7e93a6100
+Author: jameskitt234 <57361252+jameskitt234@users.noreply.github.com>
+Date:   Tue Mar 10 14:26:06 2020 +0000
+
+    Addition of about and contact pages
+
+commit 3fbe8f3e854a96370d7746eaf3c9a61410d9091a
+Author: KernowCoder <56916502+KernowCoder@users.noreply.github.com>
+Date:   Tue Mar 10 14:13:07 2020 +0000
+
+    Changed Background Colours
+
+commit db1c15b94275e168ef7e658f547b6448df72eced
+Author: KernowCoder <56916502+KernowCoder@users.noreply.github.com>
+Date:   Tue Mar 10 13:43:41 2020 +0000
+
+    Update styles_coursework.css
+
+commit 25c0b64b30c8e433363eaa756a7eb64e9e87d621
+Merge: 4658b05 77c0467
+Author: KernowCoder <56916502+KernowCoder@users.noreply.github.com>
+Date:   Tue Mar 10 13:42:12 2020 +0000
+
+    Merge branch 'master' of https://github.com/nickpap00/GroupSoftware
+
+commit 4658b057bb813c732aa2acd892dd75787ce6a4cc
+Author: KernowCoder <56916502+KernowCoder@users.noreply.github.com>
+Date:   Tue Mar 10 13:41:37 2020 +0000
+
+    Camera Png added
+    
+    Please work.
+
+commit 77c0467b4d4c69487607011de8b3eadcd7607898
+Author: SalehLootah <44471487+SalehLootah@users.noreply.github.com>
+Date:   Tue Mar 10 13:36:49 2020 +0000
+
+    New icons
+    
+    Changed the sizing of the icons to 30x30px
+
+commit 19ce87d438c1c3ec1bbfe0070b115a89bb7529f0
+Author: jameskitt234 <57361252+jameskitt234@users.noreply.github.com>
+Date:   Tue Mar 10 13:36:16 2020 +0000
+
+    Added additional icons
+
+commit 16a0038d839e5dc45612a85d539f33323c6acf8e
+Merge: ac81cd4 e1b4f2e
+Author: nickpap00 <nikos.papavasileiou@hotmail.com>
+Date:   Tue Mar 10 13:30:33 2020 +0000
+
+    Merge branch 'master' of https://github.com/nickpap00/GroupSoftware
+
+commit ac81cd48dde0fc5647e6ed62e2812297610216e0
+Author: nickpap00 <nikos.papavasileiou@hotmail.com>
+Date:   Tue Mar 10 13:25:55 2020 +0000
+
+    updated code to work with last location
+
+commit e1b4f2ef7d03e400d3288bb31cffc727135b238d
+Author: KernowCoder <56916502+KernowCoder@users.noreply.github.com>
+Date:   Tue Mar 10 13:12:40 2020 +0000
+
+    Even More changes
+    
+    Just trying to make it look nice
+
+commit 06a30d74383cf49bba71eed378d0c51ad4683a79
+Author: KernowCoder <56916502+KernowCoder@users.noreply.github.com>
+Date:   Tue Mar 10 12:50:20 2020 +0000
+
+    More Styling updates.
+
+commit 30525401d068e76e9fb11e3dc20bbfb33104d36f
+Author: jameskitt234 <57361252+jameskitt234@users.noreply.github.com>
+Date:   Tue Mar 10 12:37:06 2020 +0000
+
+    Addition of comments
+    
+    addition of various comments through the source code
+
+commit 9a3e26e57a2ebff67f1ab1ab34ab5445a0e5ee85
+Author: jameskitt234 <57361252+jameskitt234@users.noreply.github.com>
+Date:   Tue Mar 10 12:04:30 2020 +0000
+
+    Update locationsDB.sql
+
+commit 6b828f268e50885d765c964b1b4afd9c70a2121d
+Merge: 741ed51 431cd1f
+Author: jameskitt234 <57361252+jameskitt234@users.noreply.github.com>
+Date:   Tue Mar 10 12:04:16 2020 +0000
+
+    Merge branch 'master' of https://github.com/nickpap00/GroupSoftware
+
+commit 431cd1fa16e10b2e24a7a22faba23fe9a6549df3
+Author: KernowCoder <56916502+KernowCoder@users.noreply.github.com>
+Date:   Tue Mar 10 11:22:52 2020 +0000
+
+    Changes for mobile scaling
+
+commit c27f3dd2ad93137610312c6c2e773e534cd13205
+Author: KernowCoder <56916502+KernowCoder@users.noreply.github.com>
+Date:   Tue Mar 10 10:37:07 2020 +0000
+
+    More Styling changes
+
+commit 741ed514bf6db71fecc09a47b03efbfa30f9a0ca
+Author: jameskitt234 <57361252+jameskitt234@users.noreply.github.com>
+Date:   Sun Mar 8 22:25:43 2020 +0000
+
+    Create webAppDB.sql
+
+commit 9a0f2e3ce74a0bec2265043fa1bbc40e743004a4
+Author: zainhabib1 <57769966+zainhabib1@users.noreply.github.com>
+Date:   Sun Mar 8 17:47:01 2020 +0000
+
+    Update projectdb.sql
+
+commit 444990bfca3ad9c3f777a335d60193c5791d74d4
+Merge: 9771501 a43ddb0
+Author: jameskitt234 <57361252+jameskitt234@users.noreply.github.com>
+Date:   Sat Mar 7 18:37:02 2020 +0000
+
+    Merge branch 'master' of https://github.com/nickpap00/GroupSoftware
+
+commit 9771501b19e4db8f8cf87a6623e8bb3a88f8ae14
+Author: jameskitt234 <57361252+jameskitt234@users.noreply.github.com>
+Date:   Sat Mar 7 18:36:56 2020 +0000
+
+    Update locationsDB.sql
+    
+    Added more location information to the database
+
+commit a43ddb09ff90fdde017a36a52091535ea559875d
+Author: nickpap00 <nikos.papavasileiou@hotmail.com>
+Date:   Sat Mar 7 18:03:28 2020 +0000
+
+    updated test code
+
+commit 15962299bb555febcf60c86844a2f69aabd22844
+Author: nickpap00 <nikos.papavasileiou@hotmail.com>
+Date:   Sat Mar 7 18:02:21 2020 +0000
+
+    updated icons
+
+commit 1c3f3dfadac91ef068211a1ad68d64549e3ed711
+Author: nickpap00 <nikos.papavasileiou@hotmail.com>
+Date:   Sat Mar 7 18:01:24 2020 +0000
+
+    updated js code
+
+commit 6489e0ca487ccf3b1cfc3c2a3156f5dc95906be2
+Author: jameskitt234 <57361252+jameskitt234@users.noreply.github.com>
+Date:   Sat Mar 7 17:48:55 2020 +0000
+
+    Update projectdb.sql
+    
+    set default value for last visited to be -1
+
+commit 4d5854dff228d531e01dcc0b3cf4f794bf13e18e
+Author: jameskitt234 <57361252+jameskitt234@users.noreply.github.com>
+Date:   Sat Mar 7 17:42:38 2020 +0000
+
+    Update locationsDB.sql
+    
+    Addition of required fields for webapp interaction
+
+commit 35bc350db617cc358b06bafad8df3626e98e1fc6
+Author: KernowCoder <56916502+KernowCoder@users.noreply.github.com>
+Date:   Sat Mar 7 17:04:03 2020 +0000
+
+    Added Scanner and Updated Css for main.html
+
+commit b443dbe291decac3b1317e01d270c8d26d1c1cd2
+Author: KernowCoder <56916502+KernowCoder@users.noreply.github.com>
+Date:   Sat Mar 7 16:25:50 2020 +0000
+
+    Created Separte js file for qr scanner
+
+commit 7381fe0ff512949f878cf14711e05b32bd582820
+Merge: 32b4986 f87fec8
+Author: KernowCoder <56916502+KernowCoder@users.noreply.github.com>
+Date:   Sat Mar 7 11:48:30 2020 +0000
+
+    Merge branch 'master' of https://github.com/nickpap00/GroupSoftware
+
+commit 32b498675aebdb06b3520724f628b047bbb8ffdb
+Author: KernowCoder <56916502+KernowCoder@users.noreply.github.com>
+Date:   Sat Mar 7 11:48:22 2020 +0000
+
+    Merge branch 'master' of https://github.com/nickpap00/GroupSoftware
+
+commit e443cbd1fc1574fc3f4c5bf8828f3a8cc6b9407e
+Author: KernowCoder <56916502+KernowCoder@users.noreply.github.com>
+Date:   Sat Mar 7 11:33:58 2020 +0000
+
+    File name changes.
+    
+    Changing file names for testing
+
+commit f87fec85c50ebbd67d2ff668af67fc07291edd3c
+Author: nickpap00 <nikos.papavasileiou@hotmail.com>
+Date:   Fri Mar 6 16:01:37 2020 +0000
+
+    colored map
+
+commit af852c15b694b65cef3b965a421ce82b3459c0f5
+Author: nickpap00 <nikos.papavasileiou@hotmail.com>
+Date:   Fri Mar 6 01:04:52 2020 +0000
+
+    added directions close button
+
+commit 2aac701b861be689357f8c9ede8767582883eed1
+Merge: f2218b1 b4617f2
+Author: nickpap00 <nikos.papavasileiou@hotmail.com>
+Date:   Thu Mar 5 14:27:59 2020 +0000
+
+    Merge branch 'master' of https://github.com/nickpap00/GroupSoftware
+
+commit f2218b167a66ff8b69a306b46cc4c584b83d08a8
+Author: nickpap00 <nikos.papavasileiou@hotmail.com>
+Date:   Thu Mar 5 14:27:45 2020 +0000
+
+    added main page
+
+commit b4617f2c5f80ac5228971f77d3414187bac2af12
+Author: jameskitt234 <57361252+jameskitt234@users.noreply.github.com>
+Date:   Thu Mar 5 13:38:36 2020 +0000
+
+    Update locationsDB.sql
+
+commit ce36e6742d6430a9d10b4710e49394a32d62c7db
+Author: jameskitt234 <57361252+jameskitt234@users.noreply.github.com>
+Date:   Thu Mar 5 13:37:56 2020 +0000
+
+    Update projectdb.sql
+
+commit 0776beea0c7f263f8a168632561df746bce8533a
+Author: jameskitt234 <57361252+jameskitt234@users.noreply.github.com>
+Date:   Thu Mar 5 13:35:18 2020 +0000
+
+    Update locationsDB.sql
+
+commit 2b80750298e8b83a0935dd6f41d6e00179e90e5d
+Author: jameskitt234 <57361252+jameskitt234@users.noreply.github.com>
+Date:   Thu Mar 5 13:34:35 2020 +0000
+
+    Update projectdb.sql
+
+commit 0579e418904249cae78602afe6d3ade1ba6ff677
+Author: jameskitt234 <57361252+jameskitt234@users.noreply.github.com>
+Date:   Thu Mar 5 12:53:40 2020 +0000
+
+    Update projectdb.sql
+    
+    removed duplicate table information for locations as is now in seperate file
+
+commit d9e6daf249351652bf262664874d7343f1fc1ce7
+Author: jameskitt234 <57361252+jameskitt234@users.noreply.github.com>
+Date:   Thu Mar 5 12:52:10 2020 +0000
+
+    Update locationsDB.sql
+    
+    Moved information from the main database file
+
+commit 24471c3758567900ae960a259a1bc022637dd324
+Author: jameskitt234 <57361252+jameskitt234@users.noreply.github.com>
+Date:   Thu Mar 5 12:47:51 2020 +0000
+
+    Create locationsDB.sql
+    
+    Created file to store location data in the database
+
+commit 9cfa4bc2190783c7af38fb220695a7f5af93f677
+Author: nickpap00 <nikos.papavasileiou@hotmail.com>
+Date:   Thu Mar 5 12:37:34 2020 +0000
+
+    renamed indexParallel to index
+
+commit ac13c6d2ad151a67e8a26bd0cfcac886b38582b2
+Author: nickpap00 <nikos.papavasileiou@hotmail.com>
+Date:   Thu Mar 5 10:46:20 2020 +0000
+
+    added indexParallel.html
+
+commit c957f33b66b8b757c9b554cc0cf8ede740b554b6
+Author: KernowCoder <56916502+KernowCoder@users.noreply.github.com>
+Date:   Tue Mar 3 12:01:48 2020 +0000
+
+    Change file nmae
+
+commit b06a28ac21e40694300a37a951efec09475df211
+Merge: 71a09e7 67eae41
+Author: KernowCoder <56916502+KernowCoder@users.noreply.github.com>
+Date:   Tue Mar 3 11:59:22 2020 +0000
+
+    Merge branch 'master' of https://github.com/nickpap00/GroupSoftware
+
+commit 71a09e7afcab50906e89f8e8d74eba9501c7ac19
+Author: KernowCoder <56916502+KernowCoder@users.noreply.github.com>
+Date:   Tue Mar 3 11:55:01 2020 +0000
+
+    Added QR Code Scanner
+
+commit 67eae41b89b49424019e58a98918391eb3715ad3
+Merge: 3434345 6c265b7
+Author: nickpap00 <nikos.papavasileiou@hotmail.com>
+Date:   Thu Feb 27 00:53:12 2020 +0000
+
+    markers are clickable
+
+commit 3434345b81c87f91f7d6e9f380ec0545bd0f56bd
+Author: nickpap00 <nikos.papavasileiou@hotmail.com>
+Date:   Thu Feb 27 00:51:46 2020 +0000
+
+    markers are clickable and new icons added
+
+commit 6c265b793420b47e28ae5423ca9331c909adeaa9
+Author: KernowCoder <56916502+KernowCoder@users.noreply.github.com>
+Date:   Wed Feb 26 20:25:54 2020 +0000
+
+    CSS Linked
+    
+    Updated php files containing html to include the css.
+
+commit 20a989de1d0e19549b030122a2ecc76892f8cf83
+Author: zainhabib1 <57769966+zainhabib1@users.noreply.github.com>
+Date:   Wed Feb 26 18:54:22 2020 +0000
+
+    update
+
+commit 37522d30bf97d663b11f8a25944935f2dffd4e0e
+Merge: ba5a7e7 4c7ab24
+Author: zainhabib1 <57769966+zainhabib1@users.noreply.github.com>
+Date:   Wed Feb 26 18:19:17 2020 +0000
+
+    Merge branch 'master' of https://github.com/nickpap00/GroupSoftware
+
+commit 4c7ab2463457fd1c96f38762596d9853c814bc59
+Author: jameskitt234 <57361252+jameskitt234@users.noreply.github.com>
+Date:   Wed Feb 26 16:43:24 2020 +0000
+
+    Update projectdb.sql
+    
+    attempted bug fix
+
+commit c213cbf25cdc42a679124a96636666e9f73e8419
+Author: jameskitt234 <57361252+jameskitt234@users.noreply.github.com>
+Date:   Wed Feb 26 16:41:13 2020 +0000
+
+    Update projectdb.sql
+    
+    attempted error fix
+
+commit 4261b44cdf73e64cc8acec99d070e1a3e151d2d9
+Author: jameskitt234 <57361252+jameskitt234@users.noreply.github.com>
+Date:   Wed Feb 26 14:59:12 2020 +0000
+
+    Bug fix and Author addition
+    
+    Accredited authorship of the db to zain and I.
+    Fixed an error on the tours table in the db
+
+commit ba5a7e7168d8adfa4f47a4cf189b9644b1f75177
+Merge: f48c830 ca5852d
+Author: zainhabib1 <57769966+zainhabib1@users.noreply.github.com>
+Date:   Wed Feb 26 14:26:40 2020 +0000
+
+    Merge branch 'master' of https://github.com/nickpap00/GroupSoftware
+
+commit ca5852d661a4c250f25388372a4a76b25d86a06e
+Merge: 0879f13 c7c3068
+Author: nickpap00 <nikos.papavasileiou@hotmail.com>
+Date:   Wed Feb 26 14:24:01 2020 +0000
+
+    Merge branch 'master' of https://github.com/nickpap00/GroupSoftware
+
+commit 0879f130f2638c147d2a5ff03c8638437f1dad96
+Author: nickpap00 <nikos.papavasileiou@hotmail.com>
+Date:   Wed Feb 26 14:22:42 2020 +0000
+
+    added extra features to the map
+
+commit f48c8302838f63749b8392b65c1ce7185b07650c
+Merge: ac85a88 c7c3068
+Author: zainhabib1 <57769966+zainhabib1@users.noreply.github.com>
+Date:   Wed Feb 26 13:45:36 2020 +0000
+
+    Merge branch 'master' of https://github.com/nickpap00/GroupSoftware
+
+commit c7c306883d8e97ea00caa3871ae1114a8d6d3273
+Author: jameskitt234 <57361252+jameskitt234@users.noreply.github.com>
+Date:   Wed Feb 26 12:13:14 2020 +0000
+
+    Update README.md
+    
+    correction of terminology
+
+commit 49759838849fe8207304c0e71fa9e2ba3f33580f
+Merge: b5a9fb3 ee358b8
+Author: jameskitt234 <57361252+jameskitt234@users.noreply.github.com>
+Date:   Wed Feb 26 12:10:41 2020 +0000
+
+    Merge branch 'master' of https://github.com/nickpap00/GroupSoftware
+
+commit b5a9fb30588622f6a8322717d843695b29683711
+Author: jameskitt234 <57361252+jameskitt234@users.noreply.github.com>
+Date:   Wed Feb 26 12:10:30 2020 +0000
+
+    Restructure of branches and ReadMe update
+    
+    In this commit I have moved the source code into two distinct branches (webPage and database) to help make navigation through the repo easier and have updated the readMe to show this change
+
+commit ac85a88cf19b67a852cb9be5103fea0fd11bbef9
+Merge: 022dc79 ee358b8
+Author: zainhabib1 <57769966+zainhabib1@users.noreply.github.com>
+Date:   Tue Feb 25 18:39:30 2020 +0000
+
+    Merge branch 'master' of https://github.com/nickpap00/GroupSoftware
+
+commit ee358b84bdfe244fc0d6f7d94af999af7a5e9fa8
+Merge: 00997bb f54a001
+Author: zainhabib1 <57769966+zainhabib1@users.noreply.github.com>
+Date:   Tue Feb 25 18:39:13 2020 +0000
+
+    Merge pull request #1 from nickpap00/KernowCoder-login/registercss
+    
+    Kernow coder login/registercss
+
+commit 00997bb5bfd4c851a2f4a03aba755f4665d167aa
+Author: nickpap00 <nikos.papavasileiou@hotmail.com>
+Date:   Tue Feb 25 16:54:40 2020 +0000
+
+    added more markers on map
+
+commit 25d0c82f1da5ac88d5560afdbeb330afef006137
+Author: nickpap00 <nikos.papavasileiou@hotmail.com>
+Date:   Tue Feb 25 16:33:53 2020 +0000
+
+    added more markers on map
+
+commit 022dc797dbbf9f6ea0ddbd7363208df1b2931118
+Merge: 7b8d132 f54a001
+Author: zainhabib1 <57769966+zainhabib1@users.noreply.github.com>
+Date:   Tue Feb 25 16:28:46 2020 +0000
+
+    Merge branch 'KernowCoder-login/registercss'
+
+commit f54a001e816395c212699319b6bc0213c5e2f853
+Author: KernowCoder <56916502+KernowCoder@users.noreply.github.com>
+Date:   Tue Feb 25 16:17:10 2020 +0000
+
+    Add files via upload
+
+commit 7b8d132b4e05d804f6fbe63ed7b0c52e9e648733
+Author: nickpap00 <nikos.papavasileiou@hotmail.com>
+Date:   Tue Feb 25 16:07:37 2020 +0000
+
+    added more markers on map
+
+commit 9b454025f1db5a22c80cb9a9bcd8a605b0c443ab
+Author: nickpap00 <nikos.papavasileiou@hotmail.com>
+Date:   Tue Feb 25 15:39:30 2020 +0000
+
+    added more markers on map
+
+commit 5e2e2d268ae882740e03c0b4808460b0713a87f1
+Author: KernowCoder <56916502+KernowCoder@users.noreply.github.com>
+Date:   Tue Feb 25 13:54:43 2020 +0000
+
+    Add files via upload
+
+commit 08ff6cb6613270a3d6b4f1064ee6980d9b533695
+Author: nickpap00 <nikos.papavasileiou@hotmail.com>
+Date:   Mon Feb 24 14:30:52 2020 +0000
+
+    added map test
+
+commit b08c7266021224c16b9ab374473184bc1c1efe60
+Author: nickpap00 <nikos.papavasileiou@hotmail.com>
+Date:   Mon Feb 24 14:25:47 2020 +0000
+
+    added map test
+
+commit 37c51934ea4fec3522327d3ab331142fb38918ba
+Author: jameskitt234 <57361252+jameskitt234@users.noreply.github.com>
+Date:   Wed Feb 19 15:05:27 2020 +0000
+
+    Update projectdb.sql
+
+commit 6e9d1f8fb106a4327261010e09cc8a7bb47eabeb
+Author: zainhabib1 <57769966+zainhabib1@users.noreply.github.com>
+Date:   Wed Feb 12 23:48:21 2020 +0000
+
+    Basic Pages
+    
+    Login, registration are complete and working,
+    registration javascript need to be checked,
+    update user details not done,
+    navbar is created with dummy pages,
+    read the readme.txt to see the format of the website and the variable names
+
+commit eddcaa21ccd87e53797f1b319c44dbc2a0f20800
+Author: jameskitt234 <57361252+jameskitt234@users.noreply.github.com>
+Date:   Tue Feb 11 15:06:04 2020 +0000
+
+    Update treasureHunt_init.sql
+    
+    Added table for users to be added to (inserted three dummy users to test table).
+    Continued to populate the POIs table with information about university buildings.
+
+commit 5b9e31167c57c2afa0f0f0ba8ad2aa5cd148a0f1
+Author: jameskitt234 <57361252+jameskitt234@users.noreply.github.com>
+Date:   Tue Feb 11 13:47:31 2020 +0000
+
+    Added treasureHunt_init.sql
+
+commit bc328216a1bab04aa48e7c879cf5e5458d33f7b0
+Author: nickpap00 <41973754+nickpap00@users.noreply.github.com>
+Date:   Tue Feb 4 11:32:13 2020 +0000
+
+    Initial commit
